@@ -16,7 +16,7 @@ public:
 
     void typeError();
 
-    void setDesk(GameDesk* desk);
+    void setDesk(const GameDesk* desk);
 
     void output();
 
@@ -35,7 +35,7 @@ protected:
 
     virtual void typeError_impl() = 0;
 
-    virtual void setDesk_impl(GameDesk *desk) = 0;
+    virtual void setDesk_impl(const GameDesk *desk) = 0;
 
     virtual void output_impl() =  0;
 

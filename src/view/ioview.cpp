@@ -20,7 +20,7 @@ void IoView::typeError() {
     return typeError_impl();
 }
 
-void IoView::setDesk(GameDesk* desk) {
+void IoView::setDesk(const GameDesk* desk) {
     return setDesk_impl(desk);
 }
 

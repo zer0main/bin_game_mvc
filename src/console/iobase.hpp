@@ -15,7 +15,7 @@ protected:
 
     void typeError_impl();
 
-    void setDesk_impl(GameDesk *desk);
+    void setDesk_impl(const GameDesk *desk);
 
     void output_impl();
 

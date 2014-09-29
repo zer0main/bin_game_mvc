@@ -2,11 +2,11 @@
 
 #include "game_desk.hpp"
 
-const int GameDesk::getRowNumber() {
+int GameDesk::getRowNumber() const {
     return rownumber_;
 }
 
-const int GameDesk::getDeskNumber(Point& point) {
+int GameDesk::getDeskNumber(Point& point) const {
     return desk_[point.col * rownumber_ + point.row];
 }
 
