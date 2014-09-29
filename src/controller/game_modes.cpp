@@ -65,6 +65,10 @@ void GameModes::gameWithTime() {
     iobase_->finish(checkFail(), score());
 }
 
+void GameModes::help() {
+    iobase_->sentHelpMessage();
+}
+
 void GameModes::setDesk(int desk_size) {
     int i, x;
     Point point;

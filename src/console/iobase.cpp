@@ -83,3 +83,7 @@ void IoBase::finish_impl(bool check_fail, long long int score) {
         std::cout << "You are winner! You score is " << score << std::endl;
     }
 }
+
+void IoBase::sentHelpMessage_impl() {
+    std::cout << "We haven't any help yet" << std::endl;
+}
