@@ -15,5 +15,7 @@ void GameDesk::setDeskNumber(Point& point, int number) {
 }
 
 void GameDesk::resize(int row_number) {
-    desk_.resize(row_number * row_number);
+    int square = row_number * row_number;
+    desk_.resize(square);
+    rownumber_ = row_number;
 }
