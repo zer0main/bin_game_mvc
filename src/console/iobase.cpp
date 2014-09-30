@@ -57,7 +57,7 @@ void IoBase::setDesk_impl(const GameDesk* desk) {
 void IoBase::output_impl() {
     Point point;
     int i, x;
-    for (i = 0; i < desk_->getRowNumber(); i++) {
+    for (i = desk_->getRowNumber() - 1; i >= 0; i--) {
         for (x = 0; x < desk_->getRowNumber(); x++) {
             point.col = i;
             point.row = x;
