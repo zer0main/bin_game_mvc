@@ -12,3 +12,17 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+void MainWindow::openGameWindow() {
+    gameWindow = new GameWindow;
+    gameWindwo.show();
+}
+
+void MainWindow::on_playButton_clicked() {
+    openGameWindow();
+}
+
+void MainWindow::on_quitButton_clikced() {
+    qApp->quit();
+}
