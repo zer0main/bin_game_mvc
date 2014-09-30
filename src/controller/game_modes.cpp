@@ -61,6 +61,7 @@ void GameModes::gameWithTime() {
     iobase_->output();
     while (!checkFail() && ((t2 - t1) < time_number * 60)) {
         play();
+        t2 = time(NULL);
     }
     iobase_->finish(checkFail(), score());
 }
