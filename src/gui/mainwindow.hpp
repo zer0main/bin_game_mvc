@@ -21,7 +21,7 @@ public slots:
     void openGameWindow();
 
 private:
-    GameWindow* gameWindow;
+    GameWindow* game_window;
 
 private slots:
     void on_playButton_clicked();
