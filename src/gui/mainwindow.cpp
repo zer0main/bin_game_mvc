@@ -15,8 +15,8 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::openGameWindow() {
-    gameWindow = new GameWindow;
-    gameWindwo.show();
+    game_window = new GameWindow;
+    game_window->show();
 }
 
 void MainWindow::on_playButton_clicked() {
