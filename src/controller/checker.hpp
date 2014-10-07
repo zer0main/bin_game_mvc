@@ -1,3 +1,6 @@
+#ifndef CHECKER_HPP_
+#define CHECKER_HPP_
+
 #include "game_desk.hpp"
 #include "points.hpp"
 
@@ -9,3 +12,5 @@ public:
 
     bool checkRange(int max, Points& points);
 };
+
+#endif
