@@ -17,25 +17,25 @@ Points IoView::getIndex() {
 }
 
 void IoView::typeError() {
-    return typeError_impl();
+    typeError_impl();
 }
 
 void IoView::setDesk(const GameDesk* desk) {
-    return setDesk_impl(desk);
+    setDesk_impl(desk);
 }
 
 void IoView::output() {
-    return output_impl();
+    output_impl();
 }
 
 void IoView::indexError() {
-    return indexError_impl();
+    indexError_impl();
 }
 
 void IoView::finish(bool check_fail, long long int score) {
-    return finish_impl(check_fail, score);
+    finish_impl(check_fail, score);
 }
 
 void IoView::sendHelpMessage() {
-    return sendHelpMessage_impl();
+    sendHelpMessage_impl();
 }
