@@ -84,6 +84,6 @@ void IoBase::finish_impl(bool check_fail, long long int score) {
     }
 }
 
-void IoBase::sentHelpMessage_impl() {
+void IoBase::sendHelpMessage_impl() {
     std::cout << "We haven't any help yet" << std::endl;
 }

@@ -36,6 +36,6 @@ void IoView::finish(bool check_fail, long long int score) {
     return finish_impl(check_fail, score);
 }
 
-void IoView::sentHelpMessage() {
-    return sentHelpMessage_impl();
+void IoView::sendHelpMessage() {
+    return sendHelpMessage_impl();
 }

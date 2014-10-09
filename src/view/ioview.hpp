@@ -24,7 +24,7 @@ public:
 
     void finish(bool check_fail, long long int score);
 
-    void sentHelpMessage();
+    void sendHelpMessage();
 
 protected:
     virtual int getDeskSize_impl() = 0;
@@ -45,7 +45,7 @@ protected:
 
     virtual void finish_impl(bool check_fail, long long int score) = 0;
 
-    virtual void sentHelpMessage_impl() = 0;
+    virtual void sendHelpMessage_impl() = 0;
 
 protected:
     const GameDesk *desk_;

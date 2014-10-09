@@ -67,7 +67,7 @@ void GameModes::gameWithTime() {
 }
 
 void GameModes::help() {
-    iobase_->sentHelpMessage();
+    iobase_->sendHelpMessage();
 }
 
 void GameModes::setDesk(int desk_size) {

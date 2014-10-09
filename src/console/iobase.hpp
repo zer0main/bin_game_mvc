@@ -23,7 +23,7 @@ protected:
 
     void finish_impl(bool check_fail, long long int score);
 
-    void sentHelpMessage_impl();
+    void sendHelpMessage_impl();
 
 };
 
