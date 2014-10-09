@@ -6,11 +6,11 @@ int GameDesk::getRowNumber() const {
     return rownumber_;
 }
 
-int GameDesk::getDeskNumber(Point& point) const {
+int GameDesk::getDeskNumber(const Point& point) const {
     return desk_[point.col * rownumber_ + point.row];
 }
 
-void GameDesk::setDeskNumber(Point& point, int number) {
+void GameDesk::setDeskNumber(const Point& point, int number) {
     desk_[point.col * rownumber_ + point.row] = number;
 }
 

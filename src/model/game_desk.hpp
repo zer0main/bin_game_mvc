@@ -14,9 +14,9 @@ class GameDesk {
 public:
     int getRowNumber() const;
 
-    int getDeskNumber(Point& point) const;
+    int getDeskNumber(const Point& point) const;
 
-    void setDeskNumber(Point& point, int number);
+    void setDeskNumber(const Point& point, int number);
 
     void resize(int row_number);
 
