@@ -1,35 +1,45 @@
+#include <cmath>
+
 #include "checker.hpp"
 
 bool Checker::checkStep(GameDesk& a, Points& points) {
     int rownumber = a.getRowNumber();
     if (checkIndex(rownumber, points)) {
         if (a.getDeskNumber(points.p1) == a.getDeskNumber(points.p2)) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
 
 bool Checker::checkIndex(int max, Points& points) {
+    int p1c = points.p1.col;
+    int p2c = points.p2.col;
+    int p1r = points.p1.row;
+    int p2r = points.p2.row;
     if (checkRange(max, points)) {
-        if ((points.p1.col == points.p2.col) && ((points.p1.row == points.p2.row + 1) || (points.p1.row == points.p2.row - 1))) {
-            return 1;
+        if ((p1c == p2c) && (std::abs((p1r - p2r)) == 1)) {
+            return true;
         }
-        else if ((points.p1.row == points.p2.row) && ((points.p1.col == points.p2.col + 1) || (points.p1.col == points.p2.col - 1))) {
-            return 1;
+        else if ((p1r == p2r) && std::abs((p1c - p2c) == 1)) {
+            return true;
         }
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
 
 bool Checker::checkRange(int max, Points& points) {
-    if ((points.p1.row >= 0) && (points.p1.col >= 0) && (points.p2.row >= 0) && (points.p2.col >= 0)) {
-        if ((points.p1.row < max) && (points.p1.col < max) && (points.p2.row < max) && (points.p2.col < max)) {
-            return 1;
+    int p1c = points.p1.col;
+    int p2c = points.p2.col;
+    int p1r = points.p1.row;
+    int p2r = points.p2.row;
+    if ((p1r >= 0) && (p1c >= 0) && (p2r >= 0) && (p2c >= 0)) {
+        if ((p1r < max) && (p1c < max) && (p2r < max) && (p2c < max)) {
+            return true;
         }
-        return 0;
+        return false;
     }
-    return 0;
+    return false;
 }
