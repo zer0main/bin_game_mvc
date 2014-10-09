@@ -21,9 +21,6 @@ public:
     void resize(int row_number);
 
 private:
-    typedef unsigned long long int Int;
-    typedef std::vector<Int> Ints;
-    
     Ints desk_;
     int rownumber_;
 };        
