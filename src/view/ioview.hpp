@@ -37,8 +37,6 @@ protected:
 
     virtual void typeError_impl() = 0;
 
-    virtual void setDesk_impl(const GameDesk *desk) = 0;
-
     virtual void output_impl() =  0;
 
     virtual void indexError_impl() = 0;

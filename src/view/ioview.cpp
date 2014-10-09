@@ -21,7 +21,7 @@ void IoView::typeError() {
 }
 
 void IoView::setDesk(const GameDesk* desk) {
-    setDesk_impl(desk);
+    desk_ = desk;
 }
 
 void IoView::output() {
