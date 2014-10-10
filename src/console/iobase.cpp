@@ -51,15 +51,16 @@ void IoBase::typeError_impl() {
 }
 
 void IoBase::output_impl() {
+    const GameDesk* desk = getDesk();
     Point point;
     int i, x;
-    for (i = desk_->getRowNumber() - 1; i >= 0; i--) {
-        for (x = 0; x < desk_->getRowNumber(); x++) {
+    for (i = desk->getRowNumber() - 1; i >= 0; i--) {
+        for (x = 0; x < desk->getRowNumber(); x++) {
             point.col = i;
             point.row = x;
             char prev_fill = std::cout.fill(' ');
             int prev_width = std::cout.width(5);
-            std::cout << desk_->getDeskNumber(point);
+            std::cout << desk->getDeskNumber(point);
             std::cout.width(prev_width);
             std::cout.fill(prev_fill);
         }

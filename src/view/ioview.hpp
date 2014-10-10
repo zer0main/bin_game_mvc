@@ -12,6 +12,8 @@ public:
 
     int getTimeNumber();
 
+    const GameDesk* getDesk();
+    
     Points getIndex();
 
     void typeError();
@@ -45,8 +47,8 @@ protected:
 
     virtual void sendHelpMessage_impl() = 0;
 
-protected:
-    const GameDesk *desk_;
+private:
+    const GameDesk* desk_;
 };
 
 #endif
