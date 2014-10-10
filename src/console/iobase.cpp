@@ -3,7 +3,7 @@
 
 #include "iobase.hpp"
 
-int IoBase::getDeskSize_impl() {
+int IoBase::getDeskSize_impl() const {
     int deskSize;
     std::cout << "Choose the size of game desk: " << std::endl;
     while (!(std::cin >> deskSize)) {
@@ -12,7 +12,7 @@ int IoBase::getDeskSize_impl() {
     return deskSize;
 }
 
-int IoBase::getWinNumber_impl() {
+int IoBase::getWinNumber_impl() const {
     int winNumber;
     std::cout << "What number you want to finish the game? " << std::endl;
     while(!(std::cin >> winNumber)) {
@@ -21,7 +21,7 @@ int IoBase::getWinNumber_impl() {
     return winNumber;
 }
 
-int IoBase::getTimeNumber_impl() {
+int IoBase::getTimeNumber_impl() const {
     int timeNumber;
     std::cout << "How many time you want to play (min)? " << std::endl;
     while(!(std::cin >> timeNumber)) {
@@ -30,7 +30,7 @@ int IoBase::getTimeNumber_impl() {
     return timeNumber;
 }
 
-Points IoBase::getIndex_impl() {
+Points IoBase::getIndex_impl() const {
     Points points;
     std::cout << "Enter index of number1: " << std::endl;
     while(!(std::cin >> points.p1.col >> points.p1.row)) {
@@ -43,14 +43,14 @@ Points IoBase::getIndex_impl() {
     return points;
 }
 
-void IoBase::typeError_impl() {
+void IoBase::typeError_impl() const {
     std::cout << "Error: you must enter the NUMBER" << std::endl;
     std::cout << "Try again: " << std::endl;
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
-void IoBase::output_impl() {
+void IoBase::output_impl() const {
     const GameDesk* desk = getDesk();
     Point point;
     int i, x;
@@ -68,11 +68,11 @@ void IoBase::output_impl() {
     }
 }
 
-void IoBase::indexError_impl() {
+void IoBase::indexError_impl() const {
     std::cout << "Error: wrong index of numbers." << std::endl;
 }
 
-void IoBase::finish_impl(bool check_fail, long long int score) {
+void IoBase::finish_impl(bool check_fail, long long int score) const {
     if (check_fail) {
         std::cout << "You are looser... Your score is " << score << std::endl;
     }
@@ -81,6 +81,6 @@ void IoBase::finish_impl(bool check_fail, long long int score) {
     }
 }
 
-void IoBase::sendHelpMessage_impl() {
+void IoBase::sendHelpMessage_impl() const {
     std::cout << "We haven't any help yet" << std::endl;
 }

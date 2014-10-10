@@ -6,46 +6,46 @@
 
 class IoView {
 public:
-    int getDeskSize();
+    int getDeskSize() const;
 
-    int getWinNumber();
+    int getWinNumber() const;
 
-    int getTimeNumber();
+    int getTimeNumber() const;
 
-    const GameDesk* getDesk();
+    const GameDesk* getDesk() const;
     
-    Points getIndex();
+    Points getIndex() const;
 
-    void typeError();
+    void typeError() const;
 
     void setDesk(const GameDesk* desk);
 
-    void output();
+    void output() const;
 
-    void indexError();
+    void indexError() const;
 
-    void finish(bool check_fail, long long int score);
+    void finish(bool check_fail, long long int score) const;
 
-    void sendHelpMessage();
+    void sendHelpMessage() const;
 
 protected:
-    virtual int getDeskSize_impl() = 0;
+    virtual int getDeskSize_impl() const = 0;
 
-    virtual int getWinNumber_impl() = 0;
+    virtual int getWinNumber_impl() const = 0;
 
-    virtual int getTimeNumber_impl() = 0;
+    virtual int getTimeNumber_impl() const = 0;
 
-    virtual Points getIndex_impl() = 0;
+    virtual Points getIndex_impl() const = 0;
 
-    virtual void typeError_impl() = 0;
+    virtual void typeError_impl() const = 0;
 
-    virtual void output_impl() =  0;
+    virtual void output_impl() const =  0;
 
-    virtual void indexError_impl() = 0;
+    virtual void indexError_impl() const = 0;
 
-    virtual void finish_impl(bool check_fail, long long int score) = 0;
+    virtual void finish_impl(bool check_fail, long long int score) const = 0;
 
-    virtual void sendHelpMessage_impl() = 0;
+    virtual void sendHelpMessage_impl() const = 0;
 
 private:
     const GameDesk* desk_;

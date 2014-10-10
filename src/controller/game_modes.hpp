@@ -8,12 +8,12 @@
 
 class GameModes {
 public:
-    GameModes(GameDesk *desk, IoBase *io_base);
+    GameModes(GameDesk* desk, IoBase* io_base);
 
     void start(int argc, char* argv[]);
 private:
-    GameDesk *desk_;
-    IoBase *iobase_;
+    GameDesk* desk_;
+    const IoBase* iobase_;
     
     long long int score();
 
