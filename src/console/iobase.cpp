@@ -50,10 +50,6 @@ void IoBase::typeError_impl() {
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
-void IoBase::setDesk_impl(const GameDesk* desk) {
-    desk_ = desk;
-}
-
 void IoBase::output_impl() {
     Point point;
     int i, x;
