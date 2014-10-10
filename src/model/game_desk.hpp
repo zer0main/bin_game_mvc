@@ -22,7 +22,7 @@ public:
 
 private:
     Ints desk_;
-    int rownumber_;
+    int row_number_;
 };        
 
 #endif

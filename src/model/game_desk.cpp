@@ -3,19 +3,19 @@
 #include "game_desk.hpp"
 
 int GameDesk::getRowNumber() const {
-    return rownumber_;
+    return row_number_;
 }
 
 int GameDesk::getDeskNumber(const Point& point) const {
-    return desk_[point.col * rownumber_ + point.row];
+    return desk_[point.col * row_number_ + point.row];
 }
 
 void GameDesk::setDeskNumber(const Point& point, int number) {
-    desk_[point.col * rownumber_ + point.row] = number;
+    desk_[point.col * row_number_ + point.row] = number;
 }
 
 void GameDesk::resize(int row_number) {
     int square = row_number * row_number;
     desk_.resize(square);
-    rownumber_ = row_number;
+    row_number_ = row_number;
 }
