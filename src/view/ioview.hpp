@@ -6,6 +6,10 @@
 
 class IoView {
 public:
+    IoView();
+
+    virtual ~IoView();
+
     int getDeskSize() const;
 
     int getWinNumber() const;

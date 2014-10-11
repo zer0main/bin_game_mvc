@@ -1,5 +1,11 @@
 #include "ioview.hpp"
 
+IoView::IoView() {
+}
+
+IoView::~IoView() {
+}
+
 int IoView::getDeskSize() const {
     return getDeskSize_impl();
 }
