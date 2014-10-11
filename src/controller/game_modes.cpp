@@ -3,9 +3,9 @@
 
 #include "game_modes.hpp"
 
-GameModes::GameModes(GameDesk* desk_point, IoBase* io_base_point) {
+GameModes::GameModes(GameDesk* desk_point, IoView* view) {
     desk_ = desk_point;
-    iobase_ = io_base_point;
+    ioview_ = view;
 }
 
 void GameModes::start(int argc, char* argv[]) {
@@ -24,46 +24,46 @@ void GameModes::start(int argc, char* argv[]) {
 
 void GameModes::gameForWin() {
     int desk_size;
-    desk_size = iobase_->getDeskSize();
+    desk_size = ioview_->getDeskSize();
     int win_number;
-    win_number = iobase_->getWinNumber();
+    win_number = ioview_->getWinNumber();
     setDesk(desk_size);
-    iobase_->output();
+    ioview_->output();
     while (!checkFail() && !checkWin(win_number)) {
         play();
     }
-    iobase_->finish(checkFail(), score());
+    ioview_->finish(checkFail(), score());
 }
 
 void GameModes::gameForScore() {
     int desk_size;
-    desk_size = iobase_->getDeskSize();
+    desk_size = ioview_->getDeskSize();
     setDesk(desk_size);
-    iobase_->output();
+    ioview_->output();
     while (!checkFail()) {
         play();
     }
-    iobase_->finish(checkFail(), score());
+    ioview_->finish(checkFail(), score());
 }
 
 void GameModes::gameWithTime() {
     int desk_size;
-    desk_size = iobase_->getDeskSize();
+    desk_size = ioview_->getDeskSize();
     int time_number;
-    time_number = iobase_->getTimeNumber();
+    time_number = ioview_->getTimeNumber();
     setDesk(desk_size);
     int t1 = time(NULL);
     int t2 = 0;
-    iobase_->output();
+    ioview_->output();
     while (!checkFail() && ((t2 - t1) < time_number * 60)) {
         play();
         t2 = time(NULL);
     }
-    iobase_->finish(checkFail(), score());
+    ioview_->finish(checkFail(), score());
 }
 
 void GameModes::help() {
-    iobase_->sendHelpMessage();
+    ioview_->sendHelpMessage();
 }
 
 void GameModes::setDesk(int desk_size) {
@@ -86,12 +86,12 @@ void GameModes::setDesk(int desk_size) {
 void GameModes::play() {
     Points points;
     Checker checker;
-    points = iobase_->getIndex();
+    points = ioview_->getIndex();
     if (checker.checkStep(*desk_, points)) {
         replace(points);
-        iobase_->output();
+        ioview_->output();
     } else {
-        iobase_->indexError();
+        ioview_->indexError();
     }
 }
 
