@@ -13,7 +13,7 @@ public:
     int getTimeNumber() const;
 
     const GameDesk* getDesk() const;
-    
+
     Points getIndex() const;
 
     void typeError() const;
@@ -52,3 +52,4 @@ private:
 };
 
 #endif
+

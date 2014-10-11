@@ -5,8 +5,7 @@
 #include "iobase.hpp"
 #include "game_modes.hpp"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     srand(time(NULL));
     GameDesk desk;
     IoBase io_base;
@@ -14,3 +13,4 @@ int main(int argc, char* argv[])
     GameModes game_modes(&desk, &io_base);
     game_modes.start(argc, argv);
 }
+

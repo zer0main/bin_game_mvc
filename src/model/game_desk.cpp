@@ -19,3 +19,4 @@ void GameDesk::resize(int row_number) {
     desk_.resize(square);
     row_number_ = row_number;
 }
+

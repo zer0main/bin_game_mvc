@@ -14,19 +14,19 @@ public:
 private:
     GameDesk* desk_;
     const IoBase* iobase_;
-    
+
     long long int score();
 
     bool checkFail();
 
     bool checkWin(int for_win);
-    
+
     void setDesk(int desk_size);
 
     void play();
 
     void replace(Points& points);
-    
+
     void gameForWin();
 
     void gameForScore();
@@ -37,3 +37,4 @@ private:
 };
 
 #endif
+

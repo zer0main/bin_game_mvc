@@ -43,3 +43,4 @@ void IoView::finish(bool check_fail, long long int score) const {
 void IoView::sendHelpMessage() const {
     sendHelpMessage_impl();
 }
+

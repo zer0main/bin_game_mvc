@@ -3,25 +3,21 @@
 
 #include "game_modes.hpp"
 
-GameModes::GameModes(GameDesk *desk_point, IoBase *io_base_point) {
+GameModes::GameModes(GameDesk* desk_point, IoBase* io_base_point) {
     desk_ = desk_point;
     iobase_ = io_base_point;
 }
 
-void GameModes::start(int argc, char *argv[]) {
+void GameModes::start(int argc, char* argv[]) {
     if (argc == 1) {
         help();
-    }
-    else if (*++argv[1] == 'w') {
+    } else if (*++argv[1] == 'w') {
         gameForWin();
-    }
-    else if (*argv[1] == 's') {
+    } else if (*argv[1] == 's') {
         gameForScore();
-    }
-    else if (*argv[1] == 't') {
+    } else if (*argv[1] == 't') {
         gameWithTime();
-    }
-    else {
+    } else {
         help();
     }
 }
@@ -77,11 +73,10 @@ void GameModes::setDesk(int desk_size) {
     for (i = 0; i < desk_size; i++) {
         for (x = 0; x < desk_size; x++) {
             point.col = i;
-            point.row = x; 
+            point.row = x;
             if (rand() <= (RAND_MAX / 2)) {
                 desk_->setDeskNumber(point, 1);
-            }
-            else {
+            } else {
                 desk_->setDeskNumber(point, 2);
             }
         }
@@ -95,8 +90,7 @@ void GameModes::play() {
     if (checker.checkStep(*desk_, points)) {
         replace(points);
         iobase_->output();
-    }
-    else {
+    } else {
         iobase_->indexError();
     }
 }
@@ -114,8 +108,7 @@ void GameModes::replace(Points& points) {
     }
     if (rand() <= (RAND_MAX / 2)) {
         desk_->setDeskNumber(points.p1, 2);
-    }
-    else {
+    } else {
         desk_->setDeskNumber(points.p1, 1);
     }
 }
@@ -165,3 +158,4 @@ bool GameModes::checkFail() {
     }
     return true;
 }
+
