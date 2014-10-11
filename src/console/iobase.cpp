@@ -74,7 +74,7 @@ void IoBase::indexError_impl() const {
 
 void IoBase::finish_impl(bool check_fail, long long int score) const {
     if (check_fail) {
-        std::cout << "You are looser... Your score is " << score << std::endl;
+        std::cout << "You are loser... Your score is " << score << std::endl;
     }
     else {
         std::cout << "You are winner! You score is " << score << std::endl;
@@ -82,5 +82,6 @@ void IoBase::finish_impl(bool check_fail, long long int score) const {
 }
 
 void IoBase::sendHelpMessage_impl() const {
-    std::cout << "We haven't any help yet" << std::endl;
+    std::cout << "To play this game you must use the options: -w for play to win\n"
+                 "-t for game with real time and -s to play while not lose." << std::endl;
 }
