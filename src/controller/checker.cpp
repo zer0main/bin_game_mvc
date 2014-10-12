@@ -21,8 +21,7 @@ bool Checker::checkIndex(int max, Points& points) {
     if (checkRange(max, points)) {
         if ((p1c == p2c) && (std::abs((p1r - p2r)) == 1)) {
             return true;
-        }
-        else if ((p1r == p2r) && (std::abs(p1c - p2c) == 1)) {
+        } else if ((p1r == p2r) && (std::abs(p1c - p2c) == 1)) {
             return true;
         }
         return false;
@@ -43,3 +42,4 @@ bool Checker::checkRange(int max, Points& points) {
     }
     return false;
 }
+

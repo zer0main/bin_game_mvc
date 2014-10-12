@@ -4,29 +4,29 @@
 #include "checker.hpp"
 #include "points.hpp"
 #include "game_desk.hpp"
-#include "iobase.hpp"
+#include "ioview.hpp"
 
 class GameModes {
 public:
-    GameModes(GameDesk* desk, IoBase* io_base);
+    GameModes(GameDesk* desk, IoView* view);
 
     void start(int argc, char* argv[]);
 private:
     GameDesk* desk_;
-    const IoBase* iobase_;
-    
+    const IoView* ioview_;
+
     long long int score();
 
     bool checkFail();
 
     bool checkWin(int for_win);
-    
+
     void setDesk(int desk_size);
 
     void play();
 
     void replace(Points& points);
-    
+
     void gameForWin();
 
     void gameForScore();
@@ -37,3 +37,4 @@ private:
 };
 
 #endif
+

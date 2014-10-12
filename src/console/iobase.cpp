@@ -15,7 +15,7 @@ int IoBase::getDeskSize_impl() const {
 int IoBase::getWinNumber_impl() const {
     int winNumber;
     std::cout << "What number you want to finish the game? " << std::endl;
-    while(!(std::cin >> winNumber)) {
+    while (!(std::cin >> winNumber)) {
         typeError_impl();
     }
     return winNumber;
@@ -24,7 +24,7 @@ int IoBase::getWinNumber_impl() const {
 int IoBase::getTimeNumber_impl() const {
     int timeNumber;
     std::cout << "How many time you want to play (min)? " << std::endl;
-    while(!(std::cin >> timeNumber)) {
+    while (!(std::cin >> timeNumber)) {
         typeError_impl();
     }
     return timeNumber;
@@ -33,11 +33,11 @@ int IoBase::getTimeNumber_impl() const {
 Points IoBase::getIndex_impl() const {
     Points points;
     std::cout << "Enter index of number1: " << std::endl;
-    while(!(std::cin >> points.p1.col >> points.p1.row)) {
+    while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError_impl();
     }
     std::cout << "And of number2: " << std::endl;
-    while(!(std::cin >> points.p2.col >> points.p2.row)) {
+    while (!(std::cin >> points.p2.col >> points.p2.row)) {
         typeError_impl();
     }
     return points;
@@ -75,13 +75,13 @@ void IoBase::indexError_impl() const {
 void IoBase::finish_impl(bool check_fail, long long int score) const {
     if (check_fail) {
         std::cout << "You are loser... Your score is " << score << std::endl;
-    }
-    else {
+    } else {
         std::cout << "You are winner! You score is " << score << std::endl;
     }
 }
 
 void IoBase::sendHelpMessage_impl() const {
     std::cout << "To play this game you must use the options: -w for play to win\n"
-                 "-t for game with real time and -s to play while not lose." << std::endl;
+              "-t for game with real time and -s to play while not lose." << std::endl;
 }
+

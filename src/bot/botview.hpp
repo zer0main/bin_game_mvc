@@ -1,9 +1,16 @@
-#ifndef IOBASE_HPP_
-#define IOBASE_HPP_
+#ifndef BOTVIEW_HPP_
+#define BOTVIEW_HPP_
 
 #include "ioview.hpp"
 
-class IoBase: public IoView {
+struct lua_State;
+
+class BotView: public IoView {
+public:
+    BotView();
+
+    ~BotView();
+
 protected:
     int getWinNumber_impl() const;
 
@@ -23,6 +30,8 @@ protected:
 
     void sendHelpMessage_impl() const;
 
+private:
+    lua_State* L_;
 };
 
 #endif

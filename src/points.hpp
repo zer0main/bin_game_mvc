@@ -5,7 +5,7 @@
 
 typedef unsigned long long int Int;
 typedef std::vector<Int> Ints;
-    
+
 struct Point {
     int col;
     int row;
@@ -17,3 +17,4 @@ struct Points {
 };
 
 #endif
+
