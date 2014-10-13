@@ -1,11 +1,19 @@
 math = require('math')
 
+local state
+local size
+
 function getDeskSize()
-    return math.random(3, 4)
+    size = math.random(2, 9)
+    state = {}
+    for i = 0, size - 1 do
+        state[i] = {}
+    end
+    return size
 end
 
 function getWinNumber()
-    return 100
+    return math.random(200, 1000)
 end
 
 function getIndex()
@@ -13,10 +21,14 @@ function getIndex()
 end
 
 function output(model)
-    print("getRowNumber " .. model:getRowNumber())
     local p = Point()
-    p.col = 1
-    p.row = 1
-    print("getDeskNumber " .. model:getDeskNumber(p))
+    for col = 0, size -1 do
+        for row = 0, size - 1 do
+           p.col = col;
+           p.row = row;
+           state[col][row] = model:getDeskNumber(p)
+        end
+    end
 end
 
+function think
