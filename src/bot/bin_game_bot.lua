@@ -6,7 +6,7 @@ local size
 function getDeskSize()
     size = math.random(2, 9)
     state = {}
-    for i = 0, size - 1 do
+    for i = 1, size do
         state[i] = {}
     end
     return size
