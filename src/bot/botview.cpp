@@ -29,6 +29,11 @@ BotView::BotView() {
         .def(constructor<>())
         .def_readwrite("col", &Point::col)
         .def_readwrite("row", &Point::row)
+        ,
+        class_<Points>("Points")
+        .def(constructor<>())
+        .def_readwrite("p1", &Points::p1)
+        .def_readwrite("p2", &Points::p2)
     ];
 }
 
