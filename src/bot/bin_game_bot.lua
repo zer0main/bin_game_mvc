@@ -63,3 +63,12 @@ end
 function getTimeNumber()
     return math.random(1, 10)
 end
+
+function output(model)
+    local p = Point()
+    for col = 0, size -1 do
+        for row = 0, size - 1 do
+            state[col][row] = model:getDeskNumber(p)
+        end
+    end
+end
