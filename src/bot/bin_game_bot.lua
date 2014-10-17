@@ -80,10 +80,10 @@ function getIndex()
 end
 
 function searchNearbyCells()
-    local ps = Points()
     local points_table = {}
     for col = 0, size - 1 do
         for row = 0, size - 1 do
+            local ps = Points()
             ps.p1.col = col
             ps.p1.row = row
             if col == 0 and row < size - 1 then
