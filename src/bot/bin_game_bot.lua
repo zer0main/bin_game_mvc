@@ -30,8 +30,9 @@ is array of instances of Points
 Utility lua-functions (not called from C++ directly):
 * points_table searchNearbyCells()
     returns points_table of all nearby points
-* points_table equalCells(points_table)
+* points_table equalCells(points_table, state)
     returns table of equal points (filters points_table)
+    for specified state of desk
 * int scoreOf(points)
     returns score of the points.
     This function counts possible steps on the next step
@@ -74,7 +75,7 @@ end
 
 function getIndex()
     local nearby_points = searchNearbyCells()
-    local equal_points = equalCells(nearby_points)
+    local equal_points = equalCells(nearby_points, state)
     local p = bestStep(equal_points)
     return p.p1.col, p.p1.row, p.p2.col, p.p2.row
 end
@@ -112,14 +113,14 @@ function searchNearbyCells()
     return points_table
 end
 
-function equalCells(pt)
+function equalCells(pt, st)
     local equal_cells = {}
     for p = 0, #pt - 1 do
         local p1c = pt[p].p1.col
         local p1r = pt[p].p1.row
         local p2c = pt[p].p2.col
         local p2r = pt[p].p2.row
-        if state[p1c][p1r] == state[p2c][p2r] then
+        if st[p1c][p1r] == st[p2c][p2r] then
             table.insert(equal_cells, pt[p])
         end
     end
@@ -143,4 +144,21 @@ function scoreOf(points)
     local steps_number = countSteps(points)
     local result = merge_cells * steps_number
     return result
+end
+
+function countSteps(pts)
+    local future_state = state
+    local i1c = pts.p1.col
+    local i1r = pts.p1.row
+    local i2c = pts.p2.col
+    local i2r = pts.p2.row
+    future_state[i2c][i2r] = future_state[i2c][i2r] * 2
+    while i1c ~= size - 1 do
+        future_state[i1c][i1r] = future_state[i1c + 1][i1r]
+        i1c = i1c + 1
+    end
+    future_state[i1c][i1r] = 2
+    pt = searchNearbyCells()
+    eq_pt = equalCells(pt, future_state)
+    return #eq_pt
 end
