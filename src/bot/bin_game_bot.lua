@@ -13,7 +13,6 @@ Functions called from C++:
     provides current state of game
 
 model has the following methods:
-* int getDeskSize()
 * int getDeskNumber(point)
     returns value of cell
 

@@ -22,7 +22,6 @@ BotView::BotView() {
     luabind::open(L_);
     module(L_) [
         class_<GameDesk>("GameDesk")
-        .def("getRowNumber", &GameDesk::getRowNumber)
         .def("getDeskNumber", &GameDesk::getDeskNumber)
         ,
         class_<Point>("Point")
