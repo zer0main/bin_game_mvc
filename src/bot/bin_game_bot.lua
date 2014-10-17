@@ -72,3 +72,10 @@ function output(model)
         end
     end
 end
+
+function getIndex()
+    local nearby_points = searchNearbyCells()
+    local equal_points = equalCells(nearby_points)
+    local p = bestStep(equal_points)
+    return p.p1.col, p.p1.row, p.p2.col, p.p2.row
+end
