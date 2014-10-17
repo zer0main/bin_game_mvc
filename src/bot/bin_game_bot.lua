@@ -114,7 +114,7 @@ end
 
 function equalCells(pt)
     local equal_cells = {}
-    for p = 0, #pt do
+    for p = 0, #pt - 1 do
         local p1c = pt[p].p1.col
         local p1r = pt[p].p1.row
         local p2c = pt[p].p2.col
@@ -124,4 +124,16 @@ function equalCells(pt)
         end
     end
     return equal_cells
+end
+
+function bestStep(pt)
+    local max_score = scoreOf(pt[0])
+    local s
+    for p = 1, #pt - 1 do
+        if scoreOf(pt[p]) > max_score then
+            max_score = scoreOf(pt[p])
+            s = p
+        end
+    end
+    return pt[s]
 end
