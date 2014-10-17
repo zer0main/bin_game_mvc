@@ -111,3 +111,17 @@ function searchNearbyCells()
     end
     return points_table
 end
+
+function equalCells(pt)
+    local equal_cells = {}
+    for p = 0, #pt do
+        local p1c = pt[p].p1.col
+        local p1r = pt[p].p1.row
+        local p2c = pt[p].p2.col
+        local p2r = pt[p].p2.row
+        if state[p1c][p1r] == state[p2c][p2r] then
+            table.insert(equal_cells, pt[p])
+        end
+    end
+    return equal_cells
+end
