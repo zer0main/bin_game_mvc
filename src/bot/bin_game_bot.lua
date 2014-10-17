@@ -25,17 +25,22 @@ Points has the following fields:
 * Point p1
 * Point p2
 
+type points_table:
+is array of instances of Points
+
 Utility lua-functions (not called from C++ directly):
-* table searchNearbyCells()
-    returns table of all nearby points combined in 
-    Points structures
-* table equalityCells(nearby_cells_table)
-    returns table of equality points (filter nearby_cells_table)
-* int countSteps(points)
-    returns number of possible steps on the next step described by
-    argument points
+* points_table searchNearbyCells()
+    returns points_table of all nearby points
+* points_table equalCells(points_table)
+    returns table of equal points (filters points_table)
+* int scoreOf(points)
+    returns score of the points.
+    This function counts possible steps on the next step
+    after applying points and multiplies it with
+    value of merged cells.
 * points bestStep(points_table)
-    returns the best points for new step form points_table
+    returns the best points for new step from points_table.
+    Uses scoreOf as scoring function.
 --]]
 
 math = require('math')
