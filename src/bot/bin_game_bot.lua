@@ -101,6 +101,8 @@ function searchNearbyCells()
                 ps.p2.row = row
                 table.insert(points_table, ps)
                 local ps = Points()
+                ps.p1.col = col
+                ps.p1.row = row
                 ps.p2.col = col
                 ps.p2.row = row + 1
                 table.insert(points_table, ps)
