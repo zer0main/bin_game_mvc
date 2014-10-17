@@ -82,7 +82,6 @@ end
 function searchNearbyCells()
     local ps = Points()
     local points_table = {}
-    local i = 0
     for col = 0, size - 1 do
         for row = 0, size - 1 do
             ps.p1.col = col
@@ -90,24 +89,20 @@ function searchNearbyCells()
             if col == 0 and row < size - 1 then
                 ps.p2.col = col
                 ps.p2.row = row + 1
-                points_table[i] = ps
-                i = i + 1
+                table.insert(points_table, ps)
             elseif col > 0 and row == size - 1 then
                 ps.p2.col = col - 1
                 ps.p2.row = row
-                points_table[i] = ps
-                i = i + 1
+                table.insert(points_table, ps)
             elseif col == 0 and row == size - 1 then
                 break
             else
                 ps.p2.col = col - 1
                 ps.p2.row = row
-                points_table[i] = ps
+                table.insert(points_table, ps)
                 ps.p2.col = col
                 ps.p2.row = row + 1
-                i = i + 1
-                points_table[i] = ps
-                i = i + 1
+                table.insert(points_table, ps)
             end
         end
     end
