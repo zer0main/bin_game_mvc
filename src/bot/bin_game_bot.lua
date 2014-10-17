@@ -78,3 +78,38 @@ function getIndex()
     local p = bestStep(equal_points)
     return p.p1.col, p.p1.row, p.p2.col, p.p2.row
 end
+
+function searchNearbyCells()
+    local ps = Points()
+    local points_table = {}
+    local i = 0
+    for col = 0, size - 1 do
+        for row = 0, size - 1 do
+            ps.p1.col = col
+            ps.p1.row = row
+            if col == 0 and row < size - 1 then
+                ps.p2.col = col
+                ps.p2.row = row + 1
+                points_table[i] = ps
+                i = i + 1
+            elseif col > 0 and row == size - 1 then
+                ps.p2.col = col - 1
+                ps.p2.row = row
+                points_table[i] = ps
+                i = i + 1
+            elseif col == 0 and row == size - 1 then
+                break
+            else
+                ps.p2.col = col - 1
+                ps.p2.row = row
+                points_table[i] = ps
+                ps.p2.col = col
+                ps.p2.row = row + 1
+                i = i + 1
+                points_table[i] = ps
+                i = i + 1
+            end
+        end
+    end
+    return points_table
+end
