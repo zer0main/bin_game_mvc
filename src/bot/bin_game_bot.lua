@@ -137,3 +137,10 @@ function bestStep(pt)
     end
     return pt[s]
 end
+
+function scoreOf(points)
+    local merge_cells = state[points.p1.col][points.p1.row] * 2
+    local steps_number = countSteps(points)
+    local result = merge_cells * steps_number
+    return result
+end
