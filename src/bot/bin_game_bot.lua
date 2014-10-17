@@ -41,6 +41,8 @@ Utility lua-functions (not called from C++ directly):
 * points bestStep(points_table)
     returns the best points for new step from points_table.
     Uses scoreOf as scoring function.
+* points_table cloneState()
+    returns copy of a global variable state
 --]]
 
 math = require('math')
@@ -147,7 +149,7 @@ function scoreOf(points)
 end
 
 function countSteps(pts)
-    local future_state = state
+    local future_state = cloneState()
     local i1c = pts.p1.col
     local i1r = pts.p1.row
     local i2c = pts.p2.col
@@ -161,4 +163,12 @@ function countSteps(pts)
     pt = searchNearbyCells()
     eq_pt = equalCells(pt, future_state)
     return #eq_pt
+end
+
+function cloneState()
+    local pt = {}
+    for p = 0, size - 1 do
+        pt[p] = state[p]
+    end
+    return pt
 end
