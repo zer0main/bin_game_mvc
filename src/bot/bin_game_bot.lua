@@ -68,8 +68,10 @@ end
 
 function output(model)
     local p = Point()
-    for col = 0, size -1 do
+    for col = 0, size - 1 do
         for row = 0, size - 1 do
+            p.col = col
+            p.row = row
             state[col][row] = model:getDeskNumber(p)
         end
     end
@@ -117,28 +119,28 @@ end
 
 function equalCells(pt, st)
     local equal_cells = {}
-    for p = 0, #pt - 1 do
-        local p1c = pt[p].p1.col
-        local p1r = pt[p].p1.row
-        local p2c = pt[p].p2.col
-        local p2r = pt[p].p2.row
+    for _, p in ipairs(pt) do
+        local p1c = p.p1.col
+        local p1r = p.p1.row
+        local p2c = p.p2.col
+        local p2r = p.p2.row
         if st[p1c][p1r] == st[p2c][p2r] then
-            table.insert(equal_cells, pt[p])
+            table.insert(equal_cells, p)
         end
     end
     return equal_cells
 end
 
 function bestStep(pt)
-    local max_score = scoreOf(pt[0])
-    local s
-    for p = 1, #pt - 1 do
-        if scoreOf(pt[p]) > max_score then
-            max_score = scoreOf(pt[p])
-            s = p
+    local best_points = pt[1]
+    local max_score = scoreOf(best_points)
+    for _, p in ipairs(pt) do
+        if scoreOf(p) > max_score then
+            max_score = scoreOf(p)
+            best_points = p
         end
     end
-    return pt[s]
+    return best_points
 end
 
 function scoreOf(points)
