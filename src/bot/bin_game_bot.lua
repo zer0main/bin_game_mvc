@@ -46,10 +46,12 @@ Utility lua-functions (not called from C++ directly):
 --]]
 
 math = require('math')
+os = require('os')
 local state
 local size
 
 function getDeskSize()
+    os.execute("sleep 2")
     size = math.random(2, 9)
     state = {}
     for i = 0, size - 1 do
@@ -59,10 +61,12 @@ function getDeskSize()
 end
 
 function getWinNumber()
+    os.execute("sleep 2")
     return math.random(200, 1000)
 end
 
 function getTimeNumber()
+    os.execute("sleep 2")
     return math.random(1, 10)
 end
 
@@ -78,6 +82,7 @@ function output(model)
 end
 
 function getIndex()
+    os.execute("sleep 2")
     local nearby_points = searchNearbyCells()
     local equal_points = equalCells(nearby_points, state)
     local p = bestStep(equal_points)
