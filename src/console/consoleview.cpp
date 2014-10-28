@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 
-#include "iobase.hpp"
+#include "consoleview.hpp"
 
 int ConsoleView::getDeskSize_impl() const {
     int deskSize;
