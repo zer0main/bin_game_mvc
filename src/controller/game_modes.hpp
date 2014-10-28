@@ -15,7 +15,7 @@ private:
     GameDesk* desk_;
     const IoView* ioview_;
 
-    long long int score();
+    int score();
 
     bool checkFail();
 

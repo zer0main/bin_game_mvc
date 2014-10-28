@@ -104,7 +104,7 @@ void BotView::output_impl() const {
 void BotView::indexError_impl() const {
 }
 
-void BotView::finish_impl(bool check_fail, long long int score) const {
+void BotView::finish_impl(bool check_fail, int score) const {
     if (check_fail) {
         std::cout << "You are loser... Your score is " << score << std::endl;
     } else {

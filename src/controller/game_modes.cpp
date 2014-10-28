@@ -113,10 +113,10 @@ void GameModes::replace(Points& points) {
     }
 }
 
-long long int GameModes::score() {
+int GameModes::score() {
     Point point;
-    long long int all_score = 0;
-    long long int row_score = 0;
+    int all_score = 0;
+    int row_score = 0;
     int i, x;
     for (i = 0; i < desk_->getRowNumber(); i++) {
         for (x = 0; x < desk_->getRowNumber(); x++) {

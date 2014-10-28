@@ -28,7 +28,7 @@ public:
 
     void indexError() const;
 
-    void finish(bool check_fail, long long int score) const;
+    void finish(bool check_fail, int score) const;
 
     void sendHelpMessage() const;
 
@@ -47,7 +47,7 @@ protected:
 
     virtual void indexError_impl() const = 0;
 
-    virtual void finish_impl(bool check_fail, long long int score) const = 0;
+    virtual void finish_impl(bool check_fail, int score) const = 0;
 
     virtual void sendHelpMessage_impl() const = 0;
 

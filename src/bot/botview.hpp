@@ -26,7 +26,7 @@ protected:
 
     void indexError_impl() const;
 
-    void finish_impl(bool check_fail, long long int score) const;
+    void finish_impl(bool check_fail, int score) const;
 
     void sendHelpMessage_impl() const;
 

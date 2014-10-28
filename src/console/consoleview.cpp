@@ -72,7 +72,7 @@ void ConsoleView::indexError_impl() const {
     std::cout << "Error: wrong index of numbers." << std::endl;
 }
 
-void ConsoleView::finish_impl(bool check_fail, long long int score) const {
+void ConsoleView::finish_impl(bool check_fail, int score) const {
     if (check_fail) {
         std::cout << "You are loser... Your score is " << score << std::endl;
     } else {
