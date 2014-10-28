@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 
 #include "consoleview.hpp"
 
@@ -43,13 +42,6 @@ Points ConsoleView::getIndex_impl() const {
     return points;
 }
 
-void ConsoleView::typeError_impl() const {
-    std::cout << "Error: you must enter the NUMBER" << std::endl;
-    std::cout << "Try again: " << std::endl;
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-}
-
 void ConsoleView::output_impl() const {
     const GameDesk* desk = getDesk();
     Point point;
@@ -67,21 +59,3 @@ void ConsoleView::output_impl() const {
         std::cout << std::endl;
     }
 }
-
-void ConsoleView::indexError_impl() const {
-    std::cout << "Error: wrong index of numbers." << std::endl;
-}
-
-void ConsoleView::finish_impl(bool check_fail, int score) const {
-    if (check_fail) {
-        std::cout << "You are loser... Your score is " << score << std::endl;
-    } else {
-        std::cout << "You are winner! You score is " << score << std::endl;
-    }
-}
-
-void ConsoleView::sendHelpMessage_impl() const {
-    std::cout << "To play this game you must use the options: -w for play to win\n"
-              "-t for game with real time and -s to play while not lose." << std::endl;
-}
-

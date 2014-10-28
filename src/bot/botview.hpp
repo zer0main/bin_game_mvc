@@ -1,11 +1,11 @@
 #ifndef BOTVIEW_HPP_
 #define BOTVIEW_HPP_
 
-#include "ioview.hpp"
+#include "consolebotview.hpp"
 
 struct lua_State;
 
-class BotView: public IoView {
+class BotView: public ConsoleBotView {
 public:
     BotView();
 
@@ -20,15 +20,7 @@ protected:
 
     Points getIndex_impl() const;
 
-    void typeError_impl() const;
-
     void output_impl() const;
-
-    void indexError_impl() const;
-
-    void finish_impl(bool check_fail, int score) const;
-
-    void sendHelpMessage_impl() const;
 
 private:
     lua_State* L_;

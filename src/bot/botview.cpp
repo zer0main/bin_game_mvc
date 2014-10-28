@@ -77,9 +77,6 @@ Points BotView::getIndex_impl() const {
     return points;
 }
 
-void BotView::typeError_impl() const {
-}
-
 void BotView::output_impl() const {
     const GameDesk* desk = getDesk();
     Point point;
@@ -96,24 +93,5 @@ void BotView::output_impl() const {
         }
         std::cout << std::endl;
     }
-    // TODO ^^ move to base class
-    //
     globals(L_)["output"](getDesk());
 }
-
-void BotView::indexError_impl() const {
-}
-
-void BotView::finish_impl(bool check_fail, int score) const {
-    if (check_fail) {
-        std::cout << "You are loser... Your score is " << score << std::endl;
-    } else {
-        std::cout << "You are winner! You score is " << score << std::endl;
-    }
-}
-
-void BotView::sendHelpMessage_impl() const {
-    std::cout << "To play this game you must use the options: -w for play to win\n"
-              "-t for game with real time and -s to play while not lose." << std::endl;
-}
-

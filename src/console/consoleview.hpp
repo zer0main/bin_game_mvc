@@ -1,9 +1,9 @@
 #ifndef IOBASE_HPP_
 #define IOBASE_HPP_
 
-#include "ioview.hpp"
+#include "consolebotview.hpp"
 
-class ConsoleView: public IoView {
+class ConsoleView: public ConsoleBotView {
 protected:
     int getWinNumber_impl() const;
 
@@ -13,15 +13,7 @@ protected:
 
     Points getIndex_impl() const;
 
-    void typeError_impl() const;
-
     void output_impl() const;
-
-    void indexError_impl() const;
-
-    void finish_impl(bool check_fail, int score) const;
-
-    void sendHelpMessage_impl() const;
 
 };
 
