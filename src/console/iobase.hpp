@@ -3,7 +3,7 @@
 
 #include "ioview.hpp"
 
-class IoBase: public IoView {
+class ConsoleView: public IoView {
 protected:
     int getWinNumber_impl() const;
 

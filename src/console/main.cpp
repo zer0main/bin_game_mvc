@@ -8,9 +8,9 @@
 int main(int argc, char* argv[]) {
     srand(time(NULL));
     GameDesk desk;
-    IoBase io_base;
-    io_base.setDesk(&desk);
-    GameModes game_modes(&desk, &io_base);
+    ConsoleView io_console;
+    io_console.setDesk(&desk);
+    GameModes game_modes(&desk, &io_console);
     game_modes.start(argc, argv);
 }
 
