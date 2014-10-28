@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 #include <boost/bind.hpp>
 
 #include "luabind-format-signature.hpp"
