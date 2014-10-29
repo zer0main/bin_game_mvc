@@ -15,6 +15,7 @@ struct Points {
     Point p1;
     Point p2;
 
+    int undo_steps_number;
     bool undo_action;
 };
 
