@@ -42,8 +42,8 @@ void IoView::indexError() const {
     indexError_impl();
 }
 
-void IoView::finish(bool check_fail, int score) const {
-    finish_impl(check_fail, score);
+void IoView::finish(bool check_fail, int score, int steps_number) const {
+    finish_impl(check_fail, score, steps_number);
 }
 
 void IoView::sendHelpMessage() const {

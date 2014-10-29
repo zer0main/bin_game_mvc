@@ -26,12 +26,13 @@ void ConsoleBotView::sendHelpMessage_impl() const {
               "-t for game with real time and -s to play while not lose." << std::endl;
 }
 
-void ConsoleBotView::finish_impl(bool check_fail, int score) const {
+void ConsoleBotView::finish_impl(bool check_fail, int score, int steps_number) const {
     if (check_fail) {
         std::cout << "You are loser... Your score is " << score << std::endl;
     } else {
         std::cout << "You are winner! Your score is " << score << std::endl;
     }
+    std::cout << "You have completed the game in " << steps_number << " steps." << std::endl;
 }
 
 void ConsoleBotView::typeError_impl() const {

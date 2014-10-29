@@ -11,7 +11,7 @@ protected:
 
     void indexError_impl() const;
     
-    void finish_impl(bool check_fail, int score) const;
+    void finish_impl(bool check_fail, int score, int steps_number) const;
 
     void sendHelpMessage_impl() const;
 };
