@@ -15,6 +15,8 @@ protected:
 
     void output_impl() const;
 
+    void getUndoNumber(Points& points) const;
+
 };
 
 #endif

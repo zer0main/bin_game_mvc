@@ -1,3 +1,4 @@
+#include <string>
 #include <iostream>
 
 #include "consoleview.hpp"
@@ -32,6 +33,13 @@ int ConsoleView::getTimeNumber_impl() const {
 Points ConsoleView::getIndex_impl() const {
     Points points;
     std::cout << "Enter index of number1: " << std::endl;
+    std::string str;
+    if (std::cin >> str) {
+        if (str == "u") {
+            getUndoNumber(points);
+            return points;
+        }
+    }
     while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError_impl();
     }
@@ -40,6 +48,12 @@ Points ConsoleView::getIndex_impl() const {
         typeError_impl();
     }
     return points;
+}
+
+void ConsoleView::getUndoNumber(Points& points) const {
+    points.undo_action = true;
+    std::cout << "How many steps you want to cancel? " << std::endl;
+    std::cin >> points.undo_steps_number;
 }
 
 void ConsoleView::output_impl() const {
