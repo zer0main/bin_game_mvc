@@ -77,20 +77,6 @@ Points BotView::getIndex_impl() const {
 }
 
 void BotView::output_impl() const {
-    const GameDesk* desk = getDesk();
-    Point point;
-    int i, x;
-    for (i = desk->getRowNumber() - 1; i >= 0; i--) {
-        for (x = 0; x < desk->getRowNumber(); x++) {
-            point.col = i;
-            point.row = x;
-            char prev_fill = std::cout.fill(' ');
-            int prev_width = std::cout.width(5);
-            std::cout << desk->getDeskNumber(point);
-            std::cout.width(prev_width);
-            std::cout.fill(prev_fill);
-        }
-        std::cout << std::endl;
-    }
+    outputGeneral();
     globals(L_)["output"](getDesk());
 }
