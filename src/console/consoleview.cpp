@@ -40,6 +40,7 @@ Points ConsoleView::getIndex_impl() const {
             return points;
         }
     }
+    points.undo_action = false;
     while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError_impl();
     }

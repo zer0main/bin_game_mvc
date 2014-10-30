@@ -3,6 +3,9 @@
 #include "checker.hpp"
 
 bool Checker::checkStep(GameDesk& a, Points& points) {
+    if (points.undo_action = true) {
+        return true;
+    }
     int rownumber = a.getRowNumber();
     int n1 = a.getDeskNumber(points.p1);
     int n2 = a.getDeskNumber(points.p2);
