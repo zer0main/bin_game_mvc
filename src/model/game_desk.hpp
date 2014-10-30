@@ -18,6 +18,8 @@ public:
 
     void resize(int row_number);
 
+    void saveStep(Points& points);
+
 private:
     Moves moves_;
     Ints desk_;

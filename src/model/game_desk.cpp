@@ -20,3 +20,6 @@ void GameDesk::resize(int row_number) {
     row_number_ = row_number;
 }
 
+void GameDesk::saveStep(Points& points) {
+    moves_.push_back(points);
+}
