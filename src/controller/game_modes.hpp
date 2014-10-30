@@ -27,6 +27,8 @@ private:
 
     void replace(Points& points);
 
+    void gameUndo(Points& points);
+    
     void gameForWin();
 
     void gameForScore();

@@ -102,6 +102,9 @@ void GameModes::play() {
 }
 
 void GameModes::replace(Points& points) {
+    if (points.undo_action = true) {
+        gameUndo(points);
+    }
     int n1 = desk_->getDeskNumber(points.p1);
     int n2 = desk_->getDeskNumber(points.p2);
     desk_->setDeskNumber(points.p2, n2 * 2);
@@ -165,3 +168,5 @@ bool GameModes::checkFail() {
     return true;
 }
 
+void GameModes::gameUndo(Points& points) {
+}
