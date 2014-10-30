@@ -3,9 +3,6 @@
 
 #include <vector>
 
-typedef unsigned long long int Int;
-typedef std::vector<Int> Ints;
-
 struct Point {
     int col;
     int row;
@@ -18,6 +15,11 @@ struct Points {
     int undo_steps_number;
     bool undo_action;
 };
+
+typedef std::vector<Points> Moves;
+
+typedef unsigned long long int Int;
+typedef std::vector<Int> Ints;
 
 #endif
 
