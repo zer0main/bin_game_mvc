@@ -62,7 +62,7 @@ int BotView::getTimeNumber_impl() const {
 
 Points BotView::getIndex_impl() const {
     Points points;
-    point.undo_action = false;
+    points.undo_action = false;
     std::cout << "Enter index of number1: " << std::endl;
     lua_getglobal(L_, "getIndex");
     lua_call(L_, 0, 4);
