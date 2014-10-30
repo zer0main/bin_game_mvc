@@ -94,6 +94,7 @@ void GameModes::play() {
     Checker checker;
     points = ioview_->getIndex();
     if (checker.checkStep(*desk_, points)) {
+        desk_->saveStep(points);
         replace(points);
         ioview_->output();
     } else {
@@ -104,6 +105,7 @@ void GameModes::play() {
 void GameModes::replace(Points& points) {
     if (points.undo_action = true) {
         gameUndo(points);
+        return;
     }
     int n1 = desk_->getDeskNumber(points.p1);
     int n2 = desk_->getDeskNumber(points.p2);
