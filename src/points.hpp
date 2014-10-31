@@ -11,12 +11,17 @@ struct Point {
 struct Points {
     Point p1;
     Point p2;
-
-    int undo_steps_number;
-    bool undo_action;
 };
 
-typedef std::vector<Points> Moves;
+struct Move {
+    Points points;
+
+    bool undo_action;
+    int undo_steps_number;
+    int random_number;
+}
+
+typedef std::vector<Move> Moves;
 
 typedef unsigned long long int Int;
 typedef std::vector<Int> Ints;
