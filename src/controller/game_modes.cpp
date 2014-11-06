@@ -94,7 +94,7 @@ void GameModes::play(int steps_number) {
     Checker checker;
     move = ioview_->getIndex();
     if (checker.checkStep(*desk_, move)) {
-        replace(move);
+        replace(move, steps_number);
         desk_->saveStep(move);
         ioview_->output();
     } else {
@@ -102,9 +102,9 @@ void GameModes::play(int steps_number) {
     }
 }
 
-void GameModes::replace(Move& move) {
+void GameModes::replace(Move& move, int steps_number) {
     if (move.undo_action == true) {
-        gameUndo(move);
+        gameUndo(move, steps_number);
         return;
     }
     int n1 = desk_->getDeskNumber(move.p1);
@@ -171,5 +171,5 @@ bool GameModes::checkFail() {
     return true;
 }
 
-void GameModes::gameUndo(Move& move) {
+void GameModes::gameUndo(Move& move, int steps_number) {
 }

@@ -25,9 +25,9 @@ private:
 
     void play(int steps_number);
 
-    void replace(Move& move);
+    void replace(Move& move, int steps_number);
 
-    void gameUndo(Move& move);
+    void gameUndo(Move& move, int steps_number);
     
     void gameForWin();
 
