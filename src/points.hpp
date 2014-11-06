@@ -8,13 +8,9 @@ struct Point {
     int row;
 };
 
-struct Points {
+struct Move {
     Point p1;
     Point p2;
-};
-
-struct Move {
-    Points points;
 
     bool undo_action;
     int undo_steps_number;
