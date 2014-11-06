@@ -20,7 +20,7 @@ public:
 
     void saveStep(Move& move);
 
-    void getStep(int step_number);
+    Move getStep(int step_number);
 
 private:
     Moves moves_;

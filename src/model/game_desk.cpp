@@ -24,6 +24,6 @@ void GameDesk::saveStep(Move& move) {
     moves_.push_back(move);
 }
 
-void GameDesk::getStep(int step_number) {
+Move GameDesk::getStep(int step_number) {
     return moves_[step_number];
 }
