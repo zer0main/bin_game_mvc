@@ -20,6 +20,8 @@ public:
 
     void saveStep(const Move& move);
 
+    void removeStep();
+    
     Move getStep(int step_number) const;
 
 private:
