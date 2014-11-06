@@ -20,10 +20,10 @@ void GameDesk::resize(int row_number) {
     row_number_ = row_number;
 }
 
-void GameDesk::saveStep(Move& move) {
+void GameDesk::saveStep(const Move& move) {
     moves_.push_back(move);
 }
 
-Move GameDesk::getStep(int step_number) {
+Move GameDesk::getStep(int step_number) const {
     return moves_[step_number];
 }

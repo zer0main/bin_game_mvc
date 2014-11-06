@@ -18,9 +18,9 @@ public:
 
     void resize(int row_number);
 
-    void saveStep(Move& move);
+    void saveStep(const Move& move);
 
-    Move getStep(int step_number);
+    Move getStep(int step_number) const;
 
 private:
     Moves moves_;
