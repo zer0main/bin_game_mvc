@@ -31,8 +31,8 @@ void GameModes::gameForWin() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail() && !checkWin(win_number)) {
-        steps_number += 1;
         play(steps_number);
+        steps_number += 1;
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -44,8 +44,8 @@ void GameModes::gameForScore() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail()) {
-        steps_number += 1;
         play(steps_number);
+        steps_number += 1;
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -61,8 +61,8 @@ void GameModes::gameWithTime() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail() && ((t2 - t1) < time_number * 60)) {
-        steps_number += 1;
         play(steps_number);
+        steps_number += 1;
         t2 = time(NULL);
     }
     ioview_->finish(checkFail(), score(), steps_number);
