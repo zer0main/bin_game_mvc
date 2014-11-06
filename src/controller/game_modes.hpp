@@ -23,7 +23,7 @@ private:
 
     void setDesk(int desk_size);
 
-    void play();
+    void play(int steps_number);
 
     void replace(Move& move);
 

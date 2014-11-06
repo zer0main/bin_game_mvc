@@ -32,7 +32,7 @@ void GameModes::gameForWin() {
     int steps_number = 0;
     while (!checkFail() && !checkWin(win_number)) {
         steps_number += 1;
-        play();
+        play(steps_number);
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -45,7 +45,7 @@ void GameModes::gameForScore() {
     int steps_number = 0;
     while (!checkFail()) {
         steps_number += 1;
-        play();
+        play(steps_number);
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -62,7 +62,7 @@ void GameModes::gameWithTime() {
     int steps_number = 0;
     while (!checkFail() && ((t2 - t1) < time_number * 60)) {
         steps_number += 1;
-        play();
+        play(steps_number);
         t2 = time(NULL);
     }
     ioview_->finish(checkFail(), score(), steps_number);
@@ -89,7 +89,7 @@ void GameModes::setDesk(int desk_size) {
     }
 }
 
-void GameModes::play() {
+void GameModes::play(int steps_number) {
     Move move;
     Checker checker;
     move = ioview_->getIndex();
