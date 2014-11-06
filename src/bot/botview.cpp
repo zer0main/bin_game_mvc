@@ -28,10 +28,11 @@ BotView::BotView() {
         .def_readwrite("col", &Point::col)
         .def_readwrite("row", &Point::row)
         ,
-        class_<Points>("Points")
+        class_<Move>("Move")
         .def(constructor<>())
-        .def_readwrite("p1", &Points::p1)
-        .def_readwrite("p2", &Points::p2)
+        .def_readwrite("p1", &Move::p1)
+        .def_readwrite("p2", &Move::p2)
+        .def_readwrite("undo_action", &Move::undo_action)
     ];
 }
 
@@ -60,21 +61,21 @@ int BotView::getTimeNumber_impl() const {
     return timeNumber;
 }
 
-Points BotView::getIndex_impl() const {
-    Points points;
-    points.undo_action = false;
+Move BotView::getIndex_impl() const {
+    Move move;
+    move.undo_action = false;
     std::cout << "Enter index of number1: " << std::endl;
     lua_getglobal(L_, "getIndex");
     lua_call(L_, 0, 4);
-    points.p1.col = lua_tonumber(L_, -4);
-    points.p1.row = lua_tonumber(L_, -3);
-    points.p2.col = lua_tonumber(L_, -2);
-    points.p2.row = lua_tonumber(L_, -1);
+    move.p1.col = lua_tonumber(L_, -4);
+    move.p1.row = lua_tonumber(L_, -3);
+    move.p2.col = lua_tonumber(L_, -2);
+    move.p2.row = lua_tonumber(L_, -1);
     lua_pop(L_, 4);
-    std::cout << points.p1.col << ' ' << points.p1.row << std::endl;
+    std::cout << move.p1.col << ' ' << move.p1.row << std::endl;
     std::cout << "And of number2: " << std::endl;
-    std::cout << points.p2.col << ' ' << points.p2.row << std::endl;
-    return points;
+    std::cout << move.p2.col << ' ' << move.p2.row << std::endl;
+    return move;
 }
 
 void BotView::output_impl() const {

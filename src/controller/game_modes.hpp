@@ -25,9 +25,9 @@ private:
 
     void play();
 
-    void replace(Points& points);
+    void replace(Move& move);
 
-    void gameUndo(Points& points);
+    void gameUndo(Move& move);
     
     void gameForWin();
 

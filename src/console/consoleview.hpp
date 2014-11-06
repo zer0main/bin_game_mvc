@@ -11,11 +11,11 @@ protected:
 
     int getTimeNumber_impl() const;
 
-    Points getIndex_impl() const;
+    Move getIndex_impl() const;
 
     void output_impl() const;
 
-    void getUndoNumber(Points& points) const;
+    void getUndoNumber(Move& move) const;
 
 };
 

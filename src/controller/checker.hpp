@@ -6,11 +6,11 @@
 
 class Checker {
 public:
-    bool checkStep(GameDesk& desk, Points& points);
+    bool checkStep(GameDesk& desk, Move& move);
 
-    bool checkIndex(int max, Points& points);
+    bool checkIndex(int max, Move& move);
 
-    bool checkRange(int max, Points& points);
+    bool checkRange(int max, Move& move);
 };
 
 #endif

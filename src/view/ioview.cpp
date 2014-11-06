@@ -22,7 +22,7 @@ const GameDesk* IoView::getDesk() const {
     return desk_;
 }
 
-Points IoView::getIndex() const {
+Move IoView::getIndex() const {
     return getIndex_impl();
 }
 

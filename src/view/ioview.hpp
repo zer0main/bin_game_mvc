@@ -18,7 +18,7 @@ public:
 
     const GameDesk* getDesk() const;
 
-    Points getIndex() const;
+    Move getIndex() const;
 
     void typeError() const;
 
@@ -39,7 +39,7 @@ protected:
 
     virtual int getTimeNumber_impl() const = 0;
 
-    virtual Points getIndex_impl() const = 0;
+    virtual Move getIndex_impl() const = 0;
 
     virtual void typeError_impl() const = 0;
 

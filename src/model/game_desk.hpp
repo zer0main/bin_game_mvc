@@ -18,7 +18,9 @@ public:
 
     void resize(int row_number);
 
-    void saveStep(Points& points);
+    void saveStep(Move& move);
+
+    void getStep(int step_number);
 
 private:
     Moves moves_;

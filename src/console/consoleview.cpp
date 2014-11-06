@@ -30,7 +30,7 @@ int ConsoleView::getTimeNumber_impl() const {
     return timeNumber;
 }
 
-Points ConsoleView::getIndex_impl() const {
+Move ConsoleView::getIndex_impl() const {
     Move move;
     std::cout << "Enter index of number1: " << std::endl;
     std::string str;

@@ -20,28 +20,29 @@ Point has the following fields:
 * 0-int col
 * 0-int row
 
-Points has the following fields:
+Move has the following fields:
 * Point p1
 * Point p2
+* bool undo_action
 
-type points_table:
-is array of instances of Points
+type move_table:
+is array of instances of Move
 
 Utility lua-functions (not called from C++ directly):
-* points_table searchNearbyCells()
-    returns points_table of all nearby points
-* points_table equalCells(points_table, state)
-    returns table of equal points (filters points_table)
+* move_table searchNearbyCells()
+    returns move_table of all nearby move
+* move_table equalCells(move_table, state)
+    returns table of equal move (filters move_table)
     for specified state of desk
-* int scoreOf(points)
-    returns score of the points.
+* int scoreOf(move)
+    returns score of the move.
     This function counts possible steps on the next step
-    after applying points and multiplies it with
+    after applying move and multiplies it with
     value of merged cells.
-* points bestStep(points_table)
-    returns the best points for new step from points_table.
+* move bestStep(move_table)
+    returns the best move for new step from move_table.
     Uses scoreOf as scoring function.
-* points_table cloneState(original_state)
+* move_table cloneState(original_state)
     returns copy of a state
 --]]
 
@@ -83,43 +84,43 @@ end
 
 function getIndex()
     os.execute("sleep 2")
-    local nearby_points = searchNearbyCells()
-    local equal_points = equalCells(nearby_points, state)
-    local p = bestStep(equal_points)
+    local nearby_move = searchNearbyCells()
+    local equal_move = equalCells(nearby_move, state)
+    local p = bestStep(equal_move)
     return p.p1.col, p.p1.row, p.p2.col, p.p2.row
 end
 
 function searchNearbyCells()
-    local points_table = {}
+    local move_table = {}
     for col = 0, size - 1 do
         for row = 0, size - 1 do
-            local ps = Points()
+            local ps = Move()
             ps.p1.col = col
             ps.p1.row = row
             if col == 0 and row < size - 1 then
                 ps.p2.col = col
                 ps.p2.row = row + 1
-                table.insert(points_table, ps)
+                table.insert(move_table, ps)
             elseif col > 0 and row == size - 1 then
                 ps.p2.col = col - 1
                 ps.p2.row = row
-                table.insert(points_table, ps)
+                table.insert(move_table, ps)
             elseif col == 0 and row == size - 1 then
                 break
             else
                 ps.p2.col = col - 1
                 ps.p2.row = row
-                table.insert(points_table, ps)
-                local ps = Points()
+                table.insert(move_table, ps)
+                local ps = Move()
                 ps.p1.col = col
                 ps.p1.row = row
                 ps.p2.col = col
                 ps.p2.row = row + 1
-                table.insert(points_table, ps)
+                table.insert(move_table, ps)
             end
         end
     end
-    return points_table
+    return move_table
 end
 
 function equalCells(pt, st)
@@ -137,20 +138,20 @@ function equalCells(pt, st)
 end
 
 function bestStep(pt)
-    local best_points = pt[1]
-    local max_score = scoreOf(best_points)
+    local best_move = pt[1]
+    local max_score = scoreOf(best_move)
     for _, p in ipairs(pt) do
         if scoreOf(p) > max_score then
             max_score = scoreOf(p)
-            best_points = p
+            best_move = p
         end
     end
-    return best_points
+    return best_move
 end
 
-function scoreOf(points)
-    local merge_cells = state[points.p1.col][points.p1.row] * 2
-    local steps_number = countSteps(points)
+function scoreOf(move)
+    local merge_cells = state[move.p1.col][move.p1.row] * 2
+    local steps_number = countSteps(move)
     local result = merge_cells * steps_number
     return result
 end
