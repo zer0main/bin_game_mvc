@@ -15,7 +15,7 @@ struct Move {
     bool undo_action;
     int undo_steps_number;
     int random_number;
-}
+};
 
 typedef std::vector<Move> Moves;
 
