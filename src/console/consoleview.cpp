@@ -41,11 +41,11 @@ Move ConsoleView::getIndex_impl() const {
         }
     }
     move.undo_action = false;
-    while (!(std::cin >> points.p1.col >> points.p1.row)) {
+    while (!(std::cin >> move.p1.col >> move.p1.row)) {
         typeError_impl();
     }
     std::cout << "And of number2: " << std::endl;
-    while (!(std::cin >> points.p2.col >> points.p2.row)) {
+    while (!(std::cin >> move.p2.col >> move.p2.row)) {
         typeError_impl();
     }
     return move;
