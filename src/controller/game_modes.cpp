@@ -172,4 +172,25 @@ bool GameModes::checkFail() {
 }
 
 void GameModes::gameUndo(Move& move, int steps_number) {
+    if (move.undo_steps_number == 0) {
+        return;
+    }
+    prev_move = desk_->getStep(steps_number - 1);
+    move.p1 = prev_move.p1;
+    move.p2 = prev_move.p2;
+    move.random_number = prev_move.random_number;
+    int n1 = desk_->getDeskNumber(move.p2);
+    desk_->setDeskNumber(move.p2, n1 / 2);
+    move.p1.col += 1;
+    while (move.p1.col < (desk_->getRowNumber())) {
+        Move move_local = move;
+        move_local.p1.col -= 1;
+        int number = desk_->getDeskNumber(move_local.p1);
+        desk_->setDeskNumber(move.p1, number);
+        move.p1.col++;
+    }
+    desk_->setDeskNumber(move.p1; move.random_number);
+    desk_->removeStep();
+    move.undo_steps_number -= 1;
+    gameUndo(move, steps_number - 1);
 }
