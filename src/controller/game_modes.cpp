@@ -172,7 +172,7 @@ bool GameModes::checkFail() {
 }
 
 void GameModes::gameUndo(Move& move, int steps_number) {
-    if (move.undo_steps_number == 0) {
+    if (move.undo_steps_number <= 0 || steps_number == 0) {
         return;
     }
     Move prev_move = desk_->getStep(steps_number - 1);
