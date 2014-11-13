@@ -19,8 +19,7 @@ struct Move {
 
 typedef std::vector<Move> Moves;
 
-typedef unsigned long long int Int;
-typedef std::vector<Int> Ints;
+typedef std::vector<int> Ints;
 
 #endif
 
