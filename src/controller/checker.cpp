@@ -3,7 +3,7 @@
 #include "checker.hpp"
 
 bool Checker::checkStep(GameDesk& a, Move& move) {
-    if (move.undo_action = true) {
+    if (move.undo_action == true) {
         return true;
     }
     int rownumber = a.getRowNumber();
