@@ -3,8 +3,7 @@
 
 #include <vector>
 
-typedef unsigned long long int Int;
-typedef std::vector<Int> Ints;
+typedef std::vector<int> Ints;
 
 struct Point {
     int col;
