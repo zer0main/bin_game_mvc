@@ -20,14 +20,3 @@ void GameDesk::resize(int row_number) {
     row_number_ = row_number;
 }
 
-void GameDesk::saveStep(const Move& move) {
-    moves_.push_back(move);
-}
-
-void GameDesk::removeStep() {
-    moves_.pop_back();
-}
-
-Move GameDesk::getStep(int step_number) const {
-    return moves_[step_number];
-}

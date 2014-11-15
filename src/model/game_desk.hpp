@@ -6,6 +6,8 @@
 #ifndef GAME_DESK_HPP_
 #define GAME_DESK_HPP_
 
+#include <vector>
+
 #include "points.hpp"
 
 class GameDesk {
@@ -18,14 +20,7 @@ public:
 
     void resize(int row_number);
 
-    void saveStep(const Move& move);
-
-    void removeStep();
-    
-    Move getStep(int step_number) const;
-
 private:
-    Moves moves_;
     Ints desk_;
     int row_number_;
 };

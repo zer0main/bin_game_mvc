@@ -3,23 +3,20 @@
 
 #include <vector>
 
+typedef unsigned long long int Int;
+typedef std::vector<Int> Ints;
+
 struct Point {
     int col;
     int row;
 };
 
-struct Move {
+struct Points {
     Point p1;
     Point p2;
 
     bool undo_action;
-    int undo_steps_number;
-    int random_number;
 };
-
-typedef std::vector<Move> Moves;
-
-typedef std::vector<int> Ints;
 
 #endif
 

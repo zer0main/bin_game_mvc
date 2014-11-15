@@ -1,4 +1,3 @@
-#include <string>
 #include <iostream>
 
 #include "consoleview.hpp"
@@ -30,31 +29,17 @@ int ConsoleView::getTimeNumber_impl() const {
     return timeNumber;
 }
 
-Move ConsoleView::getIndex_impl() const {
-    Move move;
+Points ConsoleView::getIndex_impl() const {
+    Points points;
     std::cout << "Enter index of number1: " << std::endl;
-    std::string str;
-    if (std::cin >> str) {
-        if (str == "u") {
-            getUndoNumber(move);
-            return move;
-        }
-    }
-    move.undo_action = false;
-    while (!(std::cin >> move.p1.col >> move.p1.row)) {
+    while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError_impl();
     }
     std::cout << "And of number2: " << std::endl;
-    while (!(std::cin >> move.p2.col >> move.p2.row)) {
+    while (!(std::cin >> points.p2.col >> points.p2.row)) {
         typeError_impl();
     }
-    return move;
-}
-
-void ConsoleView::getUndoNumber(Move& move) const {
-    move.undo_action = true;
-    std::cout << "How many steps you want to cancel? " << std::endl;
-    std::cin >> move.undo_steps_number;
+    return points;
 }
 
 void ConsoleView::output_impl() const {

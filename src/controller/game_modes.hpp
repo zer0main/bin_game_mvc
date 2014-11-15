@@ -23,12 +23,10 @@ private:
 
     void setDesk(int desk_size);
 
-    void play(int steps_number);
+    void play();
 
-    void replace(Move& move, int steps_number);
+    void replace(Points& points);
 
-    void gameUndo(Move& move, int steps_number);
-    
     void gameForWin();
 
     void gameForScore();

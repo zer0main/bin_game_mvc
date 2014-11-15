@@ -31,8 +31,8 @@ void GameModes::gameForWin() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail() && !checkWin(win_number)) {
-        play(steps_number);
         steps_number += 1;
+        play();
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -44,8 +44,8 @@ void GameModes::gameForScore() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail()) {
-        play(steps_number);
         steps_number += 1;
+        play();
     }
     ioview_->finish(checkFail(), score(), steps_number);
 }
@@ -61,8 +61,8 @@ void GameModes::gameWithTime() {
     ioview_->output();
     int steps_number = 0;
     while (!checkFail() && ((t2 - t1) < time_number * 60)) {
-        play(steps_number);
         steps_number += 1;
+        play();
         t2 = time(NULL);
     }
     ioview_->finish(checkFail(), score(), steps_number);
@@ -89,40 +89,34 @@ void GameModes::setDesk(int desk_size) {
     }
 }
 
-void GameModes::play(int steps_number) {
-    Move move;
+void GameModes::play() {
+    Points points;
     Checker checker;
-    move = ioview_->getIndex();
-    if (checker.checkStep(*desk_, move)) {
-        replace(move, steps_number);
-        desk_->saveStep(move);
+    points = ioview_->getIndex();
+    if (checker.checkStep(*desk_, points)) {
+        replace(points);
         ioview_->output();
     } else {
         ioview_->indexError();
     }
 }
 
-void GameModes::replace(Move& move, int steps_number) {
-    if (move.undo_action == true) {
-        gameUndo(move, steps_number);
-        return;
-    }
-    int n1 = desk_->getDeskNumber(move.p1);
-    int n2 = desk_->getDeskNumber(move.p2);
-    desk_->setDeskNumber(move.p2, n2 * 2);
-    while (move.p1.col < (desk_->getRowNumber() - 1)) {
-        Move move_local;
-        move_local = move;
-        move_local.p1.col += 1;
-        desk_->setDeskNumber(move.p1, desk_->getDeskNumber(move_local.p1));
-        move.p1.col = move_local.p1.col;
+void GameModes::replace(Points& points) {
+    int n1 = desk_->getDeskNumber(points.p1);
+    int n2 = desk_->getDeskNumber(points.p2);
+    desk_->setDeskNumber(points.p2, n2 * 2);
+    while (points.p1.col < (desk_->getRowNumber() - 1)) {
+        Points points_local;
+        points_local = points;
+        points_local.p1.col += 1;
+        desk_->setDeskNumber(points.p1, desk_->getDeskNumber(points_local.p1));
+        points.p1.col = points_local.p1.col;
     }
     if (rand() <= (RAND_MAX / 2)) {
-        desk_->setDeskNumber(move.p1, 2);
+        desk_->setDeskNumber(points.p1, 2);
     } else {
-        desk_->setDeskNumber(move.p1, 1);
+        desk_->setDeskNumber(points.p1, 1);
     }
-    move.random_number = desk_->getDeskNumber(move.p1);
 }
 
 int GameModes::score() {
@@ -150,18 +144,18 @@ bool GameModes::checkWin(int for_win) {
 }
 
 bool GameModes::checkFail() {
-    Move move;
+    Points points;
     Checker checker;
     int i, x, z, t;
     for (i = 0; i < desk_->getRowNumber(); i++) {
-        move.p1.col = i;
+        points.p1.col = i;
         for (x = 0; x < desk_->getRowNumber(); x++) {
-            move.p1.row = x;
+            points.p1.row = x;
             for (z = 0; z < desk_->getRowNumber(); z++) {
-                move.p2.col = z;
+                points.p2.col = z;
                 for (t = 0; t < desk_->getRowNumber(); t++) {
-                    move.p2.row = t;
-                    if (checker.checkStep(*desk_, move)) {
+                    points.p2.row = t;
+                    if (checker.checkStep(*desk_, points)) {
                         return false;
                     }
                 }
@@ -171,26 +165,3 @@ bool GameModes::checkFail() {
     return true;
 }
 
-void GameModes::gameUndo(Move& move, int steps_number) {
-    if (move.undo_steps_number <= 0 || steps_number == 0) {
-        return;
-    }
-    Move prev_move = desk_->getStep(steps_number - 1);
-    move.p1 = prev_move.p1;
-    move.p2 = prev_move.p2;
-    move.random_number = prev_move.random_number;
-    int n1 = desk_->getDeskNumber(move.p2);
-    desk_->setDeskNumber(move.p2, n1 / 2);
-    move.p1.col += 1;
-    while (move.p1.col < (desk_->getRowNumber())) {
-        Move move_local = move;
-        move_local.p1.col -= 1;
-        int number = desk_->getDeskNumber(move_local.p1);
-        desk_->setDeskNumber(move.p1, number);
-        move.p1.col++;
-    }
-    desk_->setDeskNumber(move.p1, move.random_number);
-    desk_->removeStep();
-    move.undo_steps_number -= 1;
-    gameUndo(move, steps_number - 1);
-}
