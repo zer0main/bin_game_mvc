@@ -14,8 +14,6 @@ struct Point {
 struct Points {
     Point p1;
     Point p2;
-
-    bool undo_action;
 };
 
 #endif
