@@ -35,3 +35,7 @@ if (LUA51_FOUND)
     endif()
 endif()
 
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/bot/bin_game_bot.lua
+    ${CMAKE_CURRENT_BINARY_DIR}/bin_game_bot.lua)
+
