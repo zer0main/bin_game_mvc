@@ -8,7 +8,8 @@ static int myAbs(int number) {
     }
 }
 
-bool Checker::checkStep(GameDesk& a, Points& points) {
+bool Checker::checkStep(const GameDesk& a,
+                        const Points& points) const {
     int rownumber = a.getRowNumber();
     if (checkIndex(rownumber, points)) {
         int n1 = a.getDeskNumber(points.p1);
@@ -20,7 +21,8 @@ bool Checker::checkStep(GameDesk& a, Points& points) {
     return false;
 }
 
-bool Checker::checkIndex(int max, Points& points) {
+bool Checker::checkIndex(int max,
+                         const Points& points) const {
     int p1c = points.p1.col;
     int p2c = points.p2.col;
     int p1r = points.p1.row;
@@ -36,7 +38,8 @@ bool Checker::checkIndex(int max, Points& points) {
     return false;
 }
 
-bool Checker::checkRange(int max, Points& points) {
+bool Checker::checkRange(int max,
+                         const Points& points) const {
     int p1c = points.p1.col;
     int p2c = points.p2.col;
     int p1r = points.p1.row;
