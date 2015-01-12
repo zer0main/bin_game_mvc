@@ -10,9 +10,14 @@ static int myAbs(int number) {
 
 bool Checker::checkStep(GameDesk& a, Points& points) {
     int rownumber = a.getRowNumber();
-    int n1 = a.getDeskNumber(points.p1);
-    int n2 = a.getDeskNumber(points.p2);
-    return checkIndex(rownumber, points) && n1 == n2;
+    if (checkIndex(rownumber, points)) {
+        int n1 = a.getDeskNumber(points.p1);
+        int n2 = a.getDeskNumber(points.p2);
+        if (n1 == n2) {
+            return true;
+        }
+    }
+    return false;
 }
 
 bool Checker::checkIndex(int max, Points& points) {
