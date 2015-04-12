@@ -27,5 +27,6 @@ $ mkdir build-dir
 $ cd build-dir
 $ cmake /path/to/bin_game_mvc
 $ make
+```
 
 [2048]: https://gabrielecirulli.github.io/2048/
