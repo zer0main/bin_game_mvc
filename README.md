@@ -19,12 +19,13 @@ Build dependencies
  - make
  - C++ compiler
 
-How to build
-------------
+How to build (Linux)
+--------------------
 
-The first command: `cmake /path/to/bin_game_mvc`
-
-And the second (in directory where you need to build):
-`make`
+```bash
+$ mkdir build-dir
+$ cd build-dir
+$ cmake /path/to/bin_game_mvc
+$ make
 
 [2048]: https://gabrielecirulli.github.io/2048/
