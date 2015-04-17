@@ -6,8 +6,8 @@ It's a console C++ version of [2048 game][2048].
 Run dependencies
 ----------------
 
- - Standart library of C language
- - Standart library of C++ language
+ - Standard library of C language
+ - Standard library of C++ language
  - lua
  - luabind
 
