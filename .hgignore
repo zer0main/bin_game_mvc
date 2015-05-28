@@ -12,7 +12,7 @@ syntax: glob
 *.a
 *.o
 
-*.pro.user
+*.pro*
 *-build-*
 
 doc/
