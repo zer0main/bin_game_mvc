@@ -29,3 +29,6 @@ cmake_install.cmake
 install_manifest.txt
 CTestCostData.txt
 
+ui_*.h
+moc_*.h
+src/gui/bin_game_mvc/bin_game_mvc
