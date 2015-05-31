@@ -259,13 +259,6 @@ color: rgb(255, 255, 255);</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Choose the size of game desk: </string>
-          </property>
-         </widget>
-        </item>
         <item row="3" column="0">
          <widget class="QSpinBox" name="spinBox_3"/>
         </item>
@@ -274,6 +267,94 @@ color: rgb(255, 255, 255);</string>
         </item>
         <item row="7" column="0">
          <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Choose the size of game desk: </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="winInputpage">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,3,2">
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="playButton3">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>PLAY</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Choose the size of game desk: </string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>What score you want to finish the game?</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QSpinBox" name="spinBox_4"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QSpinBox" name="spinBox_5"/>
+        </item>
+        <item row="5" column="0">
+         <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
