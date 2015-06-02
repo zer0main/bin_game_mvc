@@ -406,7 +406,7 @@ color: rgb(255, 255, 255);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="resultPage">
+      <widget class="QWidget" name="resultpage">
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="1" column="1">
          <widget class="QPushButton" name="endButton">
