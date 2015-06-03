@@ -2,7 +2,7 @@ language: c
 
 install:
   - sudo apt-get update
-  - sudo apt-get install g++ cmake make lua5.1 luabind-dev
+  - sudo apt-get install g++ cmake make lua5.1 libluabind-dev
 
 script:
   - mkdir build-dir
