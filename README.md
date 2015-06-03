@@ -2,7 +2,7 @@ bin_game_mvc
 ============
 
 [![Build Status][build-status][travis]
-[![License][license](LICENSE)
+[![License][license]](LICENSE)
 
 It's a console C++ version of [2048 game][2048].
 
