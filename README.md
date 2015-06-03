@@ -33,6 +33,6 @@ $ make
 ```
 
 [2048]: https://gabrielecirulli.github.io/2048/
-[license]: [license]: https://img.shields.io/badge/License-MIT-brightgreen.png
+[license]: https://img.shields.io/badge/License-MIT-brightgreen.png
 [travis]: https://travis-ci.org/zer0main/bin_game_mvc
 [build-status]: https://travis-ci.org/zer0main/bin_game_mvc.png?branch=master
