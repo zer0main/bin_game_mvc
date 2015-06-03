@@ -1,6 +1,9 @@
 bin_game_mvc
 ============
 
+[![Build Status][build-status][travis]
+[![License][license](LICENSE)
+
 It's a console C++ version of [2048 game][2048].
 
 Run dependencies
@@ -30,3 +33,6 @@ $ make
 ```
 
 [2048]: https://gabrielecirulli.github.io/2048/
+[license]: [license]: https://img.shields.io/badge/License-MIT-brightgreen.png
+[travis]: https://travis-ci.org/zer0main/bin_game_mvc
+[build-status]: https://travis-ci.org/zer0main/bin_game_mvc.png?branch=master
