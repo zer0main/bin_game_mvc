@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2014-2015 Pavel Dolgov
+ *
+ * See the LICENSE file for terms of use.
+ */
+
 #include "checker.hpp"
 
 static int myAbs(int number) {

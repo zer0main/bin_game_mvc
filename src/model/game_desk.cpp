@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2014-2015 Pavel Dolgov
+ *
+ * See the LICENSE file for terms of use.
+ */
+
 #include <stdlib.h>
 
 #include "game_desk.hpp"
