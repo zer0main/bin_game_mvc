@@ -21,6 +21,9 @@ public:
 
 private:
     Ui::MainWindow* ui;
+
+private slots:
+    void on_quitButton_clicked();
 };
 
 #endif
