@@ -24,6 +24,8 @@ private:
 
 private slots:
     void on_quitButton_clicked();
+
+    void on_winButton_clicked();
 };
 
 #endif

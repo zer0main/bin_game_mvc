@@ -20,3 +20,7 @@ MainWindow::~MainWindow() {
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
+
+void MainWindow::on_winButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->winInputpage);
+}
