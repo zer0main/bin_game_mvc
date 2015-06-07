@@ -24,3 +24,7 @@ void MainWindow::on_quitButton_clicked() {
 void MainWindow::on_winButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->winInputpage);
 }
+
+void MainWindow::on_timeButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->timeInputpage);
+}
