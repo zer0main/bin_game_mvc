@@ -30,6 +30,8 @@ private slots:
     void on_timeButton_clicked();
 
     void on_scoreButton_clicked();
+
+    void on_endButton_clicked();
 };
 
 #endif

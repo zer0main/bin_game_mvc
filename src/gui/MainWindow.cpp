@@ -32,3 +32,7 @@ void MainWindow::on_timeButton_clicked() {
 void MainWindow::on_scoreButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
+
+void MainWindow::on_endButton_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->startpage);
+}
