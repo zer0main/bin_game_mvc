@@ -17,9 +17,6 @@ public:
     GameModes(GameDesk* desk, IoView* view);
 
     void start(int argc, char* argv[]);
-private:
-    GameDesk* desk_;
-    const IoView* ioview_;
 
     int score();
 
@@ -32,6 +29,10 @@ private:
     void play();
 
     void replace(Points& points);
+
+private:
+    GameDesk* desk_;
+    const IoView* ioview_;
 
     void gameForWin();
 
