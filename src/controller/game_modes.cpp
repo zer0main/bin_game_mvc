@@ -79,11 +79,10 @@ void GameModes::help() {
 }
 
 void GameModes::setDesk(int desk_size) {
-    int i, x;
     Point point;
     desk_->resize(desk_size);
-    for (i = 0; i < desk_size; i++) {
-        for (x = 0; x < desk_size; x++) {
+    for (int i = 0; i < desk_size; i++) {
+        for (int x = 0; x < desk_size; x++) {
             point.col = i;
             point.row = x;
             if (rand() <= (RAND_MAX / 2)) {
@@ -129,9 +128,8 @@ int GameModes::score() {
     Point point;
     int all_score = 0;
     int row_score = 0;
-    int i, x;
-    for (i = 0; i < desk_->getRowNumber(); i++) {
-        for (x = 0; x < desk_->getRowNumber(); x++) {
+    for (int i = 0; i < desk_->getRowNumber(); i++) {
+        for (int x = 0; x < desk_->getRowNumber(); x++) {
             point.col = i;
             point.row = x;
             row_score += desk_->getDeskNumber(point);
@@ -152,14 +150,13 @@ bool GameModes::checkWin(int for_win) {
 bool GameModes::checkFail() {
     Points points;
     Checker checker;
-    int i, x, z, t;
-    for (i = 0; i < desk_->getRowNumber(); i++) {
+    for (int i = 0; i < desk_->getRowNumber(); i++) {
         points.p1.col = i;
-        for (x = 0; x < desk_->getRowNumber(); x++) {
+        for (int x = 0; x < desk_->getRowNumber(); x++) {
             points.p1.row = x;
-            for (z = 0; z < desk_->getRowNumber(); z++) {
+            for (int z = 0; z < desk_->getRowNumber(); z++) {
                 points.p2.col = z;
-                for (t = 0; t < desk_->getRowNumber(); t++) {
+                for (int t = 0; t < desk_->getRowNumber(); t++) {
                     points.p2.row = t;
                     if (checker.checkStep(*desk_, points)) {
                         return false;

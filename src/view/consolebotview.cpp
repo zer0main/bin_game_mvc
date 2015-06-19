@@ -12,9 +12,8 @@
 void ConsoleBotView::outputGeneral() const {
     const GameDesk* desk = getDesk();
     Point point;
-    int i, x;
-    for (i = desk->getRowNumber() - 1; i >= 0; i--) {
-        for (x = 0; x < desk->getRowNumber(); x++) {
+    for (int i = desk->getRowNumber() - 1; i >= 0; i--) {
+        for (int x = 0; x < desk->getRowNumber(); x++) {
             point.col = i;
             point.row = x;
             char prev_fill = std::cout.fill(' ');
