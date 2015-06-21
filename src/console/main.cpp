@@ -17,6 +17,4 @@ int main(int argc, char* argv[]) {
     ConsoleView io_console;
     io_console.setDesk(&desk);
     GameModes game_modes(&desk, &io_console);
-    game_modes.start(argc, argv);
 }
-

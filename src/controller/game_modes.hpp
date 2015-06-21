@@ -16,31 +16,13 @@ class GameModes {
 public:
     GameModes(GameDesk* desk, IoView* view);
 
-    void start(int argc, char* argv[]);
-
-    int score();
-
-    bool checkFail();
-
-    bool checkWin(int for_win);
-
     void setDesk(int desk_size);
-
-    void play();
 
     void replace(Points& points);
 
 private:
     GameDesk* desk_;
     const IoView* ioview_;
-
-    void gameForWin();
-
-    void gameForScore();
-
-    void gameWithTime();
-
-    void help();
 };
 
 #endif
