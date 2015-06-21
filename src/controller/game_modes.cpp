@@ -9,8 +9,15 @@
 
 #include "game_modes.hpp"
 
-GameModes::GameModes(GameDesk* desk) {
-    desk_ = desk;
+GameModes* GameModes::make(GameDesk* desk) {
+    if (desk == NULL) {
+        throw Exception("Received NULL pointer to "
+                        "GameDesk when try to create "
+                        "GameModes");
+    }
+    GameModes* controller = new GameModes();
+    controller->desk_ = desk;
+    return controller;
 }
 
 void GameModes::setDesk(int desk_size) {
@@ -45,4 +52,7 @@ void GameModes::replace(Points& points) {
     } else {
         desk_->setDeskNumber(points.p1, 1);
     }
+}
+
+GameModes::GameModes() {
 }

@@ -16,5 +16,5 @@ int main(int argc, char* argv[]) {
     GameDesk desk;
     ConsoleView io_console;
     io_console.setDesk(&desk);
-    GameModes game_modes(&desk);
+    GameModes* controller = GameModes::make(&desk);
 }

@@ -7,6 +7,7 @@
 #ifndef GAME_MODES_HPP_
 #define GAME_MODES_HPP_
 
+#include "Exception.hpp"
 #include "checker.hpp"
 #include "points.hpp"
 #include "game_desk.hpp"
@@ -14,7 +15,10 @@
 
 class GameModes {
 public:
-    GameModes(GameDesk* desk);
+    /** Create new instance.
+    \param desk Model that will be changeable by GameModes
+    */
+    static GameModes* make(GameDesk* desk);
 
     void setDesk(int desk_size);
 
@@ -22,6 +26,8 @@ public:
 
 private:
     GameDesk* desk_;
+
+    GameModes();
 };
 
 #endif
