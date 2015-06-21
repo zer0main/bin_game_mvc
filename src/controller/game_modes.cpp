@@ -9,9 +9,8 @@
 
 #include "game_modes.hpp"
 
-GameModes::GameModes(GameDesk* desk, IoView* view) {
+GameModes::GameModes(GameDesk* desk) {
     desk_ = desk;
-    ioview_ = view;
 }
 
 void GameModes::setDesk(int desk_size) {

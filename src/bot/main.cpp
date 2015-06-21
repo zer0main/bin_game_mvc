@@ -16,5 +16,5 @@ int main(int argc, char* argv[]) {
     GameDesk desk;
     BotView bot;
     bot.setDesk(&desk);
-    GameModes game_modes(&desk, &bot);
+    GameModes game_modes(&desk);
 }

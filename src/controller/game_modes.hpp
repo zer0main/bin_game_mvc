@@ -14,7 +14,7 @@
 
 class GameModes {
 public:
-    GameModes(GameDesk* desk, IoView* view);
+    GameModes(GameDesk* desk);
 
     void setDesk(int desk_size);
 
@@ -22,7 +22,6 @@ public:
 
 private:
     GameDesk* desk_;
-    const IoView* ioview_;
 };
 
 #endif
