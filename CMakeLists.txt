@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 project(bin_game2)
 
 file(GLOB sources "src/controller/*.cpp",
-    "src/model/*.cpp", "src/view/*.cpp", "src/*.cpp")
+    "src/model/*.cpp", "src/view/*.cpp", "src/*.cpp",
+    "src/util/*.cpp)
 
 file(GLOB console "src/console/*.cpp")
 
@@ -12,6 +13,7 @@ include_directories(src/console)
 include_directories(src/controller)
 include_directories(src/model)
 include_directories(src/view)
+include_directories(src/util)
 include_directories(src)
 
 add_executable(bin_game2 ${sources} ${console})
