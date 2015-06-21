@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 project(bin_game2)
 
 file(GLOB sources "src/controller/*.cpp",
-    "src/model/*.cpp", "src/view/*.cpp", "src/*.cpp",
-    "src/util/*.cpp)
+    "src/model/*.cpp", "src/view/*.cpp", "src/util/*.cpp",
+    "src/*.cpp")
 
 file(GLOB console "src/console/*.cpp")
 
