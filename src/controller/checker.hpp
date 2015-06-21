@@ -15,6 +15,7 @@ public:
     bool checkStep(const GameDesk& desk,
                    const Points& points) const;
 
+private:
     bool checkIndex(int max, const Points& points) const;
 
     bool checkRange(int max, const Points& points) const;
