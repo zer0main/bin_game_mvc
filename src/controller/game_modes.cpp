@@ -40,13 +40,7 @@ void GameModes::replace(Points& points) {
     int n1 = desk_->getDeskNumber(points.p1);
     int n2 = desk_->getDeskNumber(points.p2);
     desk_->setDeskNumber(points.p2, n2 * 2);
-    while (points.p1.col < (desk_->getRowNumber() - 1)) {
-        Points points_local;
-        points_local = points;
-        points_local.p1.col += 1;
-        desk_->setDeskNumber(points.p1, desk_->getDeskNumber(points_local.p1));
-        points.p1.col = points_local.p1.col;
-    }
+    gravity(points.p1);
     newRandomNumber(points.p1);
 }
 
