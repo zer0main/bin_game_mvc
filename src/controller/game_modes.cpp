@@ -56,5 +56,15 @@ void GameModes::newRandomNumber(const Point& point) {
     desk_->setDeskNumber(point, new_number);
 }
 
+void GameModes::gravity(Point& free_space) {
+    while (free_space.col < (desk_->getRowNumber() - 1)) {
+        Point next = free_space;
+        next.col += 1;
+        desk_->setDeskNumber(free_space,
+                             desk_->getDeskNumber(next));
+        free_space.col = next.col;
+    }
+}
+
 GameModes::GameModes() {
 }

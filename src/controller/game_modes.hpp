@@ -32,6 +32,11 @@ private:
     */
     void newRandomNumber(const Point& point);
 
+    /* Move all the numbers from current column down
+    using free space (merge space)
+    */
+    void gravity(Point& free_space);
+
     GameModes();
 };
 
