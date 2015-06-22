@@ -31,11 +31,7 @@ void GameModes::setDesk(int desk_size) {
         for (int x = 0; x < desk_size; x++) {
             point.col = i;
             point.row = x;
-            if (rand() <= (RAND_MAX / 2)) {
-                desk_->setDeskNumber(point, 1);
-            } else {
-                desk_->setDeskNumber(point, 2);
-            }
+            newRandomNumber(point);
         }
     }
 }
@@ -51,11 +47,7 @@ void GameModes::replace(Points& points) {
         desk_->setDeskNumber(points.p1, desk_->getDeskNumber(points_local.p1));
         points.p1.col = points_local.p1.col;
     }
-    if (rand() <= (RAND_MAX / 2)) {
-        desk_->setDeskNumber(points.p1, 2);
-    } else {
-        desk_->setDeskNumber(points.p1, 1);
-    }
+    newRandomNumber(points.p1);
 }
 
 void GameModes::newRandomNumber(const Point& point) {
