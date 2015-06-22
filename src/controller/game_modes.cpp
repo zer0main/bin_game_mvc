@@ -58,5 +58,13 @@ void GameModes::replace(Points& points) {
     }
 }
 
+void GameModes::newRandomNumber(const Point& point) {
+    if (rand() <= (RAND_MAX / 2)) {
+        desk_->setDeskNumber(point, 2);
+    } else {
+        desk_->setDeskNumber(point, 1);
+    }
+}
+
 GameModes::GameModes() {
 }

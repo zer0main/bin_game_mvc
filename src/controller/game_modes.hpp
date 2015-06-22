@@ -27,6 +27,11 @@ public:
 private:
     GameDesk* desk_;
 
+    /* Set new random number (1 or 2) in cell with
+    coordinates specified in point argument
+    */
+    void newRandomNumber(const Point& point);
+
     GameModes();
 };
 
