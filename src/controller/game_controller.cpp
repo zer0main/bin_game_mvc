@@ -4,7 +4,6 @@
  * See the LICENSE file for terms of use.
  */
 
-#include <time.h>
 #include <stdlib.h>
 
 #include "game_controller.hpp"

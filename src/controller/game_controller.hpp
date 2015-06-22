@@ -11,7 +11,6 @@
 #include "checker.hpp"
 #include "points.hpp"
 #include "game_desk.hpp"
-#include "ioview.hpp"
 
 class GameController {
 public:
