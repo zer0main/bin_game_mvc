@@ -7,24 +7,24 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "game_modes.hpp"
+#include "game_controller.hpp"
 
 static bool getOneHalf() {
     return rand() <= (RAND_MAX / 2);
 }
 
-GameModes* GameModes::make(GameDesk* desk) {
+GameController* GameController::make(GameDesk* desk) {
     if (desk == NULL) {
         throw Exception("Received NULL pointer to "
                         "GameDesk when try to create "
-                        "GameModes");
+                        "GameController");
     }
-    GameModes* controller = new GameModes();
+    GameController* controller = new GameController();
     controller->desk_ = desk;
     return controller;
 }
 
-void GameModes::setDesk(int desk_size) {
+void GameController::setDesk(int desk_size) {
     Point point;
     desk_->resize(desk_size);
     for (int i = 0; i < desk_size; i++) {
@@ -36,7 +36,7 @@ void GameModes::setDesk(int desk_size) {
     }
 }
 
-void GameModes::replace(Points& points) {
+void GameController::replace(Points& points) {
     int n1 = desk_->getDeskNumber(points.p1);
     int n2 = desk_->getDeskNumber(points.p2);
     desk_->setDeskNumber(points.p2, n2 * 2);
@@ -44,13 +44,13 @@ void GameModes::replace(Points& points) {
     newRandomNumber(points.p1);
 }
 
-void GameModes::newRandomNumber(const Point& point) {
+void GameController::newRandomNumber(const Point& point) {
     bool rand = getOneHalf();
     int new_number = (rand) ? 2 : 1;
     desk_->setDeskNumber(point, new_number);
 }
 
-void GameModes::gravity(Point& free_space) {
+void GameController::gravity(Point& free_space) {
     while (free_space.col < (desk_->getRowNumber() - 1)) {
         Point next = free_space;
         next.col += 1;
@@ -60,5 +60,5 @@ void GameModes::gravity(Point& free_space) {
     }
 }
 
-GameModes::GameModes() {
+GameController::GameController() {
 }

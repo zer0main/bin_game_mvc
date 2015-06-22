@@ -9,12 +9,13 @@
 
 #include "game_desk.hpp"
 #include "consoleview.hpp"
-#include "game_modes.hpp"
+#include "game_controller.hpp"
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));
     GameDesk desk;
     ConsoleView io_console;
     io_console.setDesk(&desk);
-    GameModes* controller = GameModes::make(&desk);
+    GameController* controller =
+        GameController::make(&desk);
 }

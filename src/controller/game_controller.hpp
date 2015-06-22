@@ -13,12 +13,13 @@
 #include "game_desk.hpp"
 #include "ioview.hpp"
 
-class GameModes {
+class GameController {
 public:
     /** Create new instance.
-    \param desk Model that will be changeable by GameModes
+    \param desk Model that will be changeable by
+    GameController
     */
-    static GameModes* make(GameDesk* desk);
+    static GameController* make(GameDesk* desk);
 
     void setDesk(int desk_size);
 
@@ -37,7 +38,7 @@ private:
     */
     void gravity(Point& free_space);
 
-    GameModes();
+    GameController();
 };
 
 #endif
