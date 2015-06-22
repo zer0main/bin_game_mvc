@@ -9,6 +9,10 @@
 
 #include "game_modes.hpp"
 
+static bool getOneHalf() {
+    return rand() <= (RAND_MAX / 2);
+}
+
 GameModes* GameModes::make(GameDesk* desk) {
     if (desk == NULL) {
         throw Exception("Received NULL pointer to "
