@@ -13,9 +13,4 @@
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));
-    GameDesk desk;
-    BotView bot;
-    bot.setDesk(&desk);
-    GameController* controller =
-        GameController::make(&desk);
 }

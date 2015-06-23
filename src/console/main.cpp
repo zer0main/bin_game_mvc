@@ -13,9 +13,4 @@
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));
-    GameDesk desk;
-    ConsoleView io_console;
-    io_console.setDesk(&desk);
-    GameController* controller =
-        GameController::make(&desk);
 }
