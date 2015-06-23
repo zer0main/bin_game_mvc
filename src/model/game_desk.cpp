@@ -8,6 +8,19 @@
 
 #include "game_desk.hpp"
 
+GameDesk* GameDesk::make(int row_number) {
+    if ((row_number < MIN_WIDTH) || (row_number >
+                                     MAX_WIDTH)) {
+        throw Exception("width (length) of desk is out of "
+                        "allowable range");
+    }
+    GameDesk* desk = new GameDesk();
+    int square = row_number * row_number;
+    desk->row_number_ = row_number;
+    desk->desk_.resize(square);
+    return desk;
+}
+
 int GameDesk::getRowNumber() const {
     return row_number_;
 }
@@ -26,3 +39,5 @@ void GameDesk::resize(int row_number) {
     row_number_ = row_number;
 }
 
+GameDesk::GameDesk() {
+}

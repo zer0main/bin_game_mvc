@@ -9,10 +9,17 @@
 
 #include <vector>
 
+#include "constants.hpp"
 #include "points.hpp"
+#include "Exception.hpp"
 
 class GameDesk {
 public:
+    /** Create new instance.
+    \param row_number Width/Length of game board
+    */
+    static GameDesk* make(int row_number);
+
     int getRowNumber() const;
 
     int getDeskNumber(const Point& point) const;
@@ -24,6 +31,8 @@ public:
 private:
     Ints desk_;
     int row_number_;
+
+    GameDesk();
 };
 
 #endif
