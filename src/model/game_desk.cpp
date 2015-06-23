@@ -8,6 +8,22 @@
 
 #include "game_desk.hpp"
 
+/* get global coordinate from horizontal and
+   vertical coordinates
+*/
+static int getIndex(const Point& point, int row_number) {
+    bool less = ((point.col < 0) || (point.row < 0));
+    bool greater = ((point.col >= row_number) ||
+                    (point.row >= row_number));
+    if (less || greater) {
+        throw Exception("Model: index of cell in some "
+                        "arguments of GameDesk's methods "
+                        "is out of range.");
+    }
+    int index = point.col * row_number + point.row;
+    return index;
+}
+
 GameDesk* GameDesk::make(int row_number) {
     if ((row_number < MIN_WIDTH) || (row_number >
                                      MAX_WIDTH)) {
