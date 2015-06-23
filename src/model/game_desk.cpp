@@ -42,11 +42,14 @@ int GameDesk::getRowNumber() const {
 }
 
 int GameDesk::getDeskNumber(const Point& point) const {
-    return desk_[point.col * row_number_ + point.row];
+    int index = getIndex(point, row_number_);
+    return desk_[index];
 }
 
-void GameDesk::setDeskNumber(const Point& point, int number) {
-    desk_[point.col * row_number_ + point.row] = number;
+void GameDesk::setDeskNumber(const Point& point,
+                             int number) {
+    int index = getIndex(point, row_number_);
+    desk_[index] = number;
 }
 
 GameDesk::GameDesk() {
