@@ -37,9 +37,8 @@ void GameController::setDesk(int desk_size) {
 void GameController::replace(Points& points) {
     Checker checker;
     if (!checker.checkStep(*desk_, points)) {
-        throw Exception("Error: wrong index of numbers "
-                        "or numbers with this index "
-                        "aren't neighboring or equal");
+        throw Exception("Error: numbers with this index "
+                        "aren't neighboring and equal");
     }
     int n1 = desk_->getDeskNumber(points.p1);
     int n2 = desk_->getDeskNumber(points.p2);

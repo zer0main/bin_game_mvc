@@ -16,9 +16,7 @@ public:
                    const Points& points) const;
 
 private:
-    bool checkIndex(int max, const Points& points) const;
-
-    bool checkRange(int max, const Points& points) const;
+    bool checkIndex(const Points& points) const;
 };
 
 #endif
