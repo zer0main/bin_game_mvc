@@ -25,7 +25,6 @@ GameController* GameController::make(GameDesk* desk) {
 
 void GameController::setDesk(int desk_size) {
     Point point;
-    desk_->resize(desk_size);
     for (int i = 0; i < desk_size; i++) {
         for (int x = 0; x < desk_size; x++) {
             point.col = i;

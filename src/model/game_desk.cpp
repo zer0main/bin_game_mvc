@@ -33,11 +33,5 @@ void GameDesk::setDeskNumber(const Point& point, int number) {
     desk_[point.col * row_number_ + point.row] = number;
 }
 
-void GameDesk::resize(int row_number) {
-    int square = row_number * row_number;
-    desk_.resize(square);
-    row_number_ = row_number;
-}
-
 GameDesk::GameDesk() {
 }

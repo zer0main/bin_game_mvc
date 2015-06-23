@@ -26,8 +26,6 @@ public:
 
     void setDeskNumber(const Point& point, int number);
 
-    void resize(int row_number);
-
 private:
     Ints desk_;
     int row_number_;
