@@ -52,3 +52,17 @@ bool checkWin(const GameDesk& desk, int win_number) {
     bool win = win_number <= score(desk);
     return (win) ? true : false;
 }
+
+bool checkFail(const GameDesk& desk) {
+    for (int i = 0; i < desk.getRowNumber(); i++) {
+        for (int x = 0; x < desk.getRowNumber(); x++) {
+            Point pt;
+            pt.col = i;
+            pt.row = x;
+            if (neighboringGoodCell(desk, pt)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
