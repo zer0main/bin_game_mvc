@@ -11,4 +11,6 @@
 
 int score(const GameDesk& desk);
 
+bool checkWin(const GameDesk& desk, int win_number);
+
 #endif

@@ -18,3 +18,8 @@ int score(const GameDesk& desk) {
     }
     return score;
 }
+
+bool checkWin(const GameDesk& desk, int win_number) {
+    bool win = win_number <= score(desk);
+    return (win) ? true : false;
+}
