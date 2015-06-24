@@ -8,6 +8,7 @@
 #define DESK_FUNCTIONS_HPP
 
 #include "game_desk.hpp"
+#include "checker.hpp"
 
 int score(const GameDesk& desk);
 
