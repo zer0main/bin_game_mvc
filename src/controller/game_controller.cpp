@@ -23,7 +23,8 @@ GameController* GameController::make(GameDesk* desk) {
     return controller;
 }
 
-void GameController::setDesk(int desk_size) {
+void GameController::initialStateOfBoard() {
+    int desk_size = desk_->getRowNumber();
     Point point;
     for (int i = 0; i < desk_size; i++) {
         for (int x = 0; x < desk_size; x++) {

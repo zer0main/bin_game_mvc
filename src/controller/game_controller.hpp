@@ -20,7 +20,7 @@ public:
     */
     static GameController* make(GameDesk* desk);
 
-    void setDesk(int desk_size);
+    void initialStateOfBoard();
 
     void replace(Points& points);
 
