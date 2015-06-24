@@ -15,7 +15,6 @@ public:
     bool checkStep(const GameDesk& desk,
                    const Points& points) const;
 
-private:
     bool checkIndex(const Points& points) const;
 };
 
