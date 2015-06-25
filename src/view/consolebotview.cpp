@@ -9,6 +9,14 @@
 
 #include "consolebotview.hpp"
 
+void ConsoleBotView::start() const {
+    std::cout << "*** BIN_GAME ***" << std::endl;
+    std::cout << "----------------" << std::endl;
+    std::cout << "t: time mode | w: play for score | s: "
+                 "play while not lose" << std::endl;
+    std::cout << ">>> " << std::endl;
+}
+
 void ConsoleBotView::outputGeneral() const {
     const GameDesk* desk = getDesk();
     Point point;

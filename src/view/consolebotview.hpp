@@ -11,6 +11,8 @@
 
 class ConsoleBotView: public IoView {
 protected:
+    void start() const;
+
     void outputGeneral() const;
 
     void typeError_impl() const;
