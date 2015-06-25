@@ -9,6 +9,11 @@
 
 #include "consolebotview.hpp"
 
+void ConsoleBotView::view() const {
+    while (true) {
+    }
+}
+
 void ConsoleBotView::start() const {
     std::cout << "*** BIN_GAME ***" << std::endl;
     std::cout << "----------------" << std::endl;

@@ -10,6 +10,9 @@
 #include "ioview.hpp"
 
 class ConsoleBotView: public IoView {
+public:
+    void view() const;
+
 protected:
     void start() const;
 
