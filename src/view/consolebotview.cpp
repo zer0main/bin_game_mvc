@@ -14,7 +14,7 @@ void ConsoleBotView::start() const {
     std::cout << "----------------" << std::endl;
     std::cout << "t: time mode | w: play for score | s: "
                  "play while not lose" << std::endl;
-    std::cout << ">>> " << std::endl;
+    std::cout << ">>> ";
 }
 
 void ConsoleBotView::outputGeneral() const {
