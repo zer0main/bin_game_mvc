@@ -9,6 +9,7 @@ It's a console C++ version of [2048 game][2048].
 Run dependencies
 ----------------
 
+ - Qt library (version 4.6+)
  - Standard library of C language
  - Standard library of C++ language
  - lua
