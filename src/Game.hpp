@@ -16,7 +16,6 @@
 
 /** Contains all classes necessary for game */
 struct Game {
-    QSharedPointer<IoView> view;
     QSharedPointer<GameDesk> desk;
     QSharedPointer<TableModel> t_model;
     QSharedPointer<GameController> controller;
