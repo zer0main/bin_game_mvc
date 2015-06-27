@@ -13,10 +13,12 @@ class GameDesk;
 class TableModel;
 class GameController;
 struct Game;
+struct GuiGame;
 
 typedef QSharedPointer<GameDesk> GameDeskPtr;
 typedef QSharedPointer<TableModel> TableModelPtr;
 typedef QSharedPointer<GameController> GameControllerPtr;
 typedef QSharedPointer<Game> GamePtr;
+typedef QSharedPointer<GuiGame> GuiGamePtr;
 
 #endif
