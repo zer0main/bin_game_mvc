@@ -12,14 +12,18 @@ file(GLOB console "src/console/*.cpp")
 
 file(GLOB bot "src/bot/*.cpp")
 
+file(GLOB gui "src/gui/*.cpp")
+
 include_directories(src/console)
 include_directories(src/controller)
 include_directories(src/model)
 include_directories(src/view)
 include_directories(src/util)
+include_directories(src/gui)
 include_directories(src)
 
 add_executable(bin_game2 ${sources} ${console})
+target_link_libraries(bin_game2 ${QT_LIBRARIES})
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR})
@@ -38,10 +42,22 @@ if (LUA51_FOUND)
         target_link_libraries(bin_game_bot
             ${LUA_LIBRARIES} ${LUABIND_LIBRARIES}
             ${QT_LIBRARIES})
+        configure_file(
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/bot/bin_game_bot.lua
+            ${CMAKE_CURRENT_BINARY_DIR}/bin_game_bot.lua)
     endif()
 endif()
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/bot/bin_game_bot.lua
-    ${CMAKE_CURRENT_BINARY_DIR}/bin_game_bot.lua)
-TARGET_LINK_LIBRARIES(bin_game2 ${QT_LIBRARIES})
+include_directories("${PROJECT_SOURCE_DIR}/src/gui"
+    "${PROJECT_BINARY_DIR}/src/gui"
+    "${PROJECT_BINARY_DIR}")
+
+file(GLOB uis "src/gui/*.ui")
+file(GLOB qheaders "src/gui/*.hpp")
+
+QT4_WRAP_UI(UISrcs ${uis})
+QT4_WRAP_CPP(MOCrcs ${qheaders})
+
+add_executable(bin_game_gui ${sources} ${gui}
+                            ${UISrcs} ${MOCrcs})
+target_link_libraries(bin_game_gui ${QT_LIBRARIES})
