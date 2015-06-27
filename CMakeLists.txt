@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 project(bin_game2)
 
+FIND_PACKAGE(Qt4 REQUIRED)
+INCLUDE(${QT_USE_FILE})
+
 file(GLOB sources "src/controller/*.cpp",
     "src/model/*.cpp", "src/view/*.cpp", "src/util/*.cpp",
     "src/*.cpp")
@@ -33,11 +36,12 @@ if (LUA51_FOUND)
 
         add_executable(bin_game_bot ${sources} ${bot})
         target_link_libraries(bin_game_bot
-            ${LUA_LIBRARIES} ${LUABIND_LIBRARIES})
+            ${LUA_LIBRARIES} ${LUABIND_LIBRARIES}
+            ${QT_LIBRARIES})
     endif()
 endif()
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/src/bot/bin_game_bot.lua
     ${CMAKE_CURRENT_BINARY_DIR}/bin_game_bot.lua)
-
+TARGET_LINK_LIBRARIES(bin_game2 ${QT_LIBRARIES})
