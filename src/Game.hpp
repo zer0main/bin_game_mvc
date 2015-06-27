@@ -7,6 +7,8 @@
 #ifndef GAME_HPP_
 #define GAME_HPP_
 
+#include <QtCore>
+
 #include "game_desk.hpp"
 #include "game_controller.hpp"
 #include "TableModel.hpp"
@@ -14,10 +16,10 @@
 
 /** Contains all classes necessary for game */
 struct Game {
-    IoView* view;
-    GameDesk* desk;
-    TableModel* t_model;
-    GameController* controller;
+    QSharedPointer<IoView> view;
+    QSharedPointer<GameDesk> desk;
+    QSharedPointer<TableModel> t_model;
+    QSharedPointer<GameController> controller;
 };
 
 #endif
