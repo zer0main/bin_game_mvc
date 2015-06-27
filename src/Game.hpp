@@ -7,18 +7,24 @@
 #ifndef GAME_HPP_
 #define GAME_HPP_
 
-#include <QtCore>
-
+#include "global.hpp"
 #include "game_desk.hpp"
 #include "game_controller.hpp"
-#include "TableModel.hpp"
-#include "ioview.hpp"
 
 /** Contains all classes necessary for game */
 struct Game {
-    QSharedPointer<GameDesk> desk;
-    QSharedPointer<TableModel> t_model;
-    QSharedPointer<GameController> controller;
+    /** Create new instance.
+    \param desk Model
+    \param controller Controller
+    */
+    static GamePtr make(GameDeskPtr desk,
+                        GameControllerPtr controller);
+
+    GameDeskPtr desk;
+    GameControllerPtr controller;
+
+private:
+    Game();
 };
 
 #endif
