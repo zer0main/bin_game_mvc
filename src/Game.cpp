@@ -6,14 +6,12 @@
 
 #include "Game.hpp"
 
-GamePtr Game::make(GameDeskPtr desk,
-                   GameControllerPtr controller) {
-    if (!desk || !controller) {
-        throw Exception("No desk or no controller");
-    }
+GamePtr Game::make(int row_number) {
     GamePtr game(new Game());
-    game->desk = desk;
-    game->controller = controller;
+    game->desk = GameDeskPtr(GameDesk::make(row_number));
+    game->controller =
+        GameControllerPtr
+        (GameController::make(game->desk.data()));
     return game;
 }
 

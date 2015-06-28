@@ -14,11 +14,9 @@
 /** Contains all classes necessary for game */
 struct Game {
     /** Create new instance.
-    \param desk Model
-    \param controller Controller
+    \param row_number Width/length of game board
     */
-    static GamePtr make(GameDeskPtr desk,
-                        GameControllerPtr controller);
+    static GamePtr make(int row_number);
 
     GameDeskPtr desk;
     GameControllerPtr controller;
