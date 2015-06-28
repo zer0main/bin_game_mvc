@@ -7,6 +7,7 @@
 #ifndef GUI_GAME_HPP_
 #define GUI_GAME_HPP_
 
+#include "TableModel.hpp"
 #include "Game.hpp"
 
 /** Contains all classes necessary for game */
