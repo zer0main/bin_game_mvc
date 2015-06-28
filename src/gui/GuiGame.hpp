@@ -13,13 +13,11 @@
 /** Contains all classes necessary for game */
 struct GuiGame : public Game {
     /** Create new instance.
-    \param desk Model
-    \param controller Controller
-    \param t_model Table model
+    \param window MainWindow
+    \param row_number Width/length of game board
     */
-    static GuiGamePtr make(GameDeskPtr desk,
-                           GameControllerPtr controller,
-                           TableModelPtr t_model);
+    static GuiGamePtr make(QObject* window,
+                           int row_number);
 
     TableModelPtr t_model;
 
