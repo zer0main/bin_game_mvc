@@ -306,10 +306,10 @@ color: rgb(255, 255, 255);</string>
         <item row="5" column="0">
          <widget class="QSpinBox" name="spinBox_2">
           <property name="minimum">
-           <number>3</number>
+           <number>1</number>
           </property>
           <property name="maximum">
-           <number>16</number>
+           <number>1000</number>
           </property>
          </widget>
         </item>
@@ -408,10 +408,10 @@ color: rgb(255, 255, 255);</string>
         <item row="3" column="0">
          <widget class="QSpinBox" name="spinBox_5">
           <property name="minimum">
-           <number>3</number>
+           <number>10</number>
           </property>
           <property name="maximum">
-           <number>16</number>
+           <number>9999999</number>
           </property>
          </widget>
         </item>
