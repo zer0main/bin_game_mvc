@@ -23,7 +23,7 @@ struct Game {
     GameDeskPtr desk;
     GameControllerPtr controller;
 
-private:
+protected:
     Game();
 };
 
