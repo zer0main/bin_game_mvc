@@ -4,7 +4,10 @@ bin_game_mvc
 [![Build Status][build-status]][travis]
 [![License][license]](LICENSE)
 
-It's a console C++ version of [2048 game][2048].
+It's a C++ version of [2048 game][2048] (with modified
+game rules) with bot and many other features.
+
+Console and GUI modes are possible.
 
 Run dependencies
 ----------------
