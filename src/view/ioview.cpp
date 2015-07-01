@@ -36,10 +36,6 @@ void IoView::typeError() const {
     typeError_impl();
 }
 
-void IoView::setDesk(const GameDesk* desk) {
-    desk_ = desk;
-}
-
 void IoView::output() const {
     output_impl();
 }

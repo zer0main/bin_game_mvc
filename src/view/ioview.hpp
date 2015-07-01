@@ -23,12 +23,9 @@ public:
     int getTimeNumber() const;
 
     const GameDesk* getDesk() const;
-
     Points getIndex() const;
 
     void typeError() const;
-
-    void setDesk(const GameDesk* desk);
 
     void output() const;
 
