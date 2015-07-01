@@ -15,8 +15,6 @@ public:
     void view() const;
 
 protected:
-    void start() const;
-
     void outputGeneral() const;
 
     void prompt() const;
@@ -37,6 +35,8 @@ protected:
 
 private:
     GamePtr game_;
+
+    void start() const;
 };
 
 #endif
