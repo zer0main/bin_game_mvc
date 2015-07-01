@@ -11,25 +11,6 @@
 #include "game_desk.hpp"
 
 class IoView {
-public:
-    IoView();
-
-    virtual ~IoView();
-
-    int getDeskSize() const;
-
-    int getWinNumber() const;
-
-    int getTimeNumber() const;
-
-    Points getIndex() const;
-
-    void output() const;
-
-    void finish(bool check_fail, int score, int steps_number) const;
-
-    void sendHelpMessage() const;
-
 protected:
     virtual int getDeskSize_impl() const = 0;
 
