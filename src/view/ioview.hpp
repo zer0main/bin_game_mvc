@@ -18,10 +18,6 @@ protected:
 
     virtual int getTimeNumber_impl() const = 0;
 
-    virtual Points getIndex_impl() const = 0;
-
-    virtual void output_impl() const =  0;
-
     virtual void finish_impl(bool check_fail, int score, int steps_number) const = 0;
 
     virtual void sendHelpMessage_impl() const = 0;
