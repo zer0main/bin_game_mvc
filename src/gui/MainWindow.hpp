@@ -7,6 +7,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include "GuiGame.hpp"
 #include <QMainWindow>
 
 namespace Ui {
@@ -21,6 +22,8 @@ public:
 
 private:
     Ui::MainWindow* ui;
+
+    GuiGamePtr game_;
 
 private slots:
     void on_quitButton_clicked();
