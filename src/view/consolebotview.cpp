@@ -62,13 +62,13 @@ void ConsoleBotView::finish_impl(bool check_fail, int score, int steps_number) c
     std::cout << "You have completed the game in " << steps_number << " steps." << std::endl;
 }
 
-void ConsoleBotView::typeError_impl() const {
+void ConsoleBotView::typeError() const {
     std::cout << "Error: you must enter the NUMBER" << std::endl;
     std::cout << "Try again: " << std::endl;
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
-void ConsoleBotView::indexError_impl() const {
+void ConsoleBotView::indexError() const {
     std::cout << "Error: wrong index of numbers." << std::endl;
 }

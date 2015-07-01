@@ -28,16 +28,8 @@ Points IoView::getIndex() const {
     return getIndex_impl();
 }
 
-void IoView::typeError() const {
-    typeError_impl();
-}
-
 void IoView::output() const {
     output_impl();
-}
-
-void IoView::indexError() const {
-    indexError_impl();
 }
 
 void IoView::finish(bool check_fail, int score, int steps_number) const {

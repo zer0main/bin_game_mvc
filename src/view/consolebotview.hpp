@@ -23,9 +23,9 @@ protected:
 
     const GameDesk* getDesk() const;
 
-    void typeError_impl() const;
+    void typeError() const;
 
-    void indexError_impl() const;
+    void indexError() const;
 
     void finish_impl(bool check_fail, int score, int steps_number) const;
 

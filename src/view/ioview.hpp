@@ -24,11 +24,7 @@ public:
 
     Points getIndex() const;
 
-    void typeError() const;
-
     void output() const;
-
-    void indexError() const;
 
     void finish(bool check_fail, int score, int steps_number) const;
 
@@ -43,11 +39,7 @@ protected:
 
     virtual Points getIndex_impl() const = 0;
 
-    virtual void typeError_impl() const = 0;
-
     virtual void output_impl() const =  0;
-
-    virtual void indexError_impl() const = 0;
 
     virtual void finish_impl(bool check_fail, int score, int steps_number) const = 0;
 
