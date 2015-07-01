@@ -18,6 +18,8 @@ protected:
 
     void outputGeneral() const;
 
+    void prompt() const;
+
     void typeError_impl() const;
 
     void indexError_impl() const;

@@ -40,6 +40,10 @@ void ConsoleBotView::outputGeneral() const {
     }
 }
 
+void ConsoleBotView::prompt() const {
+    std::cout << ">>> ";
+}
+
 void ConsoleBotView::sendHelpMessage_impl() const {
     std::cout << "To play this game you must use the options: -w for play to win\n"
               "-t for game with real time and -s to play while not lose." << std::endl;
