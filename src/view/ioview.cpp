@@ -24,10 +24,6 @@ int IoView::getTimeNumber() const {
     return getTimeNumber_impl();
 }
 
-const GameDesk* IoView::getDesk() const {
-    return desk_;
-}
-
 Points IoView::getIndex() const {
     return getIndex_impl();
 }

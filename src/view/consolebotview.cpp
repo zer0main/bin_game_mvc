@@ -24,15 +24,15 @@ void ConsoleBotView::start() const {
 }
 
 void ConsoleBotView::outputGeneral() const {
-    const GameDesk* desk = getDesk();
     Point point;
-    for (int i = desk->getRowNumber() - 1; i >= 0; i--) {
-        for (int x = 0; x < desk->getRowNumber(); x++) {
+    int row_number = game_->desk->getRowNumber();
+    for (int i = row_number - 1; i >= 0; i--) {
+        for (int x = 0; x < row_number; x++) {
             point.col = i;
             point.row = x;
             char prev_fill = std::cout.fill(' ');
             int prev_width = std::cout.width(5);
-            std::cout << desk->getDeskNumber(point);
+            std::cout << game_->desk->getDeskNumber(point);
             std::cout.width(prev_width);
             std::cout.fill(prev_fill);
         }
@@ -42,6 +42,10 @@ void ConsoleBotView::outputGeneral() const {
 
 void ConsoleBotView::prompt() const {
     std::cout << ">>> ";
+}
+
+const GameDesk* ConsoleBotView::getDesk() const {
+    return game_->desk.data();
 }
 
 void ConsoleBotView::sendHelpMessage_impl() const {
