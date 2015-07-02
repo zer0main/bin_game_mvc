@@ -36,6 +36,8 @@ protected:
 
     void sendHelpMessage_impl() const;
 
+    void startGame_impl(int row_number);
+
 private:
     GamePtr game_;
 

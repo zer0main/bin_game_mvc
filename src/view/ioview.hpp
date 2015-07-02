@@ -21,6 +21,8 @@ protected:
     virtual void finish_impl(bool check_fail, int score, int steps_number) const = 0;
 
     virtual void sendHelpMessage_impl() const = 0;
+
+    virtual void startGame_impl(int row_number) = 0;
 };
 
 #endif

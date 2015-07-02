@@ -57,6 +57,15 @@ void ConsoleBotView::sendHelpMessage_impl() const {
               "-t for game with real time and -s to play while not lose." << std::endl;
 }
 
+void ConsoleBotView::startGame_impl(int row_number) {
+    try {
+        game_ = Game::make(row_number);
+        game_->controller->initialStateOfBoard();
+    } catch (std::exception& e) {
+        errorHandling(e);
+    }
+}
+
 void ConsoleBotView::finish_impl(bool check_fail, int score, int steps_number) const {
     if (check_fail) {
         std::cout << "You are loser... Your score is " << score << std::endl;
