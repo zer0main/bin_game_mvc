@@ -14,7 +14,7 @@
 
 class ConsoleBotView: public IoView {
 public:
-    void view() const;
+    void view();
 
 protected:
     void errorHandling(std::exception& e) const;

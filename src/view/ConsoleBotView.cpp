@@ -9,7 +9,7 @@
 
 #include "ConsoleBotView.hpp"
 
-void ConsoleBotView::view() const {
+void ConsoleBotView::view() {
     while (true) {
     }
 }
