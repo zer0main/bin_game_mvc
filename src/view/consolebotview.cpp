@@ -105,3 +105,17 @@ void ConsoleBotView::gameForWin() {
     finish_impl(checkFail(*desk), score(*desk),
                 steps_number);
 }
+
+void ConsoleBotView::gameForScore() {
+    int desk_size = getDeskSize_impl();
+    startGame_impl(desk_size);
+    const GameDesk* desk = game_->desk.data();
+    output_impl();
+    int steps_number = 0;
+    while (!checkFail(*desk)) {
+        steps_number += 1;
+        play();
+    }
+    finish_impl(checkFail(*desk), score(*desk),
+                steps_number);
+}

@@ -45,6 +45,8 @@ private:
     void start() const;
 
     void gameForWin();
+
+    void gameForScore();
 };
 
 #endif
