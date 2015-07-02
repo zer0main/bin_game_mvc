@@ -43,7 +43,7 @@ int ConsoleView::getDeskSize_impl() const {
 int ConsoleView::getWinNumber_impl() const {
     int winNumber;
     std::cout << "What score you want to finish the "
-                 "game? " << std::endl;
+                 "game?" << std::endl;
     std::cout << "Minimum is 10 and maximum is 9999999" << std::endl;
     while (true) {
         if (std::cin >> winNumber) {
@@ -61,7 +61,7 @@ int ConsoleView::getWinNumber_impl() const {
 
 int ConsoleView::getTimeNumber_impl() const {
     int timeNumber;
-    std::cout << "How many time you want to play (min)? " << std::endl;
+    std::cout << "How many minutes you want to play?" << std::endl;
     std::cout << "Minimum is 1 and maximum is 1000" << std::endl;
     while (true) {
         if (std::cin >> timeNumber) {
@@ -79,11 +79,11 @@ int ConsoleView::getTimeNumber_impl() const {
 
 Points ConsoleView::getIndex_impl() const {
     Points points;
-    std::cout << "Enter index of number1: " << std::endl;
+    std::cout << "Enter index of number1" << std::endl;
     while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError();
     }
-    std::cout << "And of number2: " << std::endl;
+    std::cout << "And of number2" << std::endl;
     while (!(std::cin >> points.p2.col >> points.p2.row)) {
         typeError();
     }

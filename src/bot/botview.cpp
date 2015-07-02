@@ -46,21 +46,25 @@ BotView::~BotView() {
 }
 
 int BotView::getDeskSize_impl() const {
-    std::cout << "Choose the size of game desk: " << std::endl;
+    std::cout << "Enter the size of game desk "
+                 "(desk's size >= 3 and <= 16!)" << std::endl;
     int size = object_cast<int>(globals(L_)["getDeskSize"]());
     std::cout << size << std::endl;
     return size;
 }
 
 int BotView::getWinNumber_impl() const {
-    std::cout << "What number you want to finish the game? " << std::endl;
+    std::cout << "What score you want to finish the "
+                 "game?" << std::endl;
+    std::cout << "Minimum is 10 and maximum is 9999999" << std::endl;
     int winNumber = object_cast<int>(globals(L_)["getWinNumber"]());
     std::cout << winNumber << std::endl;
     return winNumber;
 }
 
 int BotView::getTimeNumber_impl() const {
-    std::cout << "How many time you want to play (min)? " << std::endl;
+    std::cout << "How many minutes you want to play?" << std::endl;
+    std::cout << "Minimum is 1 and maximum is 1000" << std::endl;
     int timeNumber = object_cast<int>(globals(L_)["getTimeNumber"]());
     std::cout << timeNumber << std::endl;
     return timeNumber;
@@ -68,7 +72,7 @@ int BotView::getTimeNumber_impl() const {
 
 Points BotView::getIndex_impl() const {
     Points points;
-    std::cout << "Enter index of number1: " << std::endl;
+    std::cout << "Enter index of number1" << std::endl;
     lua_getglobal(L_, "getIndex");
     lua_call(L_, 0, 4);
     points.p1.col = lua_tonumber(L_, -4);
@@ -77,7 +81,7 @@ Points BotView::getIndex_impl() const {
     points.p2.row = lua_tonumber(L_, -1);
     lua_pop(L_, 4);
     std::cout << points.p1.col << ' ' << points.p1.row << std::endl;
-    std::cout << "And of number2: " << std::endl;
+    std::cout << "And of number2" << std::endl;
     std::cout << points.p2.col << ' ' << points.p2.row << std::endl;
     return points;
 }
