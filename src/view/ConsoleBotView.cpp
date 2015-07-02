@@ -11,6 +11,24 @@
 
 void ConsoleBotView::view() {
     while (true) {
+        start();
+        char mode;
+        std::cin >> mode;
+        switch (mode) {
+            case 't':
+                gameWithTime();
+                break;
+            case 'w':
+                gameForWin();
+                break;
+            case 's':
+                gameForScore();
+                break;
+            case 'q':
+                return;
+            default:
+                sendHelpMessage_impl();
+        }
     }
 }
 
