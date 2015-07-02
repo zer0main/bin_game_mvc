@@ -73,6 +73,3 @@ void ConsoleBotView::typeError() const {
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
-void ConsoleBotView::indexError() const {
-    std::cout << "Error: wrong index of numbers." << std::endl;
-}

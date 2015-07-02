@@ -16,9 +16,8 @@ static int getIndex(const Point& point, int row_number) {
     bool greater = ((point.col >= row_number) ||
                     (point.row >= row_number));
     if (less || greater) {
-        throw Exception("Model: index of cell in some "
-                        "arguments of GameDesk's methods "
-                        "is out of range.");
+        throw Exception("This index is out of allowable "
+                        "range.");
     }
     int index = point.col * row_number + point.row;
     return index;
