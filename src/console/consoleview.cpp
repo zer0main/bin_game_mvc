@@ -8,6 +8,20 @@
 
 #include "consoleview.hpp"
 
+static bool checkRange(int verifiable, int type) {
+    switch (type) {
+        case 1:
+            return ((verifiable >= MIN_WIDTH) &&
+                    (verifiable <= MAX_WIDTH));
+        case 2:
+            return ((verifiable >= MIN_TIME) &&
+                    (verifiable <= MAX_TIME));
+        case 3:
+            return ((verifiable >= MIN_SCORE) &&
+                    (verifiable <= MAX_SCORE));
+    }
+}
+
 int ConsoleView::getDeskSize_impl() const {
     int deskSize;
     std::cout << "Choose the size of game desk: " << std::endl;

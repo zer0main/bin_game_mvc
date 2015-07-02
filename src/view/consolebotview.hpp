@@ -7,6 +7,7 @@
 #ifndef CONSOLEBOTVIEW_HPP_
 #define CONSOLEBOTVIEW_HPP_
 
+#include "constants.hpp"
 #include "Game.hpp"
 #include "ioview.hpp"
 
