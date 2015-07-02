@@ -15,6 +15,8 @@ public:
     void view() const;
 
 protected:
+    void errorHandling(std::exception& e) const;
+
     void outputGeneral() const;
 
     void prompt() const;

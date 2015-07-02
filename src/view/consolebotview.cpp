@@ -23,6 +23,10 @@ void ConsoleBotView::start() const {
     prompt();
 }
 
+void ConsoleBotView::errorHandling(std::exception& e) const {
+    std::cout << e.what() << std::endl;
+}
+
 void ConsoleBotView::outputGeneral() const {
     Point point;
     int row_number = game_->desk->getRowNumber();
