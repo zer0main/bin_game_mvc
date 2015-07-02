@@ -26,6 +26,8 @@ protected:
 
     void typeError() const;
 
+    void rangeError() const;
+
     virtual Points getIndex_impl() const = 0;
 
     virtual void output_impl() const =  0;

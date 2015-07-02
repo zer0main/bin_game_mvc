@@ -73,3 +73,7 @@ void ConsoleBotView::typeError() const {
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
+void ConsoleBotView::rangeError() const {
+    std::cout << "This number is out of allowable "
+                 "range." << std::endl;
+}
