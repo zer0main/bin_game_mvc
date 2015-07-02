@@ -6,7 +6,7 @@
 
 #include <stdlib.h>
 
-#include "game_controller.hpp"
+#include "GameController.hpp"
 
 static bool getOneHalf() {
     return rand() <= (RAND_MAX / 2);

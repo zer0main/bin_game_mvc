@@ -7,8 +7,8 @@
 #ifndef CHECKER_HPP_
 #define CHECKER_HPP_
 
-#include "game_desk.hpp"
-#include "points.hpp"
+#include "GameDesk.hpp"
+#include "Points.hpp"
 
 class Checker {
 public:

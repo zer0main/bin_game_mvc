@@ -6,7 +6,7 @@
 
 #include <stdlib.h>
 
-#include "game_desk.hpp"
+#include "GameDesk.hpp"
 
 /* get global coordinate from horizontal and
    vertical coordinates

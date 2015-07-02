@@ -8,9 +8,9 @@
 #define GAME_MODES_HPP_
 
 #include "Exception.hpp"
-#include "checker.hpp"
-#include "points.hpp"
-#include "game_desk.hpp"
+#include "Checker.hpp"
+#include "Points.hpp"
+#include "GameDesk.hpp"
 
 class GameController {
 public:

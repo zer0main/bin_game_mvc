@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "constants.hpp"
-#include "points.hpp"
+#include "Points.hpp"
 #include "Exception.hpp"
 
 class GameDesk {

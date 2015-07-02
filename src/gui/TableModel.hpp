@@ -9,7 +9,7 @@
 
 #include <QtGui>
 
-#include "game_desk.hpp"
+#include "GameDesk.hpp"
 
 /** Model for QTableView */
 class TableModel : public QAbstractTableModel {

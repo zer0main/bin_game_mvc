@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-#include "consoleview.hpp"
+#include "ConsoleView.hpp"
 
 static bool checkRange(int verifiable, int type) {
     switch (type) {

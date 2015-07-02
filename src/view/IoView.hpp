@@ -7,8 +7,8 @@
 #ifndef IOVIEW_HPP_
 #define IOVIEW_HPP_
 
-#include "points.hpp"
-#include "game_desk.hpp"
+#include "Points.hpp"
+#include "GameDesk.hpp"
 
 class IoView {
 protected:

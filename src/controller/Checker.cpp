@@ -4,7 +4,7 @@
  * See the LICENSE file for terms of use.
  */
 
-#include "checker.hpp"
+#include "Checker.hpp"
 
 static int myAbs(int number) {
     if (number >= 0) {

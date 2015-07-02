@@ -8,8 +8,8 @@
 #define GAME_HPP_
 
 #include "global.hpp"
-#include "game_desk.hpp"
-#include "game_controller.hpp"
+#include "GameDesk.hpp"
+#include "GameController.hpp"
 
 /** Contains all classes necessary for game */
 struct Game {

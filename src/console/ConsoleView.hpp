@@ -7,7 +7,7 @@
 #ifndef IOBASE_HPP_
 #define IOBASE_HPP_
 
-#include "consolebotview.hpp"
+#include "ConsoleBotView.hpp"
 
 class ConsoleView: public ConsoleBotView {
 protected:

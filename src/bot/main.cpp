@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "game_desk.hpp"
-#include "botview.hpp"
-#include "game_controller.hpp"
+#include "GameDesk.hpp"
+#include "BotView.hpp"
+#include "GameController.hpp"
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));

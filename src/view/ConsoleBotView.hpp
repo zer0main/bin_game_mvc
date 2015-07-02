@@ -10,7 +10,7 @@
 #include "desk_functions.hpp"
 #include "constants.hpp"
 #include "Game.hpp"
-#include "ioview.hpp"
+#include "IoView.hpp"
 
 class ConsoleBotView: public IoView {
 public:

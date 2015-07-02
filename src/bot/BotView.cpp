@@ -12,8 +12,7 @@
 #include <luabind/luabind.hpp>
 #include <luabind/object.hpp>
 
-#include "botview.hpp"
-#include "game_desk.hpp"
+#include "BotView.hpp"
 
 using namespace luabind;
 

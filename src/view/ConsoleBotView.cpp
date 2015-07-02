@@ -7,7 +7,7 @@
 #include <iostream>
 #include <limits>
 
-#include "consolebotview.hpp"
+#include "ConsoleBotView.hpp"
 
 void ConsoleBotView::view() const {
     while (true) {

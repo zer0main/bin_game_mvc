@@ -7,7 +7,7 @@
 #ifndef BOTVIEW_HPP_
 #define BOTVIEW_HPP_
 
-#include "consolebotview.hpp"
+#include "ConsoleBotView.hpp"
 
 struct lua_State;
 
