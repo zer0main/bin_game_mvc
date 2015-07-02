@@ -14,15 +14,6 @@ void ConsoleBotView::view() const {
     }
 }
 
-void ConsoleBotView::start() const {
-    std::cout << "*** BIN_GAME ***" << std::endl;
-    std::cout << "----------------" << std::endl;
-    std::cout << "t: time mode | w: play for score | s: "
-                 "play while not lose" << std::endl;
-    std::cout << "q: quit" << std::endl;
-    prompt();
-}
-
 void ConsoleBotView::errorHandling(std::exception& e) const {
     std::cout << e.what() << std::endl;
 }
@@ -52,6 +43,31 @@ const GameDesk* ConsoleBotView::getDesk() const {
     return game_->desk.data();
 }
 
+void ConsoleBotView::typeError() const {
+    std::cout << "Error: you must enter the NUMBER" << std::endl;
+    std::cout << "Try again: " << std::endl;
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+}
+
+void ConsoleBotView::rangeError() const {
+    std::cout << "This number is out of allowable "
+                 "range." << std::endl;
+    std::cout << "Try again: " << std::endl;
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+}
+
+void ConsoleBotView::finish_impl(bool fail, int score,
+                                 int steps_number) const {
+    if (fail) {
+        std::cout << "You are loser... Your score is " << score << std::endl;
+    } else {
+        std::cout << "You are winner! Your score is " << score << std::endl;
+    }
+    std::cout << "You have completed the game in " << steps_number << " steps." << std::endl;
+}
+
 void ConsoleBotView::sendHelpMessage_impl() const {
     std::cout << "To play this game you must use the options: -w for play to win\n"
               "-t for game with real time and -s to play while not lose." << std::endl;
@@ -66,28 +82,13 @@ void ConsoleBotView::startGame_impl(int row_number) {
     }
 }
 
-void ConsoleBotView::finish_impl(bool check_fail, int score, int steps_number) const {
-    if (check_fail) {
-        std::cout << "You are loser... Your score is " << score << std::endl;
-    } else {
-        std::cout << "You are winner! Your score is " << score << std::endl;
-    }
-    std::cout << "You have completed the game in " << steps_number << " steps." << std::endl;
-}
-
-void ConsoleBotView::typeError() const {
-    std::cout << "Error: you must enter the NUMBER" << std::endl;
-    std::cout << "Try again: " << std::endl;
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-}
-
-void ConsoleBotView::rangeError() const {
-    std::cout << "This number is out of allowable "
-                 "range." << std::endl;
-    std::cout << "Try again: " << std::endl;
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+void ConsoleBotView::start() const {
+    std::cout << "*** BIN_GAME ***" << std::endl;
+    std::cout << "----------------" << std::endl;
+    std::cout << "t: time mode | w: play for score | s: "
+                 "play while not lose" << std::endl;
+    std::cout << "q: quit" << std::endl;
+    prompt();
 }
 
 void ConsoleBotView::gameForWin() {

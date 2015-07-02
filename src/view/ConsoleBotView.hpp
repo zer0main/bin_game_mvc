@@ -33,7 +33,8 @@ protected:
 
     virtual void output_impl() const =  0;
 
-    void finish_impl(bool check_fail, int score, int steps_number) const;
+    void finish_impl(bool fail, int score,
+                     int steps_number) const;
 
     void sendHelpMessage_impl() const;
 
