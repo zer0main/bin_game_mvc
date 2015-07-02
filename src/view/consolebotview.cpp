@@ -138,3 +138,13 @@ void ConsoleBotView::gameWithTime() {
     finish_impl(checkFail(*desk), score(*desk),
                 steps_number);
 }
+
+void ConsoleBotView::play() {
+    Points points = getIndex_impl();
+    try {
+        game_->controller->replace(points);
+    } catch (std::exception& e) {
+        errorHandling(e);
+    }
+    output_impl();
+}

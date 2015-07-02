@@ -49,6 +49,8 @@ private:
     void gameForScore();
 
     void gameWithTime();
+
+    void play();
 };
 
 #endif
