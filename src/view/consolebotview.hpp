@@ -47,6 +47,8 @@ private:
     void gameForWin();
 
     void gameForScore();
+
+    void gameWithTime();
 };
 
 #endif

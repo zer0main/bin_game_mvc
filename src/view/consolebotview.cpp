@@ -119,3 +119,22 @@ void ConsoleBotView::gameForScore() {
     finish_impl(checkFail(*desk), score(*desk),
                 steps_number);
 }
+
+void ConsoleBotView::gameWithTime() {
+    int desk_size = getDeskSize_impl();
+    int time_number = getTimeNumber_impl();
+    startGame_impl(desk_size);
+    int t1 = time(NULL);
+    int t2 = 0;
+    const GameDesk* desk = game_->desk.data();
+    output_impl();
+    int steps_number = 0;
+    while (!checkFail(*desk) &&
+           ((t2 - t1) < time_number * 60)) {
+        steps_number += 1;
+        play();
+        t2 = time(NULL);
+    }
+    finish_impl(checkFail(*desk), score(*desk),
+                steps_number);
+}
