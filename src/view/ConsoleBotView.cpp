@@ -69,8 +69,8 @@ void ConsoleBotView::finish_impl(bool fail, int score,
 }
 
 void ConsoleBotView::sendHelpMessage_impl() const {
-    std::cout << "To play this game you must use the options: -w for play to win\n"
-              "-t for game with real time and -s to play while not lose." << std::endl;
+    std::cout << "You must enter t, w, s or q" << std::endl;
+    std::cout << "Try again please." << std::endl;
 }
 
 void ConsoleBotView::startGame_impl(int row_number) {
