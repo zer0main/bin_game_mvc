@@ -24,7 +24,8 @@ static bool checkRange(int verifiable, int type) {
 
 int ConsoleView::getDeskSize_impl() const {
     int deskSize;
-    std::cout << "Choose the size of game desk: " << std::endl;
+    std::cout << "Enter the size of game desk "
+                 "(desk's size >= 3 and <= 16!)" << std::endl;
     while (!(std::cin >> deskSize)) {
         typeError();
     }
@@ -33,7 +34,9 @@ int ConsoleView::getDeskSize_impl() const {
 
 int ConsoleView::getWinNumber_impl() const {
     int winNumber;
-    std::cout << "What number you want to finish the game? " << std::endl;
+    std::cout << "What score you want to finish the "
+                 "game? " << std::endl;
+    std::cout << "Minimum is 10 and maximum is 9999999" << std::endl;
     while (!(std::cin >> winNumber)) {
         typeError();
     }
@@ -43,6 +46,7 @@ int ConsoleView::getWinNumber_impl() const {
 int ConsoleView::getTimeNumber_impl() const {
     int timeNumber;
     std::cout << "How many time you want to play (min)? " << std::endl;
+    std::cout << "Minimum is 1 and maximum is 1000" << std::endl;
     while (!(std::cin >> timeNumber)) {
         typeError();
     }
