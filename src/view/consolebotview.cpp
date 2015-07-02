@@ -89,3 +89,19 @@ void ConsoleBotView::rangeError() const {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
+
+void ConsoleBotView::gameForWin() {
+    int desk_size = getDeskSize_impl();
+    int win_number = getWinNumber_impl();
+    startGame_impl(desk_size);
+    const GameDesk* desk = game_->desk.data();
+    output_impl();
+    int steps_number = 0;
+    while (!checkFail(*desk) && !checkWin(*desk,
+                                          win_number)) {
+        steps_number += 1;
+        play();
+    }
+    finish_impl(checkFail(*desk), score(*desk),
+                steps_number);
+}

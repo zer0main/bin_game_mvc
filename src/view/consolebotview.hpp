@@ -7,6 +7,7 @@
 #ifndef CONSOLEBOTVIEW_HPP_
 #define CONSOLEBOTVIEW_HPP_
 
+#include "desk_functions.hpp"
 #include "constants.hpp"
 #include "Game.hpp"
 #include "ioview.hpp"
@@ -42,6 +43,8 @@ private:
     GamePtr game_;
 
     void start() const;
+
+    void gameForWin();
 };
 
 #endif
