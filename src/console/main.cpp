@@ -13,4 +13,7 @@
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));
+    ConsoleView console_view;
+    console_view.view();
+    return 0;
 }
