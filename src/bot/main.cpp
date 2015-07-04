@@ -11,4 +11,7 @@
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));
+    BotView bot_view;
+    bot_view.view();
+    return 0;
 }
