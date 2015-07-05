@@ -56,7 +56,7 @@ local size
 
 function getDeskSize()
     os.execute("sleep 2")
-    size = math.random(2, 9)
+    size = math.random(3, 16)
     state = {}
     for i = 0, size - 1 do
         state[i] = {}
@@ -66,12 +66,12 @@ end
 
 function getWinNumber()
     os.execute("sleep 2")
-    return math.random(200, 1000)
+    return math.random(200, 10000)
 end
 
 function getTimeNumber()
     os.execute("sleep 2")
-    return math.random(1, 10)
+    return math.random(1, 100)
 end
 
 function output(model)
