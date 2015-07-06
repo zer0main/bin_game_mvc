@@ -157,7 +157,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="playButton">
+           <widget class="QPushButton" name="startButton">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -169,7 +169,7 @@
 color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>PLAY</string>
+             <string>NEXT</string>
             </property>
            </widget>
           </item>
@@ -242,7 +242,7 @@ color: rgb(255, 255, 255);</string>
       </widget>
       <widget class="QWidget" name="timeInputpage">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="6" column="0">
+        <item row="4" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,3,2">
           <item>
            <spacer name="horizontalSpacer_6">
@@ -286,7 +286,7 @@ color: rgb(255, 255, 255);</string>
           </item>
          </layout>
         </item>
-        <item row="4" column="0">
+        <item row="2" column="0">
          <widget class="QLabel" name="label_3">
           <property name="text">
            <string>How many minutes you want to play?</string>
@@ -294,16 +294,6 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QSpinBox" name="spinBox_3">
-          <property name="minimum">
-           <number>3</number>
-          </property>
-          <property name="maximum">
-           <number>16</number>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
          <widget class="QSpinBox" name="spinBox_2">
           <property name="minimum">
            <number>1</number>
@@ -313,7 +303,7 @@ color: rgb(255, 255, 255);</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
+        <item row="5" column="0">
          <spacer name="verticalSpacer_4">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -326,18 +316,11 @@ color: rgb(255, 255, 255);</string>
           </property>
          </spacer>
         </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Choose the size of game desk: </string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="winInputpage">
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="4" column="0">
+        <item row="2" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,3,2">
           <item>
            <spacer name="horizontalSpacer_7">
@@ -382,13 +365,6 @@ color: rgb(255, 255, 255);</string>
          </layout>
         </item>
         <item row="0" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Choose the size of game desk: </string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
          <widget class="QLabel" name="label_5">
           <property name="text">
            <string>What score you want to finish the game?</string>
@@ -396,16 +372,6 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QSpinBox" name="spinBox_4">
-          <property name="minimum">
-           <number>3</number>
-          </property>
-          <property name="maximum">
-           <number>16</number>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
          <widget class="QSpinBox" name="spinBox_5">
           <property name="minimum">
            <number>10</number>
@@ -415,7 +381,7 @@ color: rgb(255, 255, 255);</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="3" column="0">
          <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
