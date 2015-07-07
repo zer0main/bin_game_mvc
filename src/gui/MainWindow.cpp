@@ -22,14 +22,17 @@ void MainWindow::on_quitButton_clicked() {
 }
 
 void MainWindow::on_winButton_clicked() {
+    game_type_ = WIN_MODE;
     ui->stackedWidget->setCurrentWidget(ui->winInputpage);
 }
 
 void MainWindow::on_timeButton_clicked() {
+    game_type_ = TIME_MODE;
     ui->stackedWidget->setCurrentWidget(ui->timeInputpage);
 }
 
 void MainWindow::on_scoreButton_clicked() {
+    game_type_ = SCORE_MODE;
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
