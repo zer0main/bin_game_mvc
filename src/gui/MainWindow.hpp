@@ -31,6 +31,8 @@ private:
 
     GuiGamePtr game_;
 
+    GameType game_type_;
+
 private slots:
     void on_quitButton_clicked();
 
