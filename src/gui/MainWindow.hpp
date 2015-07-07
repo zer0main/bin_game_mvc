@@ -10,6 +10,12 @@
 #include "GuiGame.hpp"
 #include <QMainWindow>
 
+enum GameType {
+    WIN_MODE,
+    TIME_MODE,
+    SCORE_MODE
+};
+
 namespace Ui {
 class MainWindow;
 }
