@@ -33,6 +33,8 @@ private:
 
     GameType game_type_;
 
+    void setBoardsModel();
+
 private slots:
     void on_quitButton_clicked();
 

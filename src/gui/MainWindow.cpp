@@ -17,6 +17,10 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+void MainWindow::setBoardsModel() {
+    ui->gameBoard->setModel(game_->t_model.data());
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
