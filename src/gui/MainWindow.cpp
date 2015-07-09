@@ -42,7 +42,7 @@ void MainWindow::configureBoard() {
 }
 
 void MainWindow::preparingToPlay() {
-    int boards_size = ui->boardsSize->value();
+    int boards_size = getDeskSize_impl();
     startGame_impl(boards_size);
 }
 
