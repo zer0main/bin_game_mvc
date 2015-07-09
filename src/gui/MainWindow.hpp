@@ -35,6 +35,8 @@ private:
 
     void setBoardsModel();
 
+    void configureBoard();
+
 private slots:
     void on_quitButton_clicked();
 

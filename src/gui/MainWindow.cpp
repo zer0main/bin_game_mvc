@@ -21,6 +21,15 @@ void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
 
+void MainWindow::configureBoard() {
+    ui->gameBoard
+    ->setSelectionMode(QAbstractItemView::NoSelection);
+    ui->gameBoard->horizontalHeader()
+    ->setResizeMode(QHeaderView::Stretch);
+    ui->gameBoard->verticalHeader()
+    ->setResizeMode(QHeaderView::Stretch);
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
