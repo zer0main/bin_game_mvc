@@ -17,8 +17,6 @@ public:
     void view();
 
 protected:
-    void errorHandling(std::exception& e) const;
-
     void outputGeneral() const;
 
     void prompt() const;
@@ -39,6 +37,8 @@ protected:
     void sendHelpMessage_impl() const;
 
     void startGame_impl(int row_number);
+
+    void errorHandling_impl(std::exception& e) const;
 
 private:
     GamePtr game_;

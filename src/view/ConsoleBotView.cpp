@@ -32,10 +32,6 @@ void ConsoleBotView::view() {
     }
 }
 
-void ConsoleBotView::errorHandling(std::exception& e) const {
-    std::cout << e.what() << std::endl;
-}
-
 void ConsoleBotView::outputGeneral() const {
     Point point;
     int row_number = game_->desk->getRowNumber();
@@ -96,8 +92,12 @@ void ConsoleBotView::startGame_impl(int row_number) {
         game_ = Game::make(row_number);
         game_->controller->initialStateOfBoard();
     } catch (std::exception& e) {
-        errorHandling(e);
+        errorHandling_impl(e);
     }
+}
+
+void ConsoleBotView::errorHandling_impl(std::exception& e) const {
+    std::cout << e.what() << std::endl;
 }
 
 void ConsoleBotView::start() const {
@@ -163,7 +163,7 @@ void ConsoleBotView::play() {
     try {
         game_->controller->replace(points);
     } catch (std::exception& e) {
-        errorHandling(e);
+        errorHandling_impl(e);
     }
     output_impl();
 }

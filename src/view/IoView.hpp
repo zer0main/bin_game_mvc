@@ -23,6 +23,8 @@ protected:
     virtual void sendHelpMessage_impl() const = 0;
 
     virtual void startGame_impl(int row_number) = 0;
+
+    virtual void errorHandling_impl(std::exception& e) const = 0;
 };
 
 #endif
