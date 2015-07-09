@@ -28,6 +28,21 @@ void MainWindow::startGame_impl(int row_number) {
     setBoardsModel();
 }
 
+void MainWindow::errorHandling_impl(std::exception& e) const {
+    QString what = QString::fromStdString(e.what());
+    QString error = "<b>The error occurred</b>."
+                    "<br/><br/>Contact developers! "
+                    "<b>pdolgov99@gmail.com</b>";
+    what = what.replace("&", "&amp;");
+    what = what.replace("'", "&apos;");
+    what = what.replace("<", "&lt;");
+    what = what.replace(">", "&gt;");
+    what = what.replace("\"", "&quot;");
+    QString m = error + "<br/><br/>" + what;
+    QErrorMessage::qtHandler()->resize(400, 300);
+    QErrorMessage::qtHandler()->showMessage(m);
+}
+
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }

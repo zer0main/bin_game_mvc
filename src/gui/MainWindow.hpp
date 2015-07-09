@@ -31,6 +31,8 @@ protected:
 
     void startGame_impl(int row_number);
 
+    void errorHandling_impl(std::exception& e) const;
+
 private:
     Ui::MainWindow* ui;
 
