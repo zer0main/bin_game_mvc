@@ -29,6 +29,8 @@ public:
 protected:
     int getDeskSize_impl() const;
 
+    void startGame_impl(int row_number);
+
 private:
     Ui::MainWindow* ui;
 

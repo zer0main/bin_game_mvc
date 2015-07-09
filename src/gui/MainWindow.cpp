@@ -21,6 +21,13 @@ int MainWindow::getDeskSize_impl() const {
     return ui->boardsSize->value();
 }
 
+void MainWindow::startGame_impl(int row_number) {
+    configureBoard();
+    game_ = GuiGame::make(this, row_number);
+    game_->controller->initialStateOfBoard();
+    setBoardsModel();
+}
+
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
