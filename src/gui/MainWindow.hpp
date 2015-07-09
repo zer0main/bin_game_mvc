@@ -55,6 +55,8 @@ private slots:
 
     void on_scoreButton_clicked();
 
+    void on_startButton_clicked();
+
     void on_endButton_clicked();
 };
 

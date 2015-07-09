@@ -80,6 +80,24 @@ void MainWindow::on_scoreButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
+void MainWindow::on_startButton_clicked() {
+    try {
+        preparingToPlay();
+        if (game_type_ == SCORE_MODE) {
+            ui->stackedWidget
+            ->setCurrentWidget(ui->gamepage);
+        } else if (game_type_ == WIN_MODE) {
+            ui->stackedWidget
+            ->setCurrentWidget(ui->winInputpage);
+        } else {
+            ui->stackedWidget
+            ->setCurrentWidget(ui->timeInputpage);
+        }
+    } catch (std::exception& e) {
+        errorHandling_impl(e);
+    }
+}
+
 void MainWindow::on_endButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startpage);
 }
