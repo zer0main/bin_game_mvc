@@ -42,11 +42,8 @@ void MainWindow::configureBoard() {
 }
 
 void MainWindow::preparingToPlay() {
-    configureBoard();
     int boards_size = ui->boardsSize->value();
-    game_ = GuiGame::make(this, boards_size);
-    game_->controller->initialStateOfBoard();
-    setBoardsModel();
+    startGame_impl(boards_size);
 }
 
 void MainWindow::on_quitButton_clicked() {
