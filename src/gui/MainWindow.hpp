@@ -26,6 +26,9 @@ public:
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
 
+protected:
+    int getDeskSize_impl() const;
+
 private:
     Ui::MainWindow* ui;
 

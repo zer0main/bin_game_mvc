@@ -17,6 +17,10 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+int MainWindow::getDeskSize_impl() const {
+    return ui->boardsSize->value();
+}
+
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
