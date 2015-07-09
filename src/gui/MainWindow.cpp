@@ -30,6 +30,14 @@ void MainWindow::configureBoard() {
     ->setResizeMode(QHeaderView::Stretch);
 }
 
+void MainWindow::preparingToPlay() {
+    configureBoard();
+    int boards_size = ui->boardsSize->value();
+    game_ = GuiGame::make(this, boards_size);
+    game_->controller->initialStateOfBoard();
+    setBoardsModel();
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }

@@ -37,6 +37,8 @@ private:
 
     void configureBoard();
 
+    void preparingToPlay();
+
 private slots:
     void on_quitButton_clicked();
 
