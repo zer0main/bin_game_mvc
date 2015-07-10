@@ -40,6 +40,10 @@ private:
 
     GameType game_type_;
 
+    int win_number_;
+
+    int time_number_;
+
     void setBoardsModel();
 
     void configureBoard();
