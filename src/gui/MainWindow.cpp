@@ -25,6 +25,10 @@ int MainWindow::getWinNumber_impl() const {
     return ui->scoreNumber->value();
 }
 
+int MainWindow::getTimeNumber_impl() const {
+    return ui->timeNumber->value();
+}
+
 void MainWindow::startGame_impl(int row_number) {
     configureBoard();
     game_ = GuiGame::make(this, row_number);

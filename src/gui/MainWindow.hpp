@@ -31,6 +31,8 @@ protected:
 
     int getWinNumber_impl() const;
 
+    int getTimeNumber_impl() const;
+
     void startGame_impl(int row_number);
 
     void errorHandling_impl(std::exception& e) const;
