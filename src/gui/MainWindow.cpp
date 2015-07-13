@@ -106,6 +106,11 @@ void MainWindow::on_startButton_clicked() {
     }
 }
 
+void MainWindow::on_playButton_clicked() {
+    time_number_ = getTimeNumber_impl();
+    ui->stackedWidget->setCurrentWidget(ui->gamepage);
+}
+
 void MainWindow::on_endButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startpage);
 }
