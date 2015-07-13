@@ -111,6 +111,11 @@ void MainWindow::on_playButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
 }
 
+void MainWindow::on_playButton2_clicked() {
+    win_number_ = getWinNumber_impl();
+    ui->stackedWidget->setCurrentWidget(ui->gamepage);
+}
+
 void MainWindow::on_endButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startpage);
 }

@@ -67,6 +67,8 @@ private slots:
 
     void on_playButton_clicked();
 
+    void on_playButton2_clicked();
+
     void on_endButton_clicked();
 };
 
