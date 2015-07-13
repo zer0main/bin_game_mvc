@@ -258,7 +258,7 @@ color: rgb(255, 255, 255);</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="playButton2">
+           <widget class="QPushButton" name="playButton">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -336,7 +336,7 @@ color: rgb(255, 255, 255);</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="playButton3">
+           <widget class="QPushButton" name="playButton2">
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
