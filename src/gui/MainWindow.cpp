@@ -29,6 +29,18 @@ int MainWindow::getTimeNumber_impl() const {
     return ui->timeNumber->value();
 }
 
+void MainWindow::finish_impl(bool fail, int score,
+                             int steps_number) const {
+    QString result = (fail) ? "<b>You're loser...</b>" :
+                     "<b>You're winner!</b>";
+    QString score_str = "Your score is " + score;
+    QString steps = "You've completed the game in " +
+                    steps_number;
+    ui->resultLabel->setText(result);
+    ui->scoreLabel->setText(score_str);
+    ui->stepLabel->setText(steps);
+}
+
 void MainWindow::startGame_impl(int row_number) {
     configureBoard();
     game_ = GuiGame::make(this, row_number);
