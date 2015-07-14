@@ -36,6 +36,8 @@ protected:
     void finish_impl(bool fail, int score,
                      int steps_number) const;
 
+    void sendHelpMessage_impl() const;
+
     void startGame_impl(int row_number);
 
     void errorHandling_impl(std::exception& e) const;

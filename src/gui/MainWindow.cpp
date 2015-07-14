@@ -41,6 +41,13 @@ void MainWindow::finish_impl(bool fail, int score,
     ui->stepLabel->setText(steps);
 }
 
+void MainWindow::sendHelpMessage_impl() const {
+    QMessageBox help;
+    help.setText("Some useful help information.");
+    help.setInformativeText("");
+    help.exec();
+}
+
 void MainWindow::startGame_impl(int row_number) {
     configureBoard();
     game_ = GuiGame::make(this, row_number);
