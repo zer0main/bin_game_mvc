@@ -7,7 +7,9 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include "IoView.hpp"
 #include "GuiGame.hpp"
+
 #include <QMainWindow>
 
 enum GameType {
@@ -20,7 +22,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow, IoView {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget* parent = 0);
