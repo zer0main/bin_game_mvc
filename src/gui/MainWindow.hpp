@@ -55,6 +55,8 @@ private:
 
     int time_number_;
 
+    bool fisrt_click_;
+
     void setBoardsModel();
 
     void configureBoard();
