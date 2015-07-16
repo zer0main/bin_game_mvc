@@ -7,6 +7,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include "desk_functions.hpp"
 #include "IoView.hpp"
 #include "GuiGame.hpp"
 
@@ -62,6 +63,8 @@ private:
     void configureBoard();
 
     void preparingToPlay();
+
+    void finishActions(int steps_number);
 
 private slots:
     void on_quitButton_clicked();

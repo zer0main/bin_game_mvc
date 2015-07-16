@@ -88,6 +88,13 @@ void MainWindow::preparingToPlay() {
     startGame_impl(boards_size);
 }
 
+void MainWindow::finishActions(int steps_number) {
+    const GameDesk* desk = game_->desk.data();
+    finish_impl(checkFail(*desk), score(*desk),
+                steps_number);
+    ui->stackedWidget->setCurrentWidget(ui->resultpage);
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
