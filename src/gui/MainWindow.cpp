@@ -173,12 +173,19 @@ void MainWindow::on_playButton2_clicked() {
 
 void MainWindow::on_gameBoard_clicked(const QModelIndex&
                                       index) {
+    Point p;
+    p.col = index.column();
+    p.row = index.row();
     if (go_->first_click_) {
         go_->first_click_ = false;
+        go_->current_step_.p1 = p;
     } else {
         if (endOfGame()) {
             finishActions(go_->steps_number_);
         } else {
+            go_->current_step_.p2 = p;
+            tryToMove();
+            game_->t_model->updateData();
             go_->steps_number_++;
             go_->first_click_ = true;
         }
