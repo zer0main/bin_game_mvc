@@ -440,77 +440,44 @@ color: rgb(255, 255, 255);</string>
         <item row="0" column="0" colspan="3">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <spacer name="horizontalSpacer_11">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </spacer>
-            </item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2">
             <item>
              <widget class="QLabel" name="resultLabel">
               <property name="text">
                <string/>
               </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_12">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
-             </spacer>
+             </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <item>
-             <spacer name="horizontalSpacer_13">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </spacer>
-            </item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2">
             <item>
              <widget class="QLabel" name="scoreLabel">
               <property name="text">
                <string/>
               </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_14">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
-             </spacer>
+             </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <spacer name="horizontalSpacer_15">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </spacer>
-            </item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2">
             <item>
              <widget class="QLabel" name="stepLabel">
               <property name="text">
                <string/>
               </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_16">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
-             </spacer>
+             </widget>
             </item>
            </layout>
           </item>
