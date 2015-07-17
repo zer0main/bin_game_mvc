@@ -110,9 +110,9 @@ bool MainWindow::endOfGame() const {
     }
 }
 
-void MainWindow::tryToMove(Points& step) {
+void MainWindow::tryToMove() {
     try {
-        game_->controller->replace(step);
+        game_->controller->replace(go_->current_step_);
     } catch (...) {
     }
 }
