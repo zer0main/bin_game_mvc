@@ -133,7 +133,6 @@ void MainWindow::on_startButton_clicked() {
     try {
         preparingToPlay();
         if (go_->game_type_ == SCORE_MODE) {
-            go_->starting_time_ = time(NULL);
             go_->first_click_ = true;
             ui->stackedWidget
             ->setCurrentWidget(ui->gamepage);
@@ -158,7 +157,6 @@ void MainWindow::on_playButton_clicked() {
 
 void MainWindow::on_playButton2_clicked() {
     go_->win_number_ = getWinNumber_impl();
-    go_->starting_time_ = time(NULL);
     go_->first_click_ = true;
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
 }
