@@ -58,7 +58,7 @@ private:
 
     int starting_time_;
 
-    bool fisrt_click_;
+    bool first_click_;
 
     void setBoardsModel();
 

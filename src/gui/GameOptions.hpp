@@ -10,9 +10,9 @@
 #include "Points.hpp"
 
 enum GameType {
-    WIN_MODE;
-    TIME_MODE;
-    SCORE_MODE;
+    WIN_MODE,
+    TIME_MODE,
+    SCORE_MODE,
 };
 
 /** Special game parameters */
