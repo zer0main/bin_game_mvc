@@ -163,6 +163,20 @@ void MainWindow::on_playButton2_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
 }
 
+void MainWindow::on_gameBoard_clicked(const QModelIndex&
+                                      index) {
+    if (go_->first_click_) {
+        go_->first_click_ = false;
+    } else {
+        if (endOfGame()) {
+            finishActions(go_->steps_number_);
+        } else {
+            go_->steps_number_++;
+            go_->first_click_ = true;
+        }
+    }
+}
+
 void MainWindow::on_endButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startpage);
 }

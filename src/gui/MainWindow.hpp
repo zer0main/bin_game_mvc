@@ -72,6 +72,8 @@ private slots:
 
     void on_playButton2_clicked();
 
+    void on_gameBoard_clicked(const QModelIndex& index);
+
     void on_endButton_clicked();
 };
 
