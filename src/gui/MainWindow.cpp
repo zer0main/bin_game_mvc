@@ -97,15 +97,15 @@ void MainWindow::finishActions(int steps_number) {
 
 bool MainWindow::endOfGame() const {
     const GameDesk* desk = game_->desk.data();
-    if (game_type_ == SCORE_MODE) {
+    if (go_->game_type_ == SCORE_MODE) {
         return checkFail(*desk);
-    } else if (game_type_ == WIN_MODE) {
+    } else if (go_->game_type_ == WIN_MODE) {
         return checkFail(*desk) || checkWin(*desk,
-                                            win_number_);
+                                            go_->win_number_);
     } else {
         int current_time = time(NULL);
         bool time_is_up =
-            (current_time - starting_time_) >= time_number_ * 60;
+            (current_time - go_->starting_time_) >= go_->time_number_ * 60;
         return checkFail(*desk) || time_is_up;
     }
 }
@@ -115,29 +115,29 @@ void MainWindow::on_quitButton_clicked() {
 }
 
 void MainWindow::on_winButton_clicked() {
-    game_type_ = WIN_MODE;
+    go_->game_type_ = WIN_MODE;
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_timeButton_clicked() {
-    game_type_ = TIME_MODE;
+    go_->game_type_ = TIME_MODE;
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_scoreButton_clicked() {
-    game_type_ = SCORE_MODE;
+    go_->game_type_ = SCORE_MODE;
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_startButton_clicked() {
     try {
         preparingToPlay();
-        if (game_type_ == SCORE_MODE) {
-            starting_time_ = time(NULL);
-            first_click_ = true;
+        if (go_->game_type_ == SCORE_MODE) {
+            go_->starting_time_ = time(NULL);
+            go_->first_click_ = true;
             ui->stackedWidget
             ->setCurrentWidget(ui->gamepage);
-        } else if (game_type_ == WIN_MODE) {
+        } else if (go_->game_type_ == WIN_MODE) {
             ui->stackedWidget
             ->setCurrentWidget(ui->winInputpage);
         } else {
@@ -150,16 +150,16 @@ void MainWindow::on_startButton_clicked() {
 }
 
 void MainWindow::on_playButton_clicked() {
-    time_number_ = getTimeNumber_impl();
-    starting_time_ = time(NULL);
-    first_click_ = true;
+    go_->time_number_ = getTimeNumber_impl();
+    go_->starting_time_ = time(NULL);
+    go_->first_click_ = true;
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
 }
 
 void MainWindow::on_playButton2_clicked() {
-    win_number_ = getWinNumber_impl();
-    starting_time_ = time(NULL);
-    first_click_ = true;
+    go_->win_number_ = getWinNumber_impl();
+    go_->starting_time_ = time(NULL);
+    go_->first_click_ = true;
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
 }
 

@@ -10,14 +10,9 @@
 #include "desk_functions.hpp"
 #include "IoView.hpp"
 #include "GuiGame.hpp"
+#include "GameOptions.hpp"
 
 #include <QMainWindow>
-
-enum GameType {
-    WIN_MODE,
-    TIME_MODE,
-    SCORE_MODE
-};
 
 namespace Ui {
 class MainWindow;
@@ -50,15 +45,7 @@ private:
 
     GuiGamePtr game_;
 
-    GameType game_type_;
-
-    int win_number_;
-
-    int time_number_;
-
-    int starting_time_;
-
-    bool first_click_;
+    GameOptionsPtr go_;
 
     void setBoardsModel();
 
