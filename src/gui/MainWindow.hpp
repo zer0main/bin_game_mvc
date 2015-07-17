@@ -68,6 +68,8 @@ private:
 
     void finishActions(int steps_number);
 
+    bool endOfGame() const;
+
 private slots:
     void on_quitButton_clicked();
 

@@ -95,6 +95,21 @@ void MainWindow::finishActions(int steps_number) {
     ui->stackedWidget->setCurrentWidget(ui->resultpage);
 }
 
+bool MainWindow::endOfGame() const {
+    const GameDesk* desk = game_->desk.data();
+    if (game_type_ == SCORE_MODE) {
+        return checkFail(*desk);
+    } else if (game_type_ == WIN_MODE) {
+        return checkFail(*desk) || checkWin(*desk,
+                                            win_number_);
+    } else {
+        int current_time = time(NULL);
+        bool time_is_up =
+            (current_time - starting_time_) >= time_number_ * 60;
+        return checkFail(*desk) || time_is_up;
+    }
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
