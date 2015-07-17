@@ -110,6 +110,13 @@ bool MainWindow::endOfGame() const {
     }
 }
 
+void MainWindow::tryToMove(Points& step) {
+    try {
+        game_->controller->replace(step);
+    } catch (...) {
+    }
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }

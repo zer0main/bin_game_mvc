@@ -57,6 +57,8 @@ private:
 
     bool endOfGame() const;
 
+    void tryToMove(Points& step);
+
 private slots:
     void on_quitButton_clicked();
 
