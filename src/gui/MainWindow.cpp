@@ -37,7 +37,8 @@ void MainWindow::finish_impl(bool fail, int score,
     QString score_str = "Your score is " +
                         QString::number(score);
     QString steps = "You've completed the game in " +
-                    QString::number(steps_number);
+                    QString::number(steps_number) +
+                    " steps.";
     ui->resultLabel->setText(result);
     ui->scoreLabel->setText(score_str);
     ui->stepLabel->setText(steps);
