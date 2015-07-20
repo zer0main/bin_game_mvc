@@ -73,15 +73,6 @@ void MainWindow::errorHandling_impl(std::exception& e) const {
     QErrorMessage::qtHandler()->showMessage(m);
 }
 
-Point MainWindow::getModelIndex(const QModelIndex&
-                                index) const {
-    Point model_index;
-    model_index.row = index.column();
-    int row_index = game_->desk->getRowNumber() - 1;
-    model_index.col = row_index - index.row();
-    return model_index;
-}
-
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }

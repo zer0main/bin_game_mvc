@@ -47,12 +47,6 @@ private:
 
     GameOptionsPtr go_;
 
-    /** Get model's index which is equivalent to the given
-    gui index.
-    \param index Gui index
-    */
-    Point getModelIndex(const QModelIndex& index) const;
-
     void setBoardsModel();
 
     void configureBoard();
