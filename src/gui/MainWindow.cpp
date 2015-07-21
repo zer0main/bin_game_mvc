@@ -176,9 +176,8 @@ void MainWindow::on_playButton2_clicked() {
 
 void MainWindow::on_gameBoard_clicked(const QModelIndex&
                                       index) {
-    Point p;
-    p.col = index.column();
-    p.row = index.row();
+    int desk_size = game_->desk->getRowNumber();
+    Point p = getModelIndex(index, desk_size);
     if (go_->first_click_) {
         go_->first_click_ = false;
         go_->current_step_.p1 = p;

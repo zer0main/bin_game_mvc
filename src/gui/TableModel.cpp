@@ -25,9 +25,8 @@ int TableModel::columnCount(
 QVariant TableModel::data(const Index& index,
                           int role) const {
     if (role == Qt::DisplayRole) {
-        Point pt;
-        pt.col = index.column();
-        pt.row = index.row();
+        int desk_size = desk_->getRowNumber();
+        Point pt = getModelIndex(index, desk_size);
         return desk_->getDeskNumber(pt);
     }
     return QVariant();

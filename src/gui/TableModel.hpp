@@ -9,6 +9,7 @@
 
 #include <QtGui>
 
+#include "getModelIndex.hpp"
 #include "GameDesk.hpp"
 
 /** Model for QTableView */

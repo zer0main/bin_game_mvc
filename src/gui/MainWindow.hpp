@@ -7,6 +7,7 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
+#include "getModelIndex.hpp"
 #include "desk_functions.hpp"
 #include "IoView.hpp"
 #include "GuiGame.hpp"
