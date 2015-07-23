@@ -57,7 +57,8 @@ file(GLOB qheaders "src/gui/*.hpp")
 
 QT4_WRAP_UI(UISrcs ${uis})
 QT4_WRAP_CPP(MOCrcs ${qheaders})
+QT4_ADD_RESOURCES(RCSrcs "src/gui/qbin_game.qrc")
 
-add_executable(bin_game_gui ${sources} ${gui}
-                            ${UISrcs} ${MOCrcs})
+add_executable(bin_game_gui ${sources} ${gui} ${UISrcs}
+    ${MOCrcs} ${RCSrcs})
 target_link_libraries(bin_game_gui ${QT_LIBRARIES})

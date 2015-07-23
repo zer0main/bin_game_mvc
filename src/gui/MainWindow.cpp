@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget* parent) :
     ui(new Ui::MainWindow),
     go_(new GameOptions) {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/images/bin_game.ico"));
 }
 
 MainWindow::~MainWindow() {
