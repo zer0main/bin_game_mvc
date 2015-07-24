@@ -74,7 +74,8 @@ int BotView::getTimeNumber_impl() const {
 
 Points BotView::getIndex_impl() const {
     Points points;
-    std::cout << "Enter index of number1" << std::endl;
+    std::cout << "Please enter index of the first number."
+              << std::endl;
     prompt();
     lua_getglobal(L_, "getIndex");
     lua_call(L_, 0, 4);
@@ -84,7 +85,8 @@ Points BotView::getIndex_impl() const {
     points.p2.row = lua_tonumber(L_, -1);
     lua_pop(L_, 4);
     std::cout << points.p1.col << ' ' << points.p1.row << std::endl;
-    std::cout << "And of number2" << std::endl;
+    std::cout << "Please enter index of the second "
+                 "number." << std::endl;
     prompt();
     std::cout << points.p2.col << ' ' << points.p2.row << std::endl;
     return points;

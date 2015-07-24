@@ -82,12 +82,14 @@ int ConsoleView::getTimeNumber_impl() const {
 
 Points ConsoleView::getIndex_impl() const {
     Points points;
-    std::cout << "Enter index of number1" << std::endl;
+    std::cout << "Please enter index of the first number."
+              << std::endl;
     prompt();
     while (!(std::cin >> points.p1.col >> points.p1.row)) {
         typeError();
     }
-    std::cout << "And of number2" << std::endl;
+    std::cout << "Please enter index of the second "
+                 "number." << std::endl;
     prompt();
     while (!(std::cin >> points.p2.col >> points.p2.row)) {
         typeError();
