@@ -45,7 +45,8 @@ int ConsoleView::getWinNumber_impl() const {
     int winNumber;
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
-    std::cout << "Minimum is 10 and maximum is 9999999" << std::endl;
+    std::cout << "Minimum is " << MIN_SCORE << " and "
+                 "maximum is " << MAX_SCORE << std::endl;
     prompt();
     while (true) {
         if (std::cin >> winNumber) {
