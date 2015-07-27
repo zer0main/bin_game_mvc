@@ -66,7 +66,8 @@ int BotView::getWinNumber_impl() const {
 
 int BotView::getTimeNumber_impl() const {
     std::cout << "How many minutes you want to play?" << std::endl;
-    std::cout << "Minimum is 1 and maximum is 1000" << std::endl;
+    std::cout << "Minimum is " << MIN_TIME << " and "
+                 "maximum is " << MAX_TIME << std::endl;
     prompt();
     int timeNumber = object_cast<int>(globals(L_)["getTimeNumber"]());
     std::cout << timeNumber << std::endl;
