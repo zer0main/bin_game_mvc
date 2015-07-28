@@ -25,7 +25,15 @@ static bool checkRange(int verifiable, int type) {
 int ConsoleView::getDeskSize_impl() const {
     int deskSize;
     std::cout << "Please enter size of the game board."
-                 "(desk's size >= 3 and <= 16!)" << std::endl;
+              << std::endl;
+    std::cout << "Your board will have x * x square."
+              << std::endl;
+    std::cout << "(Where x is input size)" << std::endl;
+    std::cout << "Minimum size is " << MIN_WIDTH << " and "
+                 "maximum is " << MAX_WIDTH << std::endl;
+    std::cout << "But try to choose size which is "
+                 "according to the size of your screen"
+              << std::endl;
     prompt();
     while (true) {
         if (std::cin >> deskSize) {

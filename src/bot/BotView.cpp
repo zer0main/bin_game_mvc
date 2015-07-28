@@ -45,8 +45,16 @@ BotView::~BotView() {
 }
 
 int BotView::getDeskSize_impl() const {
-    std::cout << "Please enter size of the game board. "
-                 "(desk's size >= 3 and <= 16!)" << std::endl;
+    std::cout << "Please enter size of the game board."
+              << std::endl;
+    std::cout << "Your board will have x * x square."
+              << std::endl;
+    std::cout << "(Where x is input size)" << std::endl;
+    std::cout << "Minimum size is " << MIN_WIDTH << " and "
+                 "maximum is " << MAX_WIDTH << std::endl;
+    std::cout << "But try to choose size which is "
+                 "according to the size of your screen"
+              << std::endl;
     prompt();
     int size = object_cast<int>(globals(L_)["getDeskSize"]());
     std::cout << size << std::endl;
