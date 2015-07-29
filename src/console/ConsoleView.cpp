@@ -31,8 +31,8 @@ int ConsoleView::getDeskSize_impl() const {
     std::cout << "(Where x is input size)" << std::endl;
     std::cout << "Minimum size is " << MIN_WIDTH << " and "
                  "maximum is " << MAX_WIDTH << std::endl;
-    std::cout << "But try to choose size which is "
-                 "according to the size of your screen"
+    std::cout << "But try to choose size which "
+                 "corresponds to the size of your screen."
               << std::endl;
     prompt();
     while (true) {
