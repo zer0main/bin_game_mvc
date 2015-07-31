@@ -476,6 +476,10 @@ color: rgb(255, 255, 255);</string>
            <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2">
             <item>
              <widget class="QLabel" name="resultLabel">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(0, 140, 0);
+color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -490,6 +494,10 @@ color: rgb(255, 255, 255);</string>
            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2">
             <item>
              <widget class="QLabel" name="scoreLabel">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(120, 120, 120);
+color: rgb(0, 0, 0);</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -504,6 +512,10 @@ color: rgb(255, 255, 255);</string>
            <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2">
             <item>
              <widget class="QLabel" name="stepLabel">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(120, 120, 120);
+color: rgb(0, 0, 0);</string>
+              </property>
               <property name="text">
                <string/>
               </property>
