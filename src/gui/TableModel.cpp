@@ -28,6 +28,8 @@ QVariant TableModel::data(const Index& index,
         int desk_size = desk_->getRowNumber();
         Point pt = getModelIndex(index, desk_size);
         return desk_->getDeskNumber(pt);
+    } else if (role == Qt::TextAlignmentRole) {
+        return Qt::AlignCenter;
     }
     return QVariant();
 }
