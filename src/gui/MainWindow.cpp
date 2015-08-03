@@ -89,6 +89,7 @@ void MainWindow::configureBoard() {
 
 void MainWindow::preparingToPlay() {
     int boards_size = getDeskSize_impl();
+    ui->scoreNumber->setValue(boards_size * boards_size * 4);
     startGame_impl(boards_size);
 }
 
