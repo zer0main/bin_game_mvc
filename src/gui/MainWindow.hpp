@@ -60,6 +60,8 @@ private:
 
     void tryToMove();
 
+    void settingOfScore();
+
 private slots:
     void on_quitButton_clicked();
 

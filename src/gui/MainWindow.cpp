@@ -121,6 +121,13 @@ void MainWindow::tryToMove() {
     }
 }
 
+void MainWindow::settingOfScore() {
+    int boards_size = game_->desk->getRowNumber();
+    int square = boards_size * boards_size;
+    ui->scoreNumber->setValue(square * 4);
+    ui->scoreNumber->setRange(square * 2, MAX_SCORE);
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }
