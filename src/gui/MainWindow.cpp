@@ -124,7 +124,9 @@ void MainWindow::tryToMove() {
 void MainWindow::settingOfScore() {
     int boards_size = game_->desk->getRowNumber();
     int square = boards_size * boards_size;
+    // Default value: board's square * 4
     ui->scoreNumber->setValue(square * 4);
+    // Minimum possible: board's square * 2
     ui->scoreNumber->setRange(square * 2, MAX_SCORE);
 }
 
