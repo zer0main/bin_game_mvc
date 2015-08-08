@@ -158,6 +158,7 @@ void MainWindow::on_startButton_clicked() {
             ui->stackedWidget
             ->setCurrentWidget(ui->gamepage);
         } else if (go_->game_type_ == WIN_MODE) {
+            settingOfScore();
             ui->stackedWidget
             ->setCurrentWidget(ui->winInputpage);
         } else {
