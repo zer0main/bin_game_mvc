@@ -130,6 +130,12 @@ void MainWindow::settingOfScore() {
     ui->scoreNumber->setRange(square * 2, MAX_SCORE);
 }
 
+void MainWindow::setInitialParameters() {
+    go_->steps_number_ = 0;
+    go_->first_click_ = true;
+    ui->stackedWidget->setCurrentWidget(ui->gamepage);
+}
+
 void MainWindow::on_quitButton_clicked() {
     QApplication::quit();
 }

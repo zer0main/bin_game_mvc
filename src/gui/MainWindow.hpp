@@ -62,6 +62,8 @@ private:
 
     void settingOfScore();
 
+    void setInitialParameters();
+
 private slots:
     void on_quitButton_clicked();
 
