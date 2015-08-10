@@ -159,10 +159,7 @@ void MainWindow::on_startButton_clicked() {
     try {
         preparingToPlay();
         if (go_->game_type_ == SCORE_MODE) {
-            go_->steps_number_ = 0;
-            go_->first_click_ = true;
-            ui->stackedWidget
-            ->setCurrentWidget(ui->gamepage);
+            setInitialParameters();
         } else if (go_->game_type_ == WIN_MODE) {
             settingOfScore();
             ui->stackedWidget
@@ -179,16 +176,12 @@ void MainWindow::on_startButton_clicked() {
 void MainWindow::on_playButton_clicked() {
     go_->time_number_ = getTimeNumber_impl();
     go_->starting_time_ = time(NULL);
-    go_->steps_number_ = 0;
-    go_->first_click_ = true;
-    ui->stackedWidget->setCurrentWidget(ui->gamepage);
+    setInitialParameters();
 }
 
 void MainWindow::on_playButton2_clicked() {
     go_->win_number_ = getWinNumber_impl();
-    go_->steps_number_ = 0;
-    go_->first_click_ = true;
-    ui->stackedWidget->setCurrentWidget(ui->gamepage);
+    setInitialParameters();
 }
 
 void MainWindow::on_gameBoard_clicked(const QModelIndex&
