@@ -8,6 +8,12 @@
 
 #include "ConsoleView.hpp"
 
+enum TypeOfChecking {
+    SCORE,
+    BOARDS_SIZE,
+    TIME,
+};
+
 static bool checkRange(int verifiable, int type) {
     switch (type) {
         case 1:
