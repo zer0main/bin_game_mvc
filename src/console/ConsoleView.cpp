@@ -14,15 +14,16 @@ enum TypeOfChecking {
     TIME,
 };
 
-static bool checkRange(int verifiable, int type) {
+static bool checkRange(int verifiable,
+                       TypeOfChecking type) {
     switch (type) {
-        case 1:
+        case BOARDS_SIZE:
             return ((verifiable >= MIN_WIDTH) &&
                     (verifiable <= MAX_WIDTH));
-        case 2:
+        case TIME:
             return ((verifiable >= MIN_TIME) &&
                     (verifiable <= MAX_TIME));
-        case 3:
+        case SCORE:
             return ((verifiable >= MIN_SCORE) &&
                     (verifiable <= MAX_SCORE));
     }
@@ -43,7 +44,7 @@ int ConsoleView::getDeskSize_impl() const {
     prompt();
     while (true) {
         if (std::cin >> deskSize) {
-            if (checkRange(deskSize, 1)) {
+            if (checkRange(deskSize, BOARDS_SIZE)) {
                 break;
             } else {
                 rangeError();
@@ -64,7 +65,7 @@ int ConsoleView::getWinNumber_impl() const {
     prompt();
     while (true) {
         if (std::cin >> winNumber) {
-            if (checkRange(winNumber, 3)) {
+            if (checkRange(winNumber, SCORE)) {
                 break;
             } else {
                 rangeError();
@@ -84,7 +85,7 @@ int ConsoleView::getTimeNumber_impl() const {
     prompt();
     while (true) {
         if (std::cin >> timeNumber) {
-            if (checkRange(timeNumber, 2)) {
+            if (checkRange(timeNumber, TIME)) {
                 break;
             } else {
                 rangeError();
