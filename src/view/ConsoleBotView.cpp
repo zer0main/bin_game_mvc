@@ -111,8 +111,8 @@ void ConsoleBotView::start() const {
 
 void ConsoleBotView::gameForWin() {
     int desk_size = getDeskSize_impl();
-    int win_number = getWinNumber_impl();
     startGame_impl(desk_size);
+    int win_number = getWinNumber_impl();
     const GameDesk* desk = game_->desk.data();
     output_impl();
     int steps_number = 0;
