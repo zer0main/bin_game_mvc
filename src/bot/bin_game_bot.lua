@@ -66,7 +66,7 @@ end
 
 function getWinNumber()
     os.execute("sleep 2")
-    return math.random(200, 10000)
+    return math.random(size * size * 3, 10000)
 end
 
 function getTimeNumber()
