@@ -53,10 +53,6 @@ void ConsoleBotView::prompt() const {
     std::cout << ">>> ";
 }
 
-const GameDesk* ConsoleBotView::getDesk() const {
-    return game_->desk.data();
-}
-
 void ConsoleBotView::typeError() const {
     std::cout << "Error: you must enter the NUMBER" << std::endl;
     std::cout << "Try again: " << std::endl;
@@ -70,6 +66,15 @@ void ConsoleBotView::rangeError() const {
     std::cout << "Try again: " << std::endl;
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+}
+
+int ConsoleBotView::getBoardsSquare() const {
+    int boards_size = game_->desk->getRowNumber();
+    return boards_size * boards_size;
+}
+
+const GameDesk* ConsoleBotView::getDesk() const {
+    return game_->desk.data();
 }
 
 void ConsoleBotView::finish_impl(bool fail, int score,

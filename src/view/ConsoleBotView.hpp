@@ -21,11 +21,13 @@ protected:
 
     void prompt() const;
 
-    const GameDesk* getDesk() const;
-
     void typeError() const;
 
     void rangeError() const;
+
+    int getBoardsSquare() const;
+
+    const GameDesk* getDesk() const;
 
     virtual Points getIndex_impl() const = 0;
 
