@@ -37,9 +37,12 @@ int ConsoleView::getDeskSize_impl() const {
 
 int ConsoleView::getWinNumber_impl() const {
     int winNumber;
+    const GameDesk* desk = getDesk();
+    int boards_size = desk->getRowNumber();
+    int square = boards_size * boards_size;
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
-    std::cout << "Minimum is " << MIN_SCORE << " and "
+    std::cout << "Minimum is " << square * 2 << " and "
                  "maximum is " << MAX_SCORE << std::endl;
     prompt();
     while (true) {
