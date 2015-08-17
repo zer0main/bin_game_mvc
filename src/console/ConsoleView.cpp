@@ -99,9 +99,6 @@ void ConsoleView::output_impl() const {
 
 bool ConsoleView::checkRange(int verifiable,
                              TypeOfChecking type) const {
-    const GameDesk* desk = getDesk();
-    int boards_size = desk->getRowNumber();
-    int square = boards_size * boards_size;
     switch (type) {
         case BOARDS_SIZE:
             return ((verifiable >= MIN_WIDTH) &&
@@ -110,6 +107,9 @@ bool ConsoleView::checkRange(int verifiable,
             return ((verifiable >= MIN_TIME) &&
                     (verifiable <= MAX_TIME));
         case SCORE:
+            const GameDesk* desk = getDesk();
+            int boards_size = desk->getRowNumber();
+            int square = boards_size * boards_size;
             return ((verifiable >= square * 2) &&
                     (verifiable <= MAX_SCORE));
     }
