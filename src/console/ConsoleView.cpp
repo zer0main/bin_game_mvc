@@ -37,9 +37,7 @@ int ConsoleView::getDeskSize_impl() const {
 
 int ConsoleView::getWinNumber_impl() const {
     int winNumber;
-    const GameDesk* desk = getDesk();
-    int boards_size = desk->getRowNumber();
-    int square = boards_size * boards_size;
+    int square = getBoardsSquare();
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
     std::cout << "Minimum is " << square * 2 << " and "
@@ -110,9 +108,7 @@ bool ConsoleView::checkRange(int verifiable,
             return ((verifiable >= MIN_TIME) &&
                     (verifiable <= MAX_TIME));
         case SCORE:
-            const GameDesk* desk = getDesk();
-            int boards_size = desk->getRowNumber();
-            int square = boards_size * boards_size;
+            int square = getBoardsSquare();
             return ((verifiable >= square * 2) &&
                     (verifiable <= MAX_SCORE));
     }
