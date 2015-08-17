@@ -8,21 +8,6 @@
 
 #include "ConsoleView.hpp"
 
-static bool checkRange(int verifiable,
-                       TypeOfChecking type) {
-    switch (type) {
-        case BOARDS_SIZE:
-            return ((verifiable >= MIN_WIDTH) &&
-                    (verifiable <= MAX_WIDTH));
-        case TIME:
-            return ((verifiable >= MIN_TIME) &&
-                    (verifiable <= MAX_TIME));
-        case SCORE:
-            return ((verifiable >= MIN_SCORE) &&
-                    (verifiable <= MAX_SCORE));
-    }
-}
-
 int ConsoleView::getDeskSize_impl() const {
     int deskSize;
     std::cout << "Please enter size of the game board."
@@ -110,4 +95,22 @@ Points ConsoleView::getIndex_impl() const {
 
 void ConsoleView::output_impl() const {
     outputGeneral();
+}
+
+bool ConsoleView::checkRange(int verifiable,
+                             TypeOfChecking type) const {
+    const GameDesk* desk = getDesk();
+    int boards_size = desk->getRowNumber();
+    int square = boards_size * boards_size;
+    switch (type) {
+        case BOARDS_SIZE:
+            return ((verifiable >= MIN_WIDTH) &&
+                    (verifiable <= MAX_WIDTH));
+        case TIME:
+            return ((verifiable >= MIN_TIME) &&
+                    (verifiable <= MAX_TIME));
+        case SCORE:
+            return ((verifiable >= square * 2) &&
+                    (verifiable <= MAX_SCORE));
+    }
 }
