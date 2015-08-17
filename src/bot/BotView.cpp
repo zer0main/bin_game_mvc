@@ -62,9 +62,10 @@ int BotView::getDeskSize_impl() const {
 }
 
 int BotView::getWinNumber_impl() const {
+    int square = getBoardsSquare();
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
-    std::cout << "Minimum is " << MIN_SCORE << " and "
+    std::cout << "Minimum is " << square * 2 << " and "
                  "maximum is " << MAX_SCORE << std::endl;
     prompt();
     int winNumber = object_cast<int>(globals(L_)["getWinNumber"]());
