@@ -19,9 +19,6 @@ const int MIN_TIME = 1;
 /** Maximum number of minutes to play */
 const int MAX_TIME = 1000;
 
-/** Minimum winning score */
-const int MIN_SCORE = 10;
-
 /** Maximum winning score */
 const int MAX_SCORE = 9999999;
 
