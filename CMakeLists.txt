@@ -22,8 +22,8 @@ include_directories(src/util)
 include_directories(src/gui)
 include_directories(src)
 
-add_executable(bin_game2 ${sources} ${console})
-target_link_libraries(bin_game2 ${QT_LIBRARIES})
+add_executable(bin_game_console ${sources} ${console})
+target_link_libraries(bin_game_console ${QT_LIBRARIES})
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR})
