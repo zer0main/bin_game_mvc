@@ -74,6 +74,17 @@ void MainWindow::errorHandling_impl(std::exception& e) const {
     QErrorMessage::qtHandler()->showMessage(m);
 }
 
+void MainWindow::resizeBoardsContent(int boards_size) {
+    if (boards_size <= RESIZE_MAX) {
+        // Use the first row because heights of all
+        // rows are equal
+        int row_height = ui->gameBoard->rowHeight(0);
+        ui->gameBoard
+        ->setFont(QFont("Helvetica",
+                        NUMBER_PROPORTION * row_height));
+    }
+}
+
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }

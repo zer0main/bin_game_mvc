@@ -41,6 +41,8 @@ protected:
 
     void errorHandling_impl(std::exception& e) const;
 
+    void resizeBoardsContent(int boards_size);
+
 private:
     Ui::MainWindow* ui;
 
