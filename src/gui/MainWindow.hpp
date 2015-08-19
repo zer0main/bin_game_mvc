@@ -52,7 +52,7 @@ private:
 
     void setBoardsModel();
 
-    void configureBoard();
+    void configureBoard(int row_number);
 
     void preparingToPlay();
 

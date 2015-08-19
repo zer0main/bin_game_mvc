@@ -53,9 +53,9 @@ void MainWindow::sendHelpMessage_impl() const {
 }
 
 void MainWindow::startGame_impl(int row_number) {
-    configureBoard();
     game_ = GuiGame::make(this, row_number);
     game_->controller->initialStateOfBoard();
+    configureBoard(row_number);
     setBoardsModel();
 }
 
@@ -89,7 +89,7 @@ void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
 
-void MainWindow::configureBoard() {
+void MainWindow::configureBoard(int row_number) {
     ui->gameBoard
     ->setSelectionMode(QAbstractItemView::NoSelection);
     ui->gameBoard->horizontalHeader()
