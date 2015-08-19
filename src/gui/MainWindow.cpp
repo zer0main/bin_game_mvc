@@ -55,8 +55,8 @@ void MainWindow::sendHelpMessage_impl() const {
 void MainWindow::startGame_impl(int row_number) {
     game_ = GuiGame::make(this, row_number);
     game_->controller->initialStateOfBoard();
-    configureBoard(row_number);
     setBoardsModel();
+    configureBoard(row_number);
 }
 
 void MainWindow::errorHandling_impl(std::exception& e) const {
