@@ -7,6 +7,9 @@
 #ifndef CONSTANTS_HPP_
 #define CONSTANTS_HPP_
 
+/** Maximum size of the game board to resize content */
+const int RESIZE_MAX = 5;
+
 /** Minimum width/length of game board */
 const int MIN_WIDTH = 3;
 
