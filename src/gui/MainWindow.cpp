@@ -96,6 +96,7 @@ void MainWindow::configureBoard(int row_number) {
     ->setResizeMode(QHeaderView::Stretch);
     ui->gameBoard->verticalHeader()
     ->setResizeMode(QHeaderView::Stretch);
+    resizeBoardsContent(row_number);
 }
 
 void MainWindow::preparingToPlay() {
