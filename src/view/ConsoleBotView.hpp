@@ -23,6 +23,8 @@ public:
     void view();
 
 protected:
+    void winNumberMessage() const;
+
     void deskSizeMessage() const;
 
     void outputGeneral() const;

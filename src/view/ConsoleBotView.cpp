@@ -32,6 +32,15 @@ void ConsoleBotView::view() {
     }
 }
 
+void ConsoleBotView::winNumberMessage() const {
+    int square = getBoardsSquare();
+    std::cout << "What score you want to finish the "
+                 "game?" << std::endl;
+    std::cout << "Minimum is " << square * 2 << " and "
+                 "maximum is " << MAX_SCORE << std::endl;
+    prompt();
+}
+
 void ConsoleBotView::deskSizeMessage() const {
     std::cout << "Please enter size of the game board."
               << std::endl;
