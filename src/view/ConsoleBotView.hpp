@@ -23,6 +23,8 @@ public:
     void view();
 
 protected:
+    void deskSizeMessage() const;
+
     void outputGeneral() const;
 
     void prompt() const;

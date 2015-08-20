@@ -32,6 +32,20 @@ void ConsoleBotView::view() {
     }
 }
 
+void ConsoleBotView::deskSizeMessage() const {
+    std::cout << "Please enter size of the game board."
+              << std::endl;
+    std::cout << "Your board will have x * x square."
+              << std::endl;
+    std::cout << "(Where x is input size)" << std::endl;
+    std::cout << "Minimum size is " << MIN_WIDTH << " and "
+                 "maximum is " << MAX_WIDTH << std::endl;
+    std::cout << "But try to choose size which "
+                 "corresponds to the size of your screen."
+              << std::endl;
+    prompt();
+}
+
 void ConsoleBotView::outputGeneral() const {
     Point point;
     int row_number = game_->desk->getRowNumber();
