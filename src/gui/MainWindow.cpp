@@ -85,6 +85,16 @@ void MainWindow::resizeBoardsContent(int boards_size) {
     }
 }
 
+void MainWindow::resizeEvent(QResizeEvent* event) {
+    QWidget* current_page = ui->stackedWidget
+                            ->currentWidget();
+    if (current_page == ui->gamepage) {
+        QMainWindow::resizeEvent(event);
+        int boards_size = game_->desk->getRowNumber();
+        resizeBoardsContent(boards_size);
+    }
+}
+
 void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }

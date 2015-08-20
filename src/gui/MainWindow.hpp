@@ -43,6 +43,8 @@ protected:
 
     void resizeBoardsContent(int boards_size);
 
+    void resizeEvent(QResizeEvent* event);
+
 private:
     Ui::MainWindow* ui;
 
