@@ -20,6 +20,9 @@ protected:
     Points getIndex_impl() const;
 
     void output_impl() const;
+
+private:
+    int getInitialParameter(TypeOfChecking type) const;
 };
 
 #endif

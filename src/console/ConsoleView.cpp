@@ -97,3 +97,19 @@ Points ConsoleView::getIndex_impl() const {
 void ConsoleView::output_impl() const {
     outputGeneral();
 }
+
+int ConsoleView::getInitialParameter(TypeOfChecking type) const {
+    int parameter;
+    while (true) {
+        if (std::cin >> parameter) {
+            if (checkRange(parameter, type)) {
+                break;
+            } else {
+                rangeError();
+            }
+        } else {
+            typeError();
+        }
+    }
+    return parameter;
+}
