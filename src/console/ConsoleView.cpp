@@ -14,12 +14,7 @@ int ConsoleView::getDeskSize_impl() const {
 }
 
 int ConsoleView::getWinNumber_impl() const {
-    int square = getBoardsSquare();
-    std::cout << "What score you want to finish the "
-                 "game?" << std::endl;
-    std::cout << "Minimum is " << square * 2 << " and "
-                 "maximum is " << MAX_SCORE << std::endl;
-    prompt();
+    winNumberMessage();
     return getInitialParameter(SCORE);
 }
 
