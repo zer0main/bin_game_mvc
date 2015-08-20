@@ -31,6 +31,9 @@ protected:
 
     void rangeError() const;
 
+    bool checkRange(int verifiable,
+                    TypeOfChecking type) const;
+
     int getBoardsSquare() const;
 
     const GameDesk* getDesk() const;

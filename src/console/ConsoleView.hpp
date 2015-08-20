@@ -20,10 +20,6 @@ protected:
     Points getIndex_impl() const;
 
     void output_impl() const;
-
-private:
-    bool checkRange(int verifiable,
-                    TypeOfChecking type) const;
 };
 
 #endif

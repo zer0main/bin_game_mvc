@@ -97,19 +97,3 @@ Points ConsoleView::getIndex_impl() const {
 void ConsoleView::output_impl() const {
     outputGeneral();
 }
-
-bool ConsoleView::checkRange(int verifiable,
-                             TypeOfChecking type) const {
-    switch (type) {
-        case BOARDS_SIZE:
-            return ((verifiable >= MIN_WIDTH) &&
-                    (verifiable <= MAX_WIDTH));
-        case TIME:
-            return ((verifiable >= MIN_TIME) &&
-                    (verifiable <= MAX_TIME));
-        case SCORE:
-            int square = getBoardsSquare();
-            return ((verifiable >= square * 2) &&
-                    (verifiable <= MAX_SCORE));
-    }
-}

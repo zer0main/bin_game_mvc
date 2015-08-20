@@ -68,6 +68,22 @@ void ConsoleBotView::rangeError() const {
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
+bool ConsoleBotView::checkRange(int verifiable,
+                                TypeOfChecking type) const {
+    switch (type) {
+        case BOARDS_SIZE:
+            return ((verifiable >= MIN_WIDTH) &&
+                    (verifiable <= MAX_WIDTH));
+        case TIME:
+            return ((verifiable >= MIN_TIME) &&
+                    (verifiable <= MAX_TIME));
+        case SCORE:
+            int square = getBoardsSquare();
+            return ((verifiable >= square * 2) &&
+                    (verifiable <= MAX_SCORE));
+    }
+}
+
 int ConsoleBotView::getBoardsSquare() const {
     int boards_size = game_->desk->getRowNumber();
     return boards_size * boards_size;
