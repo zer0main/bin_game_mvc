@@ -19,10 +19,7 @@ int ConsoleView::getWinNumber_impl() const {
 }
 
 int ConsoleView::getTimeNumber_impl() const {
-    std::cout << "How many minutes you want to play?" << std::endl;
-    std::cout << "Minimum is " << MIN_TIME << " and "
-                 "maximum is " << MAX_TIME << std::endl;
-    prompt();
+    timeNumberMessage();
     return getInitialParameter(TIME);
 }
 
