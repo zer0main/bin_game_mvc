@@ -9,12 +9,6 @@
 
 #include "ConsoleBotView.hpp"
 
-enum TypeOfChecking {
-    SCORE,
-    BOARDS_SIZE,
-    TIME,
-};
-
 class ConsoleView: public ConsoleBotView {
 protected:
     int getWinNumber_impl() const;

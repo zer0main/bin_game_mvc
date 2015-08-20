@@ -12,6 +12,12 @@
 #include "Game.hpp"
 #include "IoView.hpp"
 
+enum TypeOfChecking {
+    SCORE,
+    BOARDS_SIZE,
+    TIME,
+};
+
 class ConsoleBotView: public IoView {
 public:
     void view();
