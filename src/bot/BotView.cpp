@@ -53,9 +53,7 @@ int BotView::getDeskSize_impl() const {
 
 int BotView::getWinNumber_impl() const {
     winNumberMessage();
-    int winNumber = object_cast<int>(globals(L_)["getWinNumber"]());
-    std::cout << winNumber << std::endl;
-    return winNumber;
+    return getBaseParameter(SCORE, "getWinNumber");
 }
 
 int BotView::getTimeNumber_impl() const {
