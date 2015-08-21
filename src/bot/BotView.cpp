@@ -58,9 +58,7 @@ int BotView::getWinNumber_impl() const {
 
 int BotView::getTimeNumber_impl() const {
     timeNumberMessage();
-    int timeNumber = object_cast<int>(globals(L_)["getTimeNumber"]());
-    std::cout << timeNumber << std::endl;
-    return timeNumber;
+    return getBaseParameter(TIME, "getTimeNumber");
 }
 
 Points BotView::getIndex_impl() const {
