@@ -46,9 +46,7 @@ BotView::~BotView() {
 
 int BotView::getDeskSize_impl() const {
     deskSizeMessage();
-    int size = object_cast<int>(globals(L_)["getDeskSize"]());
-    std::cout << size << std::endl;
-    return size;
+    return getBaseParameter(BOARDS_SIZE, "getDeskSize");
 }
 
 int BotView::getWinNumber_impl() const {
