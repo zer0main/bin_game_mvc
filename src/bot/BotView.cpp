@@ -89,3 +89,18 @@ void BotView::output_impl() const {
     outputGeneral();
     globals(L_)["output"](getDesk());
 }
+
+int BotView::getBaseParameter(TypeOfChecking type,
+                              const char* function_name) const {
+    int parameter;
+    while (true) {
+        parameter = object_cast<int>(globals(L_)[function_name]());
+        std::cout << parameter << std::endl;
+        if (checkRange(parameter, type)) {
+            break;
+        } else {
+            rangeError();
+        }
+    }
+    return parameter;
+}

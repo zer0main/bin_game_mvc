@@ -30,6 +30,9 @@ protected:
 
 private:
     lua_State* L_;
+
+    int getBaseParameter(TypeOfChecking type,
+                         const char* function_name) const;
 };
 
 #endif
