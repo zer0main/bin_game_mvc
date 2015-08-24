@@ -1,5 +1,14 @@
 # BIN_GAME
 
+## General options of the game
+ - `BOARDS_SIZE` Size of game board;
+
+    It's a linear option (it's equal to one side of the board).
+    The default is 10.
+
+ - `SCORE` Sum of all the numbers on the board at the moment;
+ - `MOVES_NUMBER` Current number of moves
+
 ## Game modes
 
  - Win mode
