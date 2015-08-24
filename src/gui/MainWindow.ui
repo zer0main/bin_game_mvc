@@ -227,7 +227,7 @@ color: rgb(255, 255, 255);</string>
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Choose the size of game desk: </string>
+             <string>Choose the size of game board: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
