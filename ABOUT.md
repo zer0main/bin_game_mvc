@@ -22,9 +22,16 @@ option named WIN_NUMBER. It's just a score you need to
 win.
 
 
-#### Win condition
+#### Victory condition
 
 ```
 SCORE >= WIN_NUMBER
 ```
 
+### Time mode
+
+#### Victory condition
+
+### Score mode
+
+#### Victory condition
