@@ -32,6 +32,14 @@ SCORE >= WIN_NUMBER
 
 #### Victory condition
 
+```
+Do not lose the game for the specified time
+```
+
 ### Score mode
 
 #### Victory condition
+
+```
+You can't win in this mode
+```
