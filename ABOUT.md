@@ -15,6 +15,13 @@
  - Time mode
  - Score mode
 
+### Defeat (for all the game modes)
+
+```
+You can't make any move:
+there are no NEIGHBORING EQUAL numbers on the board
+```
+
 ### Win mode
 
 Before playing in this mode you need to specify a special
