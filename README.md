@@ -5,7 +5,7 @@ bin_game_mvc
 [![License][license]](LICENSE)
 
 It's a C++ version of [2048 game][2048] (with modified
-game rules) with bot and many other features.
+[game rules](ABOUT)) with bot and many other features.
 
 Console and GUI modes are possible.
 
