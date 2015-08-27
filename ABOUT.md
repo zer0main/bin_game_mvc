@@ -37,6 +37,10 @@ SCORE >= WIN_NUMBER
 
 ### Time mode
 
+You need to specify TIME_NUMBER (min) before the beginning
+of the game in this mode. You will play within the
+specified time.
+
 #### Victory condition
 
 ```
@@ -44,6 +48,8 @@ Do not lose the game for the specified time
 ```
 
 ### Score mode
+
+The game continues until losing.
 
 #### Victory condition
 
