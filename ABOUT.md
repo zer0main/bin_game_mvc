@@ -56,3 +56,12 @@ The game continues until losing.
 ```
 You can't win in this mode
 ```
+
+## Game results
+
+After completing the game the following results will be
+displayed:
+
+ - Main result: victory or defeat
+ - Score
+ - Number of moves
