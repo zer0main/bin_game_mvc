@@ -4,6 +4,7 @@
  * See the LICENSE file for terms of use.
  */
 
+#include <iomanip>
 #include <iostream>
 #include <limits>
 
@@ -69,11 +70,8 @@ void ConsoleBotView::outputGeneral() const {
         for (int x = 0; x < row_number; x++) {
             point.col = i;
             point.row = x;
-            char prev_fill = std::cout.fill(' ');
-            int prev_width = std::cout.width(5);
-            std::cout << game_->desk->getDeskNumber(point);
-            std::cout.width(prev_width);
-            std::cout.fill(prev_fill);
+            std::cout << std::right << std::setw(5)
+                      << game_->desk->getDeskNumber(point);
         }
         std::cout << std::endl;
     }
