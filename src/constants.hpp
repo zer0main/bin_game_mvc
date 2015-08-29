@@ -28,4 +28,7 @@ const int MAX_TIME = 1000;
 /** Maximum winning score */
 const int MAX_SCORE = 9999999;
 
+/** Maximum length of indices */
+const int MAX_INDEX_LENGTH = 2;
+
 #endif
