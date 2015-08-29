@@ -67,7 +67,7 @@ void ConsoleBotView::outputGeneral() const {
     Point point;
     int row_number = game_->desk->getRowNumber();
     for (int i = row_number - 1; i >= 0; i--) {
-        std::cout << std::right << std::setw(2)
+        std::cout << std::right << std::setw(MAX_INDEX_LENGTH)
                   << i << " ||";
         for (int x = 0; x < row_number; x++) {
             point.col = i;
