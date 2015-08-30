@@ -62,6 +62,8 @@ private:
 
     int maxDeskNumber() const;
 
+    void rowIndices(int width) const;
+
     void start() const;
 
     void gameForWin();
