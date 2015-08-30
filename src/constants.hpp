@@ -31,4 +31,7 @@ const int MAX_SCORE = 9999999;
 /** Maximum length of indices */
 const int MAX_INDEX_LENGTH = 2;
 
+/** Minimal amount of spaces between numbers on the board */
+const int NUMBER_OF_SPACES = 2;
+
 #endif
