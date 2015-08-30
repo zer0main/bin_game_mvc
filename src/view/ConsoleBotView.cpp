@@ -10,6 +10,15 @@
 
 #include "ConsoleBotView.hpp"
 
+static int numberOfDigits(int number) {
+    int digits = 0;
+    while (number) {
+        number /= 10;
+        digits++;
+    }
+    return digits;
+}
+
 void ConsoleBotView::view() {
     while (true) {
         start();
