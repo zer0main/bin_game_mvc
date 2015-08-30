@@ -151,6 +151,24 @@ void ConsoleBotView::errorHandling_impl(std::exception& e) const {
     std::cout << e.what() << std::endl;
 }
 
+int ConsoleBotView::maxDeskNumber() const {
+    const GameDesk* desk = game_->desk.data();
+    int boards_size = desk->getRowNumber();
+    int max = 0;
+    for (int i = boards_size - 1; i >= 0; i--) {
+        for (int x = 0; x < boards_size; x++) {
+            Point pt;
+            pt.col = i;
+            pt.row = x;
+            int current_number = desk->getDeskNumber(pt);
+            if (current_number > max) {
+                max = current_number;
+            }
+        }
+    }
+    return max;
+}
+
 void ConsoleBotView::start() const {
     std::cout << "*** BIN_GAME ***" << std::endl;
     std::cout << "----------------" << std::endl;

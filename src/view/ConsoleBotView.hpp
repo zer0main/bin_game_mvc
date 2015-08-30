@@ -60,6 +60,8 @@ protected:
 private:
     GamePtr game_;
 
+    int maxDeskNumber() const;
+
     void start() const;
 
     void gameForWin();
