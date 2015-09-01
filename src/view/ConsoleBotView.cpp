@@ -53,7 +53,7 @@ void ConsoleBotView::winNumberMessage() const {
     int square = getBoardsSquare();
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
-    std::cout << "Minimum is " << square * 2 << " and "
+    std::cout << "Minimum is " << square * 2  + 1 << " and "
                  "maximum is " << MAX_SCORE << std::endl;
     prompt();
 }
@@ -129,7 +129,7 @@ bool ConsoleBotView::checkRange(int verifiable,
             return (verifiable > 0);
         case SCORE:
             int square = getBoardsSquare();
-            return (verifiable >= square * 2);
+            return (verifiable > square * 2);
     }
 }
 

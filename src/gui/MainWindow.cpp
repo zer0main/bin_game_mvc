@@ -148,8 +148,8 @@ void MainWindow::settingOfScore() {
     int square = boards_size * boards_size;
     // Default value: board's square * 4
     ui->scoreNumber->setValue(square * 4);
-    // Minimum possible: board's square * 2
-    ui->scoreNumber->setRange(square * 2, MAX_SCORE);
+    // Minimum possible: board's square * 2 + 1
+    ui->scoreNumber->setRange(square * 2 + 1, MAX_SCORE);
 }
 
 void MainWindow::setInitialParameters() {
