@@ -120,6 +120,10 @@ bool ConsoleBotView::checkRange(int verifiable,
                                 TypeOfChecking type) const {
     switch (type) {
         case BOARDS_SIZE:
+            // By checking that verifiable is greater than
+            // zero we make sure that it's less or equal
+            // to the allowable maximum for int also.
+            // See cyclic mechanism of ints in C++.
             return (verifiable > 0);
         case TIME:
             return (verifiable > 0);
