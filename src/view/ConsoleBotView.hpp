@@ -35,7 +35,7 @@ protected:
 
     void typeError() const;
 
-    void rangeError() const;
+    void rangeError(TypeOfChecking type) const;
 
     bool checkRange(int verifiable,
                     TypeOfChecking type) const;

@@ -93,7 +93,7 @@ int BotView::getBaseParameter(TypeOfChecking type,
         if (checkRange(parameter, type)) {
             break;
         } else {
-            rangeError();
+            rangeError(type);
         }
     }
     return parameter;

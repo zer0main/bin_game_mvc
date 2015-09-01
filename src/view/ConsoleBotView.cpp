@@ -102,12 +102,18 @@ void ConsoleBotView::typeError() const {
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
 
-void ConsoleBotView::rangeError() const {
+void ConsoleBotView::rangeError(TypeOfChecking type) const {
+    int max_int = std::numeric_limits<int>::max();
     std::cout << "This number is out of allowable "
                  "range." << std::endl;
+    if (type == (SCORE || TIME)) {
+        std::cout << "Please enter a POSITIVE INTEGER"
+                  << std::endl;
+        std::cout << "Maximum is " << max_int << std::endl;
+    }
     std::cout << "Try again: " << std::endl;
     std::cin.clear();
-    std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+    std::cin.ignore(max_int, '\n');
 }
 
 bool ConsoleBotView::checkRange(int verifiable,

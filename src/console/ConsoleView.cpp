@@ -51,7 +51,7 @@ int ConsoleView::getInitialParameter(TypeOfChecking type) const {
             if (checkRange(parameter, type)) {
                 break;
             } else {
-                rangeError();
+                rangeError(type);
             }
         } else {
             typeError();
