@@ -66,6 +66,10 @@ private:
 
     void settingOfScore();
 
+    void settingOfTime();
+
+    void settingOfSize();
+
     void setInitialParameters();
 
 private slots:

@@ -155,6 +155,17 @@ void MainWindow::settingOfScore() {
     ui->scoreNumber->setRange(square * 2 + 1, max_int);
 }
 
+void MainWindow::settingOfTime() {
+    int max_int = std::numeric_limits<int>::max();
+    ui->timeNumber->setValue(DEFAULT_TIME);
+    ui->timeNumber->setRange(1, max_int);
+}
+
+void MainWindow::settingOfSize() {
+    ui->boardsSize->setValue(DEFAULT_SIZE);
+    ui->boardsSize->setRange(MIN_WIDTH, MAX_WIDTH);
+}
+
 void MainWindow::setInitialParameters() {
     go_->steps_number_ = 0;
     go_->first_click_ = true;
