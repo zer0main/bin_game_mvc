@@ -120,15 +120,12 @@ bool ConsoleBotView::checkRange(int verifiable,
                                 TypeOfChecking type) const {
     switch (type) {
         case BOARDS_SIZE:
-            return ((verifiable >= MIN_WIDTH) &&
-                    (verifiable <= MAX_WIDTH));
+            return (verifiable > 0);
         case TIME:
-            return ((verifiable >= MIN_TIME) &&
-                    (verifiable <= MAX_TIME));
+            return (verifiable > 0);
         case SCORE:
             int square = getBoardsSquare();
-            return ((verifiable >= square * 2) &&
-                    (verifiable <= MAX_SCORE));
+            return (verifiable >= square * 2);
     }
 }
 
