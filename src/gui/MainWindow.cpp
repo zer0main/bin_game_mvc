@@ -101,12 +101,6 @@ void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
 
-void MainWindow::configureSpinBox() {
-    settingOfSize();
-    settingOfScore();
-    settingOfTime();
-}
-
 void MainWindow::configureBoard(int row_number) {
     ui->gameBoard
     ->setSelectionMode(QAbstractItemView::NoSelection);
@@ -184,19 +178,19 @@ void MainWindow::on_quitButton_clicked() {
 
 void MainWindow::on_winButton_clicked() {
     go_->game_type_ = WIN_MODE;
-    configureSpinBox();
+    settingOfSize();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_timeButton_clicked() {
     go_->game_type_ = TIME_MODE;
-    configureSpinBox();
+    settingOfSize();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_scoreButton_clicked() {
     go_->game_type_ = SCORE_MODE;
-    configureSpinBox();
+    settingOfSize();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
@@ -210,6 +204,7 @@ void MainWindow::on_startButton_clicked() {
             ui->stackedWidget
             ->setCurrentWidget(ui->winInputpage);
         } else {
+            settingOfTime();
             ui->stackedWidget
             ->setCurrentWidget(ui->timeInputpage);
         }

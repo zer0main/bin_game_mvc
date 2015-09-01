@@ -54,8 +54,6 @@ private:
 
     void setBoardsModel();
 
-    void configureSpinBox();
-
     void configureBoard(int row_number);
 
     void preparingToPlay();
