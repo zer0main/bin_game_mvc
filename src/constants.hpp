@@ -22,6 +22,9 @@ const int MAX_WIDTH = 16;
 /** Default value for the time number */
 const int DEFAULT_TIME = 30;
 
+/** Default size of the game board */
+const int DEFAULT_SIZE = 10;
+
 /** Maximum length of indices */
 const int MAX_INDEX_LENGTH = 2;
 
