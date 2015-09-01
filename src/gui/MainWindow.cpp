@@ -101,6 +101,12 @@ void MainWindow::setBoardsModel() {
     ui->gameBoard->setModel(game_->t_model.data());
 }
 
+void MainWindow::configureSpinBox() {
+    settingOfSize();
+    settingOfScore();
+    settingOfTime();
+}
+
 void MainWindow::configureBoard(int row_number) {
     ui->gameBoard
     ->setSelectionMode(QAbstractItemView::NoSelection);
