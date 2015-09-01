@@ -19,15 +19,6 @@ const int MIN_WIDTH = 3;
 /** Maximum width/length of game board */
 const int MAX_WIDTH = 16;
 
-/** Minimum number of minutes to play */
-const int MIN_TIME = 1;
-
-/** Maximum number of minutes to play */
-const int MAX_TIME = 1000;
-
-/** Maximum winning score */
-const int MAX_SCORE = 9999999;
-
 /** Maximum length of indices */
 const int MAX_INDEX_LENGTH = 2;
 
