@@ -4,6 +4,8 @@
  * See the LICENSE file for terms of use.
  */
 
+#include <limits>
+
 #include "MainWindow.hpp"
 #include "ui_MainWindow.h"
 
@@ -144,12 +146,13 @@ void MainWindow::tryToMove() {
 }
 
 void MainWindow::settingOfScore() {
+    int max_int = std::numeric_limits<int>::max();
     int boards_size = game_->desk->getRowNumber();
     int square = boards_size * boards_size;
     // Default value: board's square * 4
     ui->scoreNumber->setValue(square * 4);
     // Minimum possible: board's square * 2 + 1
-    ui->scoreNumber->setRange(square * 2 + 1, MAX_SCORE);
+    ui->scoreNumber->setRange(square * 2 + 1, max_int);
 }
 
 void MainWindow::setInitialParameters() {
