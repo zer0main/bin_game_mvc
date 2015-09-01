@@ -184,16 +184,19 @@ void MainWindow::on_quitButton_clicked() {
 
 void MainWindow::on_winButton_clicked() {
     go_->game_type_ = WIN_MODE;
+    configureSpinBox();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_timeButton_clicked() {
     go_->game_type_ = TIME_MODE;
+    configureSpinBox();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
 void MainWindow::on_scoreButton_clicked() {
     go_->game_type_ = SCORE_MODE;
+    configureSpinBox();
     ui->stackedWidget->setCurrentWidget(ui->inputpage);
 }
 
