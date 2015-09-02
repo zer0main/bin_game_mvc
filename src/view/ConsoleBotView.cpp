@@ -44,7 +44,7 @@ void ConsoleBotView::view() {
 
 void ConsoleBotView::timeNumberMessage() const {
     std::cout << "How many minutes you want to play?" << std::endl;
-    std::cout << "The default is " << DEFAULT_TIME
+    std::cout << "The default is " << Rules::DEFAULT_TIME
               << std::endl;
     prompt();
 }
@@ -64,8 +64,9 @@ void ConsoleBotView::deskSizeMessage() const {
     std::cout << "Your board will have x * x square."
               << std::endl;
     std::cout << "(Where x is input size)" << std::endl;
-    std::cout << "Minimum size is " << MIN_WIDTH << " and "
-                 "maximum is " << MAX_WIDTH << std::endl;
+    std::cout << "Minimum size is " << Rules::MIN_WIDTH
+              << " and maximum is " << Rules::MAX_WIDTH
+              << std::endl;
     std::cout << "But try to choose size which "
                  "corresponds to the size of your screen."
               << std::endl;
@@ -77,13 +78,14 @@ void ConsoleBotView::outputGeneral() const {
     int digits = numberOfDigits(max);
     int row_number = game_->desk->getRowNumber();
     for (int i = row_number - 1; i >= 0; i--) {
-        std::cout << std::right << std::setw(MAX_INDEX_LENGTH)
+        std::cout << std::right
+                  << std::setw(Console::MAX_INDEX_LENGTH)
                   << i << " ||";
         for (int x = 0; x < row_number; x++) {
             Point point;
             point.col = i;
             point.row = x;
-            int width = NUMBER_OF_SPACES + digits;
+            int width = Console::NUMBER_OF_SPACES + digits;
             std::cout << std::right << std::setw(width)
                       << game_->desk->getDeskNumber(point);
         }
@@ -127,8 +129,8 @@ bool ConsoleBotView::checkRange(int verifiable,
                                 TypeOfChecking type) const {
     switch (type) {
         case BOARDS_SIZE:
-            return ((verifiable >= MIN_WIDTH) &&
-                    (verifiable <= MAX_WIDTH));
+            return ((verifiable >= Rules::MIN_WIDTH) &&
+                    (verifiable <= Rules::MAX_WIDTH));
         case TIME:
             // By checking that verifiable is greater than
             // zero we make sure that it's less or equal

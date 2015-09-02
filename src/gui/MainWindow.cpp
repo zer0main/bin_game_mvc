@@ -77,13 +77,13 @@ void MainWindow::errorHandling_impl(std::exception& e) const {
 }
 
 void MainWindow::resizeBoardsContent(int boards_size) {
-    if (boards_size <= RESIZE_MAX) {
+    if (boards_size <= Gui::RESIZE_MAX) {
         // Use the first row because heights of all
         // rows are equal
         int row_height = ui->gameBoard->rowHeight(0);
         ui->gameBoard
         ->setFont(QFont("Helvetica",
-                        NUMBER_PROPORTION * row_height));
+                        Gui::NUMBER_PROPORTION * row_height));
     }
 }
 
@@ -157,13 +157,14 @@ void MainWindow::settingOfScore() {
 
 void MainWindow::settingOfTime() {
     int max_int = std::numeric_limits<int>::max();
-    ui->timeNumber->setValue(DEFAULT_TIME);
+    ui->timeNumber->setValue(Rules::DEFAULT_TIME);
     ui->timeNumber->setRange(1, max_int);
 }
 
 void MainWindow::settingOfSize() {
-    ui->boardsSize->setValue(DEFAULT_SIZE);
-    ui->boardsSize->setRange(MIN_WIDTH, MAX_WIDTH);
+    ui->boardsSize->setValue(Gui::DEFAULT_SIZE);
+    ui->boardsSize->setRange(Rules::MIN_WIDTH,
+                             Rules::MAX_WIDTH);
 }
 
 void MainWindow::setInitialParameters() {
