@@ -206,10 +206,12 @@ int ConsoleBotView::maxDeskNumber() const {
 
 void ConsoleBotView::rowIndices(int width) const {
     int boards_size = game_->desk->getRowNumber();
+    printSpaces(Console::INDEX_FIELD);
     for (int i = 0; i < width * boards_size; i++) {
         std::cout << "=";
     }
     std::cout << std::endl;
+    printSpaces(Console::INDEX_FIELD);
     for (int i = 0; i < boards_size; i++) {
         std::cout << std::right << std::setw(width) << i;
     }
