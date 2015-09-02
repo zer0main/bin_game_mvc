@@ -80,8 +80,8 @@ void ConsoleBotView::deskSizeMessage() const {
 }
 
 void ConsoleBotView::outputGeneral() const {
-    int max = maxDeskNumber();
-    int digits = numberOfDigits(max);
+    int digits = numberOfDigits(maxDeskNumber());
+    int width = Console::NUMBER_OF_SPACES + digits;
     int row_number = game_->desk->getRowNumber();
     for (int i = row_number - 1; i >= 0; i--) {
         std::cout << std::right
@@ -91,12 +91,13 @@ void ConsoleBotView::outputGeneral() const {
             Point point;
             point.col = i;
             point.row = x;
-            int width = Console::NUMBER_OF_SPACES + digits;
             std::cout << std::right << std::setw(width)
                       << game_->desk->getDeskNumber(point);
         }
         std::cout << std::endl;
     }
+    rowIndices(width);
+    std::cout << std::endl;
 }
 
 void ConsoleBotView::prompt() const {
