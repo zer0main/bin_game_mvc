@@ -35,6 +35,9 @@ const int DEFAULT_TIME = 30;
 
 namespace Console {
 
+/** Field for indices and separator */
+const int INDEX_FIELD = 5;
+
 /** Maximum length of indices */
 const int MAX_INDEX_LENGTH = 2;
 
