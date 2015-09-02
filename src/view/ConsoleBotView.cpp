@@ -44,12 +44,17 @@ void ConsoleBotView::view() {
 
 void ConsoleBotView::timeNumberMessage() const {
     std::cout << "How many minutes you want to play?" << std::endl;
+    std::cout << "The default is " << DEFAULT_TIME
+              << std::endl;
     prompt();
 }
 
 void ConsoleBotView::winNumberMessage() const {
+    int square = getBoardsSquare();
     std::cout << "What score you want to finish the "
                  "game?" << std::endl;
+    std::cout << "The default is " << square * 4
+              << std::endl;
     prompt();
 }
 
