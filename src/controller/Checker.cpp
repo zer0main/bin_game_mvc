@@ -16,10 +16,10 @@ static int myAbs(int number) {
 
 bool Checker::checkStep(const GameDesk& a,
                         const Points& points) const {
-    if (checkIndex(points)) {
-        int n1 = a.getDeskNumber(points.p1);
-        int n2 = a.getDeskNumber(points.p2);
-        if (n1 == n2) {
+    int n1 = a.getDeskNumber(points.p1);
+    int n2 = a.getDeskNumber(points.p2);
+    if (n1 == n2) {
+        if (checkIndex(points)) {
             return true;
         }
     }
