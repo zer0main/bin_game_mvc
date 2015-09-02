@@ -149,22 +149,22 @@ void MainWindow::settingOfScore() {
     int max_int = std::numeric_limits<int>::max();
     int boards_size = game_->desk->getRowNumber();
     int square = boards_size * boards_size;
-    // Default value: board's square * 4
-    ui->scoreNumber->setValue(square * 4);
     // Minimum possible: board's square * 2 + 1
     ui->scoreNumber->setRange(square * 2 + 1, max_int);
+    // Default value: board's square * 4
+    ui->scoreNumber->setValue(square * 4);
 }
 
 void MainWindow::settingOfTime() {
     int max_int = std::numeric_limits<int>::max();
-    ui->timeNumber->setValue(Rules::DEFAULT_TIME);
     ui->timeNumber->setRange(1, max_int);
+    ui->timeNumber->setValue(Rules::DEFAULT_TIME);
 }
 
 void MainWindow::settingOfSize() {
-    ui->boardsSize->setValue(Gui::DEFAULT_SIZE);
     ui->boardsSize->setRange(Rules::MIN_WIDTH,
                              Rules::MAX_WIDTH);
+    ui->boardsSize->setValue(Gui::DEFAULT_SIZE);
 }
 
 void MainWindow::setInitialParameters() {
