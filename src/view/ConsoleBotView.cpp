@@ -19,6 +19,12 @@ static int numberOfDigits(int number) {
     return digits;
 }
 
+static void printSpaces(int spaces) {
+    for (int i = 0; i < spaces; i++) {
+        std::cout << " ";
+    }
+}
+
 void ConsoleBotView::view() {
     while (true) {
         start();
