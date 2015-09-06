@@ -73,8 +73,11 @@ void ConsoleBotView::deskSizeMessage() const {
     std::cout << "Minimum size is " << Rules::MIN_WIDTH
               << " and maximum is " << Rules::MAX_WIDTH
               << std::endl;
-    std::cout << "But try to choose size which "
-                 "corresponds to the size of your screen."
+    std::cout << "Please note that you can change font's "
+                 "size in your Terminal Preferences if"
+              << std::endl;
+    std::cout << "you have size mismatch of screen and "
+                 "game board."
               << std::endl;
     prompt();
 }
