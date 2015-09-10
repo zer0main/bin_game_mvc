@@ -78,12 +78,8 @@ void MainWindow::errorHandling_impl(std::exception& e) const {
 
 void MainWindow::resizeBoardsContent(int boards_size) {
     if (boards_size <= Gui::RESIZE_MAX) {
-        // Use the first row because heights of all
-        // rows are equal
-        int row_height = ui->gameBoard->rowHeight(0);
-        ui->gameBoard
-        ->setFont(QFont("Helvetica",
-                        Gui::NUMBER_PROPORTION * row_height));
+        QTimer::singleShot(Gui::WAIT_TIME, this,
+                           SLOT(resizeBoardsContent_deferred()));
     }
 }
 
