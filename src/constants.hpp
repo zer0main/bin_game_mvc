@@ -18,7 +18,7 @@ const int WAIT_TIME = 1;
 const double NUMBER_PROPORTION = 0.3;
 
 /** Maximum size of the game board to resize content */
-const int RESIZE_MAX = 5;
+const int RESIZE_MAX = 8;
 
 /** Default size of the game board */
 const int DEFAULT_SIZE = 10;
