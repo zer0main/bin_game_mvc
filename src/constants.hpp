@@ -10,7 +10,7 @@
 namespace Gui {
 
 /** The proportion of a number in a cell */
-const double NUMBER_PROPORTION = 0.900000;
+const double NUMBER_PROPORTION = 0.3;
 
 /** Maximum size of the game board to resize content */
 const int RESIZE_MAX = 5;
