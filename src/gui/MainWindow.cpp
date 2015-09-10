@@ -104,7 +104,6 @@ void MainWindow::configureBoard(int row_number) {
     ->setResizeMode(QHeaderView::Stretch);
     ui->gameBoard->verticalHeader()
     ->setResizeMode(QHeaderView::Stretch);
-    resizeBoardsContent(row_number);
 }
 
 void MainWindow::preparingToPlay() {
@@ -167,6 +166,8 @@ void MainWindow::setInitialParameters() {
     go_->steps_number_ = 0;
     go_->first_click_ = true;
     ui->stackedWidget->setCurrentWidget(ui->gamepage);
+    int boards_size = game_->desk->getRowNumber();
+    resizeBoardsContent(boards_size);
 }
 
 void MainWindow::on_quitButton_clicked() {
