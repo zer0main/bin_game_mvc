@@ -9,6 +9,11 @@
 
 namespace Gui {
 
+/** Waiting time (msec).
+Before calling resizeBoardsContent_deferred().
+*/
+const int WAIT_TIME = 1;
+
 /** The proportion of a number in a cell */
 const double NUMBER_PROPORTION = 0.3;
 
