@@ -90,6 +90,8 @@ private slots:
     void on_gameBoard_clicked(const QModelIndex& index);
 
     void on_endButton_clicked();
+
+    void resizeBoardsContent_deferred();
 };
 
 #endif

@@ -248,3 +248,12 @@ void MainWindow::on_gameBoard_clicked(const QModelIndex&
 void MainWindow::on_endButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->startpage);
 }
+
+void MainWindow::resizeBoardsContent_deferred() {
+    // Use the first row because heights of all
+    // rows are equal
+    int row_height = ui->gameBoard->rowHeight(0);
+    ui->gameBoard
+    ->setFont(QFont("Helvetica",
+                    Gui::NUMBER_PROPORTION * row_height));
+}
