@@ -52,6 +52,8 @@ private:
 
     GameOptionsPtr go_;
 
+    QFont default_font_;
+
     void setBoardsModel();
 
     void configureBoard(int row_number);
