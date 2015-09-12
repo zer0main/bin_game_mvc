@@ -81,6 +81,8 @@ void MainWindow::resizeBoardsContent(int boards_size) {
     if (boards_size <= Gui::RESIZE_MAX) {
         QTimer::singleShot(Gui::WAIT_TIME, this,
                            SLOT(resizeBoardsContent_deferred()));
+    } else {
+        ui->gameBoard->setFont(default_font_);
     }
 }
 
