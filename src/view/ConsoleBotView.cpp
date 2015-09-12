@@ -131,7 +131,8 @@ void ConsoleBotView::rangeError(TypeOfChecking type) const {
         std::cout << "Maximum is " << max_int << std::endl;
 
     }
-    std::cout << "Try again: " << std::endl;
+    std::cout << "Try again please." << std::endl;
+    prompt();
     std::cin.clear();
     std::cin.ignore(max_int, '\n');
 }
