@@ -272,7 +272,7 @@ void ConsoleBotView::gameWithTime() {
     output_impl();
     int steps_number = 0;
     while (!checkFail(*desk) &&
-           ((t2 - t1) < time_number * 60)) {
+           ((t2 - t1) < (time_number * Rules::SEC_IN_MIN))) {
         steps_number += 1;
         play();
         t2 = time(NULL);

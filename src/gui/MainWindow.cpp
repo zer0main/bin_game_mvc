@@ -131,7 +131,8 @@ bool MainWindow::endOfGame() const {
     } else {
         int current_time = time(NULL);
         bool time_is_up =
-            (current_time - go_->starting_time_) >= go_->time_number_ * 60;
+            (current_time - go_->starting_time_) >=
+            (go_->time_number_ * Rules::SEC_IN_MIN);
         return checkFail(*desk) || time_is_up;
     }
 }
