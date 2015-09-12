@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget* parent) :
     go_(new GameOptions) {
     ui->setupUi(this);
     setWindowIcon(QIcon(":/images/bin_game.ico"));
+    default_font_ = ui->gameBoard->font();
 }
 
 MainWindow::~MainWindow() {
