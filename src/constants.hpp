@@ -36,6 +36,9 @@ const int MAX_WIDTH = 16;
 /** Default value for the time number */
 const int DEFAULT_TIME = 30;
 
+/** Number of seconds in one minute */
+const int SEC_IN_MIN = 60;
+
 }
 
 namespace Console {
