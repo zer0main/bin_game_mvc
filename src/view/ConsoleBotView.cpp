@@ -109,7 +109,8 @@ void ConsoleBotView::prompt() const {
 
 void ConsoleBotView::typeError() const {
     std::cout << "Error: you must enter the NUMBER" << std::endl;
-    std::cout << "Try again: " << std::endl;
+    std::cout << "Try again please." << std::endl;
+    prompt();
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 }
