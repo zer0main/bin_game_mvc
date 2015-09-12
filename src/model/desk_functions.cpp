@@ -50,7 +50,7 @@ int score(const GameDesk& desk) {
 
 bool checkWin(const GameDesk& desk, int win_number) {
     bool win = win_number <= score(desk);
-    return (win) ? true : false;
+    return win;
 }
 
 bool checkFail(const GameDesk& desk) {
