@@ -156,7 +156,7 @@ void MainWindow::settingOfScore() {
 
 void MainWindow::settingOfTime() {
     int max_int = std::numeric_limits<int>::max();
-    ui->timeNumber->setRange(1, max_int);
+    ui->timeNumber->setRange(1, max_int / Rules::SEC_IN_MIN);
     ui->timeNumber->setValue(Rules::DEFAULT_TIME);
 }
 

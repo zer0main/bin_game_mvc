@@ -122,7 +122,8 @@ void ConsoleBotView::rangeError(TypeOfChecking type) const {
     if (type == TIME) {
         std::cout << "Please enter a POSITIVE INTEGER"
                   << std::endl;
-        std::cout << "Maximum is " << max_int << std::endl;
+        std::cout << "Maximum is " << max_int / Rules::SEC_IN_MIN
+                  << std::endl;
     } else if (type == SCORE) {
         int square = getBoardsSquare();
         std::cout << "For this size of the game board "
@@ -144,11 +145,11 @@ bool ConsoleBotView::checkRange(int verifiable,
             return ((verifiable >= Rules::MIN_WIDTH) &&
                     (verifiable <= Rules::MAX_WIDTH));
         case TIME:
-            // By checking that verifiable is greater than
-            // zero we make sure that it's less or equal
-            // to the allowable maximum for int also.
-            // See cyclic mechanism of ints in C++.
-            return (verifiable > 0);
+            {
+            int max_int = std::numeric_limits<int>::max();
+            return (verifiable > 0) &&
+                   (verifiable <= max_int / Rules::SEC_IN_MIN);
+            }
         case SCORE:
             int square = getBoardsSquare();
             return (verifiable > square * 2);
