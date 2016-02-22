@@ -4,9 +4,8 @@ project(bin_game2)
 FIND_PACKAGE(Qt4 REQUIRED)
 INCLUDE(${QT_USE_FILE})
 
-file(GLOB sources "src/controller/*.cpp",
-    "src/model/*.cpp", "src/view/*.cpp", "src/util/*.cpp",
-    "src/*.cpp")
+file(GLOB sources "src/controller/*.cpp" "src/model/*.cpp"
+    "src/view/*.cpp" "src/util/*.cpp" "src/*.cpp")
 
 file(GLOB console "src/console/*.cpp")
 
