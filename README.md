@@ -21,6 +21,10 @@ Run dependencies
 Build dependencies
 ------------------
 
+**Warning**. Make sure you use the same Lua which luabind
+was linked against. Otherwise it compiles but results in
+memory error.
+
  - All the run dependencies
  - cmake
  - make
