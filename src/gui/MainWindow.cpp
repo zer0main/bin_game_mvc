@@ -63,18 +63,6 @@ void MainWindow::startGame_impl(int row_number) {
 }
 
 void MainWindow::errorHandling_impl(std::exception& e) const {
-    QString what = QString::fromStdString(e.what());
-    QString error = "<b>The error occurred</b>."
-                    "<br/><br/>Contact developers! "
-                    "<b>pdolgov99@gmail.com</b>";
-    what = what.replace("&", "&amp;");
-    what = what.replace("'", "&apos;");
-    what = what.replace("<", "&lt;");
-    what = what.replace(">", "&gt;");
-    what = what.replace("\"", "&quot;");
-    QString m = error + "<br/><br/>" + what;
-    QErrorMessage::qtHandler()->resize(400, 300);
-    QErrorMessage::qtHandler()->showMessage(m);
 }
 
 void MainWindow::resizeBoardsContent(int boards_size) {
@@ -197,21 +185,17 @@ void MainWindow::on_scoreButton_clicked() {
 }
 
 void MainWindow::on_startButton_clicked() {
-    try {
-        preparingToPlay();
-        if (go_->game_type_ == SCORE_MODE) {
-            setInitialParameters();
-        } else if (go_->game_type_ == WIN_MODE) {
-            settingOfScore();
-            ui->stackedWidget
-            ->setCurrentWidget(ui->winInputpage);
-        } else {
-            settingOfTime();
-            ui->stackedWidget
-            ->setCurrentWidget(ui->timeInputpage);
-        }
-    } catch (std::exception& e) {
-        errorHandling_impl(e);
+    preparingToPlay();
+    if (go_->game_type_ == SCORE_MODE) {
+        setInitialParameters();
+    } else if (go_->game_type_ == WIN_MODE) {
+        settingOfScore();
+        ui->stackedWidget
+        ->setCurrentWidget(ui->winInputpage);
+    } else {
+        settingOfTime();
+        ui->stackedWidget
+        ->setCurrentWidget(ui->timeInputpage);
     }
 }
 
